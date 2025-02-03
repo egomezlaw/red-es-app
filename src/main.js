@@ -8,7 +8,10 @@ import TextAnimator from './components/TextAnimator.vue';
 import FilterHome from './components/FilterHome.vue';
 import Schools from './components/Schools.vue';
 
+import Globe from './components/Globe.vue';
+
 const app = createApp(App);
+app.component('Globe', Globe);
 app.component('Header', Header);
 app.component('TextAnimator', TextAnimator);
 app.component('FilterHome', FilterHome);

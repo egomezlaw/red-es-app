@@ -1,27 +1,28 @@
 <template>
-    <div class="flex flex-col space-y-4">
+    <div class="flex flex-col space-y-4 w-full">
         <!-- Primer ComboBox -->
-            <h1>Selecciona la comunidad autónoma</h1>            
-            <select v-model="selectedCCAA" class="appearance-none w-full bg-red-500 text-white text-lg px-4 py-2  shadow-md focus:outline-none focus:ring-2 focus:ring-red-500">
-                <option v-for="(item, index) in schools_data" :key="index" :value="item.title">
-                    {{ item.ccaa   }}
-                </option>
-            </select>
-        
+        <div class="flex justify-center">
+             <p class="">Comunidad autónoma<i class="mx-10 arrow right max-h-36"></i>
+             </p>            
+             <select v-model="selectedCCAA" class="appearance-none text-white text-lg px-4 py-2  shadow-md focus:outline-none focus:ring-2 min-w-96">
+                 <option v-for="(item, index) in schools_data" :key="index" :value="item.title">
+                     {{ item.title }}
+                    </option>
+                </select>
+        </div>         
         <!-- Segundo ComboBox (Solo se muestra si hay una ccaa  seleccionada) -->
-        <div v-if="selectedCCAA">
-            <h1>Selecciona la provincia</h1>
-            <select v-model="selectedProvince" class="appearance-none w-full bg-red-500 text-white text-lg px-4 py-2  shadow-md focus:outline-none focus:ring-2 focus:ring-red-500">
+        <div class="flex justify-center" v-if="selectedCCAA">
+            <p class="">Provincia<i class="mx-10 arrow right max-h-36"></i></p>
+            <select v-model="selectedProvince" class="appearance-none text-white text-lg px-4 py-2  shadow-md focus:outline-none focus:ring-2 min-w-96">
                 <option v-for="(p, index) in provinces" :key="index" :value="p.title">
                     {{ p.title }}
                 </option>
             </select>
-        </div>
-        
+        </div>       
         <!-- Tercer ComboBox (Solo se muestra si hay una provincia  seleccionada) -->
-        <div v-if="selectedProvince">
-            <h1>Selecciona la municipalidad</h1>
-            <select v-model="selectedMunicipality" class="appearance-none w-full bg-red-500 text-white text-lg px-4 py-2  shadow-md focus:outline-none focus:ring-2 focus:ring-red-500">
+        <div  class="flex justify-center" v-if="selectedProvince">
+            <p class="">Municipio<i class="mx-10 arrow right max-h-36"></i></p>
+            <select v-model="selectedMunicipality" class="appearance-none text-white text-lg px-4 py-2  shadow-md focus:outline-none focus:ring-2 min-w-96">
                 <option v-for="(m, key) in municipalities" :value="key">
                     {{ key }}
                 </option>
@@ -53,7 +54,7 @@ export default{
         },
         
         municipalities(){
-            if (!this.selectedProvince){
+            if (!this.selectedCCAA && !this.selectedProvince){
                 return null;
             }
             
@@ -66,11 +67,11 @@ export default{
 <style scoped>
 /* Custom scrollbar */
 select::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 select::-webkit-scrollbar-track {
-    background: #DD0031; /* Track color */
+    background: #000000; /* Track color */
 }   
 
 select::-webkit-scrollbar-thumb {
@@ -79,7 +80,7 @@ select::-webkit-scrollbar-thumb {
 }
 
 select::-webkit-scrollbar-thumb:hover {
-    background: #DD0031; /* Thumb color on hover */
+    background: #000000; /* Thumb color on hover */
 }
 
 select.decorated option:hover {
@@ -88,10 +89,20 @@ select.decorated option:hover {
 
 /* Custom option styling */
 option {
-    background-color: #DD0031; /* Background color for options */
     color: #ffffff; /* Text color for options */
+    background-color: #000000   ; /* Background color for options */
     font-size: 1.5rem; /* Font size for options */
 }
 
+.arrow {
+  border: solid #DD0031;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
 
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
 </style>

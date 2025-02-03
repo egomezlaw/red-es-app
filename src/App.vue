@@ -4,10 +4,11 @@
     @keydown="handleUserEvent"
     tabindex="0">
     <Header></Header>
-    <!-- <button @click="openDataWindow"class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Open Fullscreen Windows</button> -->
-    <!-- <button @click="sendMessageToNewWindow" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send Message</button> -->
-    <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital"/>
-    <FilterHome v-if="!isIdle" :schools_data="schoolsData"/>
+    <button @click="openDataWindow"class="bg-[#DD0031] text-white font-bold py-4 px-8 rounded" v-if="dataWnd==null">ABRIR VENTANA DE RESULTADOS</button>
+    <template v-if="dataWnd">
+      <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital" image="/images/hand.png" :arrow="true"/>
+      <FilterHome v-if="!isIdle" :schools_data="schoolsData"/>
+    </template>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ export default {
   data(){
     return{
       isIdle:true,
+      dataWnd:null,
       inactivityTimer:0,
       schoolsData: school_json  
     }
@@ -26,39 +28,32 @@ export default {
 
     handleUserEvent(){
       this.isIdle = false;
-      /*clearTimeout(this.inactivityTimer);
-      this.inactivityTimer = setTimeout(this.handleInactivity, 60000);*/
+      this.sendMessageToWindow("awake");
+      
+      clearTimeout(this.inactivityTimer);
+      this.inactivityTimer = setTimeout(this.handleInactivity, 60000);
     },
 
     handleInactivity(){
       this.isIdle = true;
+      this.sendMessageToWindow("sleep");
+
     },
 
     openDataWindow() {
-      // Open the first window
-      this.data_window = window.open('/DataWindow', 'DataWindow', 'fullscreen=yes');
-      this.enterFullscreen(data_window);
+      // Open the window
+      this.dataWnd = window.open('/results.html', 'fullscreen=yes');
 
     },
-    sendMessageToNewWindow() {
+    sendMessageToWindow(message) {
       // Send a message to the new window
-      if (this.data_window) {
-        this.data_window.postMessage('Hello from Main Window', '*');
+      if (this.dataWnd) {
+        this.dataWnd.postMessage({ type: 'MESSAGE_FROM_PARENT', data: message }, '*');
       } else {
         console.error('New window is not open');
       }
     },
-    enterFullscreen(win) {
-      if (win.document.documentElement.requestFullscreen) {
-        win.document.documentElement.requestFullscreen();
-      } else if (win.document.documentElement.mozRequestFullScreen) { // Firefox
-        win.document.documentElement.mozRequestFullScreen();
-      } else if (win.document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, etc.
-        win.document.documentElement.webkitRequestFullscreen();
-      } else if (win.document.documentElement.msRequestFullscreen) { // IE/Edge
-        win.document.documentElement.msRequestFullscreen();
-      }
-    }
+
   }
 };
 </script>
