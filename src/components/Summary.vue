@@ -32,8 +32,8 @@ export default{
     data(){
         return{
             description : this.project_data.desc,
-            acting : this.project_data.acting,
             initiative : this.project_data.initiative,
+            acting : this.project_data.acting,
             title : this.project_data.title,
             ambit : this.project_data.ambit,
             beneficiaries : this.project_data.beneficiaries,

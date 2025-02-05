@@ -1,19 +1,19 @@
 <template>
   <div class="max-h-screen max-w-screen">
-    <!-- <TextAnimator v-if="isIdle" text="Punto por punto, el camino hacia la transformación digital" image="/images/globe.png"/> -->
+    <TextAnimator v-if="isIdle" text="Punto por punto, el camino hacia la transformación digital" image="/images/globe.png"/>
     <div v-if="!isIdle" class="flex items-start justify-items-start">
       <Summary :project_data="project" class="h-auto min-w-0.5"></Summary>
       <Globe class="min-w-0.5 w-0.5 -ml-1"></Globe>
     </div>
     <Footer></Footer>
   </div>
-  </template>
+</template>
 <script>
 export default {
   data() {
     return {      
       message: '',
-      isIdle:false,
+      isIdle:true,
       project:{
         title:"título",
         desc:"descripción",

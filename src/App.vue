@@ -1,13 +1,15 @@
 <template>
-  <div id="app" class="text-white bg-black"
+  <div class="text-white bg-black"
     @click="handleUserEvent"
     @keydown="handleUserEvent"
     tabindex="0">
     <Header></Header>
+    <NavButton v-if="!isIdle" @click="inProjects = !inProjects">{{navigationLabel}}</NavButton>
     <button @click="openDataWindow"class="bg-[#DD0031] text-white font-bold py-4 px-8 rounded" v-if="dataWnd==null">ABRIR VENTANA DE RESULTADOS</button>
     <template v-if="dataWnd">
       <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital" image="/images/hand.png" :arrow="true"/>
-      <FilterHome v-if="!isIdle" :schools_data="schoolsData"/>
+      <Schools v-if="!inProjects" :schools_data="schoolsData" class="w-auto top-100"></Schools>
+      <Projects v-if="inProjects" :projects_data="[]" class="w-auto top-100"></Projects>
     </template>
   </div>
 </template>
@@ -19,6 +21,7 @@ export default {
   data(){
     return{
       isIdle:true,
+      inProjects:true,
       dataWnd:null,
       inactivityTimer:0,
       schoolsData: school_json  
@@ -27,11 +30,16 @@ export default {
   methods: {
 
     handleUserEvent(){
+      if(!this.dataWnd){
+        return;
+      }
+
       this.isIdle = false;
+      this.inProjects = true;
       this.sendMessageToWindow("awake");
       
       clearTimeout(this.inactivityTimer);
-      this.inactivityTimer = setTimeout(this.handleInactivity, 60000);
+      //this.inactivityTimer = setTimeout(this.handleInactivity, 10000);
     },
 
     handleInactivity(){
@@ -45,6 +53,7 @@ export default {
       this.dataWnd = window.open('/results.html', 'fullscreen=yes');
 
     },
+
     sendMessageToWindow(message) {
       // Send a message to the new window
       if (this.dataWnd) {
@@ -54,6 +63,15 @@ export default {
       }
     },
 
+  },
+
+  computed: {
+    navigationLabel(){
+      if (this.inProjects){
+        return "Escuelas Conectadas";
+      }
+        return  "Proyectos Zona red.es";
+    }
   }
 };
 </script>
@@ -67,6 +85,6 @@ html {
 
 #app {
   text-align: center;
-  margin-top: 50px;
+/*  margin-top: 50px;*/
 }
 </style>
