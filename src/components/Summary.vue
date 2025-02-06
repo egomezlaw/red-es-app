@@ -1,29 +1,67 @@
 <template>
-    <div class="w-auto">
-        <div class="bg-[#DD0031] h-auto py-20 text-white text-7xl text-left font-bold">
+    <div class="flex justify-between pb-5 align-middle">
+        <div class="w-60 flex-none">
+            <img
+            src="/images/header_logo.png"
+            alt="Header Image"
+            class="absolute w-48 h-auto"
+            :style="{ top: '50px', left: '50px' }"
+            />
+        </div>
+        <div class="bg-[#DD0031] h-auto pt-5 pb-6 ml-20 text-white text-4xl text-left grow">
             <h1 class="mx-20">title</h1>
         </div>
-        <div class="text-white flex mx-20 my-10 items-start min-h-screen ">
-            <div class="text-3xl">
-                <h2 >Breve descripción de la actuación</h2>
-                <p>{{ description }}</p>
-                <h2>Actuación</h2>
-                <p>{{ acting }}</p>
+    </div>
+    <div>
+        <div class="text-white flex  my-5 mx-10 text-xl justify-between gap-1 place-content-around">
+            <div class=" ">
+                <h2>Beneficiarios</h2>
+                <p>{{ beneficiaries }}</p>    
                 <h2>Iniciativa</h2>
                 <p>{{ initiative }}</p>
             </div>
-            <div class="mx-20 text-3xl">
+            <div class=" ">
+                <h2>Actuación</h2>
+                <p>{{ acting }}</p>
                 <h2>Proyecto</h2>
                 <p>{{ title }}</p>
+            </div>
+            <div class="">
                 <h2>Ámbito</h2>
                 <p>{{ ambit }}</p>
-                <h2>Beneficiarios</h2>
-                <p>{{ beneficiaries }}</p>            
-                <h2>Presupuesto</h2>
-                <p>{{ budget }}</p>            
+               <!-- 
+                -->
             </div>
         </div>
+        <div class="text-xl mx-10">
+            <h2 >Descripción</h2>
+            <h2>lorem</h2>
+        </div>
     </div>
+    <div class="flex justify-between w-screen items-start pt-20">
+        <div class="flex flex-col my-10 w-md">
+            <div class="bg-[#DD0031] h-26  pb-6 text-white text-2xl text-center">
+                <h1 class="mx-20">lorem</h1>
+            </div>
+            <div class="my-5 mx-10" v-if="validImage">
+                <img
+                :src="image_url"
+                alt="Header Image"
+                class="w-48 h-auto"
+                :style="{ top: '50px', left: '50px' }"
+                />
+            </div>
+            <div class="text-2xl mx-10 pt-10">
+                <h2 class="text-bold ">Presupuesto</h2>
+                <h2>{{ budget }}</h2>            
+
+            </div>
+        </div>
+        <div class="flex grow">
+            <Globe class="w-full h-full" :width="640" :height="576" :zoom="300"></Globe>
+        </div>
+    </div>
+
 </template>
 <script>
 export default{
@@ -37,11 +75,15 @@ export default{
             title : this.project_data.title,
             ambit : this.project_data.ambit,
             beneficiaries : this.project_data.beneficiaries,
-            budget : this.project_data.budget
+            budget : this.project_data.budget,
+            image_url : this.project_data.image_url
         }
     },
     
     computed: {
+        validImage(){
+            return (this.image_url !== "" && String(this.image_url).startsWith('http'));
+        }
     }
     
 }
@@ -49,11 +91,11 @@ export default{
 <style scoped>
 h2 {
     font-weight: bold;
-    font-size: larger;
     text-align: left;
 }
 p{
     text-align: left;
     padding-bottom: 2rem;
+    opacity: 70%;
 }
 </style>

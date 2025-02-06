@@ -9,7 +9,7 @@ import Globe from './components/Globe.vue';
 import Summary from './components/Summary.vue';
 
 const app = createApp(App);
-app.component('Footer', Footer);
+app.component('Header', Footer);
 app.component('TextAnimator', TextAnimator);
 app.component('Summary', Summary);
 app.component('Globe', Globe);

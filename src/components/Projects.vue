@@ -1,24 +1,25 @@
 <template>
-    <div class="flex items-center justify-center">
-
-        <div class="flex flex-col space-y-4">
-            <div class="flex items-center justify-center pt-4">
+    <div class="flex flex-row items-center justify-center h-screen w-full">
+        <div class="flex flex-col space-y-2 w-3xl ml-10 align-middle">
+            <div class="flex items-center justify-center">
                 <ListPicker :items="beneficiaries" v-model="selectedBeneficiaries">Beneficiarios</ListPicker>
             </div>
 
-            <div class="flex items-center justify-center pt-4">
+            <div class="flex items-center justify-center">
                 <ListPicker :items="initiatives" v-model="selectedInitiative">Iniciativa</ListPicker>
             </div>
 
-            <div class="flex items-center justify-center pt-4">
+            <div class="flex items-center justify-center">
                 <ListPicker :items="projects" v-model="selectedProject">Proyecto</ListPicker>
             </div>
             
-            <div class="flex items-center justify-center pt-4">
+            <div class="flex items-center justify-center">
                 <ListPicker :items="actings" v-model="selectedActing">Actuación</ListPicker>
             </div>            
         </div>
-        <Globe></Globe>
+        <div class="flex grow">
+            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250"></Globe>
+        </div>
     </div>
 </template>
 <script>

@@ -2,29 +2,35 @@
   <div class="text-white bg-black"
     @click="handleUserEvent"
     @keydown="handleUserEvent"
+    @touchstart="handleUserEvent" 
+    @touchmove="handleUserEvent" 
+    @touchend="handleUserEvent"
+    @wheel="handleUserEvent"
     tabindex="0">
     <Header></Header>
     <NavButton v-if="!isIdle" @click="inProjects = !inProjects">{{navigationLabel}}</NavButton>
-    <button @click="openDataWindow"class="bg-[#DD0031] text-white font-bold py-4 px-8 rounded" v-if="dataWnd==null">ABRIR VENTANA DE RESULTADOS</button>
+    <button @click="openDataWindow"class="bg-[#DD0031] text-white font-bold py-4 px-8 rounded mt-100" v-if="dataWnd==null">ABRIR VENTANA DE RESULTADOS</button>
     <template v-if="dataWnd">
       <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital" image="/images/hand.png" :arrow="true"/>
-      <Schools v-if="!inProjects" :schools_data="schoolsData" class="w-auto top-100"></Schools>
-      <Projects v-if="inProjects" :projects_data="[]" class="w-auto top-100"></Projects>
+      <Schools v-if="!inProjects" :schools_data="schoolsData" ></Schools>
+      <Projects v-if="inProjects" :projects_data="projectsData" ></Projects>
     </template>
   </div>
 </template>
 
 <script>
 import school_json from './data/schools.json'
+import projects_json from './data/projects.json'
 export default {
   name: 'App', 
   data(){
     return{
-      isIdle:true,
+      isIdle:false,
       inProjects:true,
       dataWnd:null,
       inactivityTimer:0,
-      schoolsData: school_json  
+      schoolsData: school_json,
+      projectsData: projects_json
     }
   },
   methods: {
@@ -35,7 +41,6 @@ export default {
       }
 
       this.isIdle = false;
-      this.inProjects = true;
       this.sendMessageToWindow("awake");
       
       clearTimeout(this.inactivityTimer);
@@ -44,6 +49,7 @@ export default {
 
     handleInactivity(){
       this.isIdle = true;
+      this.inProjects = true;
       this.sendMessageToWindow("sleep");
 
     },

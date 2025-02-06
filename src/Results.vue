@@ -1,11 +1,9 @@
 <template>
-  <div class="max-h-screen max-w-screen">
+  <div class="h-screen w-screen text-white bg-black overflow-hidden">
     <TextAnimator v-if="isIdle" text="Punto por punto, el camino hacia la transformación digital" image="/images/globe.png"/>
-    <div v-if="!isIdle" class="flex items-start justify-items-start">
-      <Summary :project_data="project" class="h-auto min-w-0.5"></Summary>
-      <Globe class="min-w-0.5 w-0.5 -ml-1"></Globe>
-    </div>
-    <Footer></Footer>
+    <template v-if="!isIdle" class="flex items-start justify-items-start">
+      <Summary :project_data="project"></Summary>
+    </template>
   </div>
 </template>
 <script>
@@ -13,7 +11,7 @@ export default {
   data() {
     return {      
       message: '',
-      isIdle:true,
+      isIdle:false,
       project:{
         title:"título",
         desc:"descripción",
@@ -21,7 +19,7 @@ export default {
         initiative:"iniciativa",
         ambit:"ámbito nal/internacional",
         beneficiaries:"beneficiarios",
-        budget:"presupuesto",
+        budget:"250.000.000 €",
       }
     };
   },

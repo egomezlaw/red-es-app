@@ -1,5 +1,5 @@
 <template>
-    <div ref="globeContainer" class="max-w-0.5"></div>
+    <div ref="globeContainer"></div>
 </template>
 <script>
 
@@ -8,7 +8,8 @@ import * as THREE from 'https://esm.sh/three';
 
 
 export default{
-    
+
+    props: ['width', 'height', 'zoom'],
     data(){
         return{
             globeInstance:null,
@@ -22,19 +23,23 @@ export default{
     methods: {
         initGlobe(){
             if (this.$refs.globeContainer) {
-                this.globeInstance = Globe()(this.$refs.globeContainer, { animateIn: false })
+                this.globeInstance = Globe()(this.$refs.globeContainer, { animateIn: true })
                 .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
                 .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-                .backgroundColor('#000');
+                .backgroundColor('#000')
+                .width(this.width)
+                .height(this.height);
+                //.width(960);
                 
                 // Puedes agregar más configuraciones aquí
                 
                 this.globeInstance.controls().autoRotate = true;
                 this.globeInstance.controls().autoRotateSpeed = 0.35;
+                this.globeInstance.camera().position.z = this.zoom;
 
                 const CLOUDS_IMG_URL = '/images/clouds.png';
                 const CLOUDS_ALT = 0.004;
-                const CLOUDS_ROTATION_SPEED = -0.006; // deg/frame
+                const CLOUDS_ROTATION_SPEED = -0.016; // deg/frame
                 
                 new THREE.TextureLoader().load(CLOUDS_IMG_URL, cloudsTexture => {
                     const clouds = new THREE.Mesh(
@@ -51,7 +56,10 @@ export default{
                 });
                 
             }
-        }
+        },
+        
+
+      
     }
 }
 </script>

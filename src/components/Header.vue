@@ -1,5 +1,5 @@
 <template>
-     <header class="fixed top-0 left-0 w-full h-20shadow-md z-50">
+     <header class="fixed top-0 left-0 w-full z-50">
     <img
       src="/images/header_logo.png"
       alt="Header Image"
