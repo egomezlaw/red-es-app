@@ -18,14 +18,14 @@
             
         </div>
         <div class="flex grow">
-            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250"></Globe>
+            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250" ref="globeRef"></Globe>
         </div>
     </div>
 </template>
 <script>
 
 export default{
-    props: ['schools_data'],
+    props: ['schools_data', 'locations'],
     
     data(){
         return{
@@ -36,6 +36,16 @@ export default{
     },
 
     methods:{
+        getAllMunicipalities(obj){
+            return Object.values(obj).reduce((acc, valor) => {
+                if (Array.isArray(valor) && obj.municipios) {
+                    return acc.concat(obj.municipios);
+                } else if (typeof valor === 'object' && valor !== null) {
+                    return acc.concat(this.getAllMunicipalities(valor));
+                }
+                return acc;
+             }, []);
+        }
         
     },
     
@@ -61,6 +71,18 @@ export default{
                 return [];
             }
             return Object.keys(this.schools_data[this.selectedCCAA].provincias[this.selectedProvince]['municipios']);
+        },
+
+        filteredLocations(){
+            if (this.selectedCCAA === ''){
+                
+                /*markers = getAllMunicipalities(this.schools_data);
+                console.log(this.globeRef);
+                */
+
+                const {{municipios}} = this.schools_data;
+                this.$refs.globeRef.setMarkers(municipios);
+            }
         }
         
     }

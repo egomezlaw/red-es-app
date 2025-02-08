@@ -41,7 +41,7 @@
     <div class="flex justify-between w-screen items-start pt-20">
         <div class="flex flex-col my-10 w-md">
             <div class="bg-[#DD0031] h-26  pb-6 text-white text-2xl text-center">
-                <h1 class="mx-20">lorem</h1>
+                <h1 class="mx-20">{{ ambit }}</h1>
             </div>
             <div class="my-5 mx-10" v-if="validImage">
                 <img
@@ -69,13 +69,6 @@ export default{
     
     data(){
         return{
-            description : this.project_data.desc,
-            initiative : this.project_data.initiative,
-            acting : this.project_data.acting,
-            title : this.project_data.title,
-            ambit : this.project_data.ambit,
-            beneficiaries : this.project_data.beneficiaries,
-            budget : this.project_data.budget,
             image_url : this.project_data.image_url
         }
     },
@@ -83,7 +76,28 @@ export default{
     computed: {
         validImage(){
             return (this.image_url !== "" && String(this.image_url).startsWith('http'));
-        }
+        },
+        initiative(){
+            return (this.project_data.initiative === "" ? "TODOS" : this.project_data.initiative);
+        },
+        description(){
+            return (this.project_data.desc === "" ? "TODOS" : this.project_data.desc);
+        },
+        acting(){
+           return this.project_data.acting;
+        },
+        title(){
+            return (this.project_data.title === "" ? "TODOS" : this.project_data.title);
+        },
+        ambit(){
+            return (this.project_data.ambit === "" ? "TODOS" : this.project_data.ambit);
+        },
+        beneficiaries(){
+            return (this.project_data.beneficiaries === "" ? "TODOS" : this.project_data.beneficiaries);
+        },
+        budget(){
+            return (this.project_data.budget === "" ? "TODOS" : this.project_data.budget);
+        },
     }
     
 }

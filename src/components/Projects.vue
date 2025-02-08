@@ -25,7 +25,7 @@
 <script>
 
 export default{
-    props: ['projects_data'],
+    props: ['projects_data', 'locations'],
     
     data(){
         return{

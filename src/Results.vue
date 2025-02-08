@@ -13,13 +13,14 @@ export default {
       message: '',
       isIdle:false,
       project:{
-        title:"título",
-        desc:"descripción",
-        acting:"actuación",
-        initiative:"iniciativa",
-        ambit:"ámbito nal/internacional",
-        beneficiaries:"beneficiarios",
-        budget:"250.000.000 €",
+        title:"",
+        desc:"",
+        acting:" ",
+        initiative:"",
+        ambit:"",
+        beneficiaries:"",
+        budget:"",
+        image_url:""
       }
     };
   },
