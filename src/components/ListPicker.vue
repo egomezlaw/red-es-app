@@ -20,7 +20,7 @@
     class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 flex flex-col items-left transition-transform duration-500 ease-out"
     @wheel.prevent="onScroll"
     >
-    <li v-for="(item, index) in visibleItems" :key="index" class="p-2 text-lg transition-opacity duration-500 ease-out" :class="[index == 1 ? 'opacity-100 font-bold':'opacity-50']">
+    <li v-for="(item, index) in visibleItems" :key="index" class="p-2 text-lg transition-opacity duration-500 ease-out " :class="[index == 1 ? 'opacity-100 font-bold':'opacity-50']">
       {{item }}
     </li>
   </ul>
@@ -34,6 +34,8 @@
 
 <script setup>
 import { ref, computed, onMounted, defineProps } from 'vue';
+
+const emit = defineEmits(['change'])
 
 const model = defineModel()
 
@@ -69,10 +71,12 @@ const onScroll = (event) => {
     selectedIndex.value = (selectedIndex.value - 1 + props.items.length) % props.items.length;
   }
   model.value = props.items[selectedIndex.value];
+  emit('change');
 };
 
 const onTouchStart = (event) => {
   startY = event.touches[0].clientY;
+  console.log("onTouchStart", startY);
 };
 
 const onTouchMove = (event) => {
@@ -87,6 +91,7 @@ const onTouchEnd = () => {
   }
   model.value = props.items[selectedIndex.value];
   deltaY = 0;
+  this.$emit("change");
 };  
 </script>
 

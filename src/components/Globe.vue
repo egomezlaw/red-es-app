@@ -1,11 +1,21 @@
 <template>
-    <div ref="globeContainer"></div>
-    <button class="bg-red rounded-2xl p-5" @click="clearMarkers">Limpiar</button>
+    <div>
+        <div ref="globeContainer"></div>
+        <div @click="toggleAnimation()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <!-- Ícono de Play -->
+                <path id="play" d="M8 5v14l11-7z" fill="currentColor" v-if="!animating" @click="pauseAnimation()"/>
+                <!-- Ícono de Pausa -->
+                <path id="pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor" v-if="animating" @click="resumeAnimation()"/>
+            </svg>
+        </div>
+    </div>
 </template>
 <script>
 
 import Globe from 'globe.gl';
 import * as THREE from 'https://esm.sh/three';
+import { nextTick } from 'vue';
 
 
 export default{
@@ -14,6 +24,7 @@ export default{
     data(){
         return{
             globeInstance:null,
+            animating :true,
         }
     },    
     
@@ -60,6 +71,25 @@ export default{
                 //this.setMarkers();
                 
             },
+
+            toggleAnimation(){
+                this.animating = !this.animating;
+                this.globeInstance.pauseAnimation();
+                if (this.animating)
+                {
+                    this.globeInstance.resumeAnimation()
+                }
+            },
+
+            pauseAnimation(){
+                this.animating = false;
+                this.globeInstance.pauseAnimation();
+            },
+            
+            resumeAnimation(){
+                this.animating = true;
+                this.globeInstance.resumeAnimation();
+            },
             
             clearMarkers(){
                 this.globeInstance.htmlElementsData([]);
@@ -73,14 +103,6 @@ export default{
                 <circle fill="black" cx="14" cy="14" r="7"></circle>
                 </svg>`;
                     
-                    // Gen random data
-                    /*const N = 30;
-                    const markers = [...Array(N).keys()].map(() => ({
-                        lat: (Math.random() - 0.5) * 180,
-                        lng: (Math.random() - 0.5) * 360,
-                        size: 7 + Math.random() * 30,
-                        color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)]
-                    }));*/
                     
                     this.globeInstance
                     .htmlElementsData(markers)
@@ -96,6 +118,13 @@ export default{
                         el.onclick = () => console.info(d);
                         return el;
                     });
+
+                    this.globeInstance.resumeAnimation();
+                    if (!this.animating){
+                        this.$nextTick(() => {
+                            this.globeInstance.pauseAnimation();
+                        });
+                    }
             },
             
             

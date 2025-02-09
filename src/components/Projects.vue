@@ -2,7 +2,7 @@
     <div class="flex flex-row items-center justify-center h-screen w-full">
         <div class="flex flex-col space-y-2 w-3xl ml-10 align-middle">
             <div class="flex items-center justify-center">
-                <ListPicker :items="beneficiaries" v-model="selectedBeneficiaries">Beneficiarios</ListPicker>
+                <ListPicker :items="beneficiaries" v-model="selectedBeneficiaries" @change="onBeneficiariesChange">Beneficiarios</ListPicker>
             </div>
 
             <div class="flex items-center justify-center">
@@ -33,21 +33,8 @@ export default{
             selectedInitiative:'',
             selectedProject:'',
             selectedActing:'',
-        }
-    },
-
-    methods:{
-       
-    },
-    
-    computed: {
-        beneficiaries(){
-            return ["PYMES y emprendedores", "Ciudadanía","Administraciones y servicios públicos","Iniciativas para la ciudadanía","Empresas","Alumnos y centros docentes"];
-
-        },
-
-        initiatives(){          
-            return [
+            beneficiaries: ["PYMES y emprendedores", "Ciudadanía","Administraciones y servicios públicos","Iniciativas para la ciudadanía","Empresas","Alumnos y centros docentes"],
+            initiatives : [
             "Internacionalización",
             "Sociedad Digital",
             "Transformación Digital PYMES",
@@ -62,11 +49,24 @@ export default{
             "Emprendimiento",
             "RedIRIS",
             "Dominios.es",
-            "Red FabLabs"]
-        },
-        
-        projects(){
-            return [
+            "Red FabLabs"],
+            initiatives : [
+            "Internacionalización",
+            "Sociedad Digital",
+            "Transformación Digital PYMES",
+            "Tecnología 5G",
+            "Talento Digital",
+            "Sanidad",
+            "Servicios Sociales",
+            "Educación",
+            "Ciudades y Territorios Inteligentes",
+            "IA y Tecnología Habilitadoras Digitales",
+            "ONTSI",
+            "Emprendimiento",
+            "RedIRIS",
+            "Dominios.es",
+            "Red FabLabs"],        
+        projects : [
             "Web Summit",
             "South Summit",
             "Smart City Expo World Congress",
@@ -96,62 +96,94 @@ export default{
             "UNI-DIGITAL RedIRIS Servicios TIC comunes",
             "Dominios.es",
             "Red FabLabs"
-            ];
-        },
-        actings(){
-            return [
-                "Pabellón de España en Web Summit",
-                "Pabellón de España en South Summit",
-                "Pabellón de España en Smart City Expo World Congress",
-                "Desafía Nórdicos",
-                "Desafía Suiza",
-                "Desafía San Francisco",
-                "Desafía Londres",
-                "Desafía Berlín",
-                "Desafía Tel Aviv",
-                "Desafía New York",
-                "Pabellón de España en MWC Barcelona",
-                "Cóctel Oficial del Pabellón de España en MWC Barcelona",
-                "Pabellón de España en MWC Shanghái y Los Ángeles",
-                "Pabellón de España en MWC Las Vegas",
-                "Pabellón de España en eMerge Américas",
-                "Pabellón de España en 4YFN",
-                "Catálogo Digital",
-                "Dinamización y Sensibilización",
-                "Dinamización y Sensibilización.",
-                "Innovación basada en datos",
-                "Soporte, asesoramiento y desarrollo tecnológico ",
-                "Apoyo a la regularización",
-                "Colaboración nacional e internacional",
-                "Plataforma Acelera pyme",
-                "Oficinas Acelera pyme",
-                "Kit Digital",
-                "Kit Consulting",
-                "Bono de Conectividad",
-                "Proyecto piloto en Andalucía (1ª convocatoria)",
-                "Proyecto Piloto en Galicia (1ª convocatoria)",
-                "Proyecto piloto en Andalucía (2ª convocatoria)",
-                "Proyecto Piloto 5G Castilla-La Mancha (2ª convocatoria)",
-                "Proyecto Piloto 5G Cataluña (2ª convocatoria)",
-                "Proyecto Piloto 5G Extremadura (2ª convocatoria)",
-                "Proyecto Piloto 5G Galicia (2ª convocatoria)",
-                "Proyecto Piloto 5G Madrid (2ª convocatoria)",
-                "Proyecto Piloto 5G País Vasco (2ª convocatoria)",
-                "Proyecto Piloto 5G Valencia (2ª convocatoria)",
-                "Capacitación Digital de la Ciudadanía",
-                "Programas de atracción y retención del talento",
-                "Desempleados",
-                "Formación en competencias digitales",
-                "Aplicación de las TIC en la gestión de patologías crónicas",
-                "Aplicación de las TIC para la transformación digital de los servicios sociales",
-                "Puesto educativo en el hogar",
-                "Otros equipamientos adicionales",
-                "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
-                "IA y Tecnología Habilitadoras Digitales",
-                "IA en Cadenas de Valor",
-                "Carta de Derechos Digitales",
-                "Gestión del registro de nombres de dominio"
-            ];
+            ],
+        actings : [
+            "Pabellón de España en Web Summit",
+            "Pabellón de España en South Summit",
+            "Pabellón de España en Smart City Expo World Congress",
+            "Desafía Nórdicos",
+            "Desafía Suiza",
+            "Desafía San Francisco",
+            "Desafía Londres",
+            "Desafía Berlín",
+            "Desafía Tel Aviv",
+            "Desafía New York",
+            "Pabellón de España en MWC Barcelona",
+            "Cóctel Oficial del Pabellón de España en MWC Barcelona",
+            "Pabellón de España en MWC Shanghái y Los Ángeles",
+            "Pabellón de España en MWC Las Vegas",
+            "Pabellón de España en eMerge Américas",
+            "Pabellón de España en 4YFN",
+            "Catálogo Digital",
+            "Dinamización y Sensibilización",
+            "Dinamización y Sensibilización.",
+            "Innovación basada en datos",
+            "Soporte, asesoramiento y desarrollo tecnológico ",
+            "Apoyo a la regularización",
+            "Colaboración nacional e internacional",
+            "Plataforma Acelera pyme",
+            "Oficinas Acelera pyme",
+            "Kit Digital",
+            "Kit Consulting",
+            "Bono de Conectividad",
+            "Proyecto piloto en Andalucía (1ª convocatoria)",
+            "Proyecto Piloto en Galicia (1ª convocatoria)",
+            "Proyecto piloto en Andalucía (2ª convocatoria)",
+            "Proyecto Piloto 5G Castilla-La Mancha (2ª convocatoria)",
+            "Proyecto Piloto 5G Cataluña (2ª convocatoria)",
+            "Proyecto Piloto 5G Extremadura (2ª convocatoria)",
+            "Proyecto Piloto 5G Galicia (2ª convocatoria)",
+            "Proyecto Piloto 5G Madrid (2ª convocatoria)",
+            "Proyecto Piloto 5G País Vasco (2ª convocatoria)",
+            "Proyecto Piloto 5G Valencia (2ª convocatoria)",
+            "Capacitación Digital de la Ciudadanía",
+            "Programas de atracción y retención del talento",
+            "Desempleados",
+            "Formación en competencias digitales",
+            "Aplicación de las TIC en la gestión de patologías crónicas",
+            "Aplicación de las TIC para la transformación digital de los servicios sociales",
+            "Puesto educativo en el hogar",
+            "Otros equipamientos adicionales",
+            "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
+            "IA y Tecnología Habilitadoras Digitales",
+            "IA en Cadenas de Valor",
+            "Carta de Derechos Digitales",
+            "Gestión del registro de nombres de dominio"
+            ],
+            filteredProjects:[],
+        }
+    },
+
+    methods:{
+
+    },
+    
+    computed: {
+        onBeneficiariesChange(){
+            if (this.selectedBeneficiaries != "")
+            {
+                this.filteredProjects = this.projects_data.filter(project =>  project.beneficiaries == this.selectedBeneficiaries);
+
+                const items = [];
+
+                for(const p in this.filteredProjects){
+                    console.log(this.filteredProjects[p]['location']);
+                    const points = filteredProjects[p]['location'].split(",");
+                    for(const m in points){
+                        if (this.locations[m]){
+                            let geoData = this.locations[m];
+                            items.push(geoData);
+                            items[items.length - 1].count = provinces[p].municipios[m]
+                        }
+                    }
+                }
+
+                this.$refs.globeRef.setMarkers(items);                
+
+                this.$emit('onMessage', filteredProjects);
+                
+                return filteredProjects;
+            }
         }
         
     }

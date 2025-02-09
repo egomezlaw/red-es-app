@@ -13,7 +13,7 @@
       <NavButton v-if="!isIdle" @click="inProjects = !inProjects">{{navigationLabel}}</NavButton>
       <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital" image="/images/hand.png" :arrow="true"/>
       <Schools v-if="!inProjects" :schools_data="schoolsData" :locations="locationsData" ></Schools>
-     <!-- <Projects v-if="inProjects" :projects_data="projectsData" :locations="locationsData"></Projects>-->
+     <Projects v-if="inProjects" :projects_data="projectsData" :locations="locationsData" @on-message="sendMessageToWindow"></Projects>
     </template>
   </div>
 </template>

@@ -59,6 +59,26 @@ export default{
                 return [];
             }
             
+
+            //get info for globe
+            const provinces = this.schools_data[this.selectedCCAA].provincias; 
+            const items = [];
+
+            for(const p in provinces){
+                for (const m in provinces[p].municipios){
+                    if (this.locations[m]){
+                        let geoData = this.locations[m];
+                        items.push(geoData);
+                        items[items.length - 1].count = provinces[p].municipios[m]
+                    }
+                }
+            }
+
+            this.$refs.globeRef.setMarkers(items);
+
+            this.selectedProvince = '';
+            this.selectedMunicipality = '';
+
             return Object.keys(this.schools_data[this.selectedCCAA].provincias);
         },
         
@@ -67,24 +87,27 @@ export default{
                 return [];
             }
             if (!this.schools_data[this.selectedCCAA].provincias[this.selectedProvince])
-            {
+            {                
                 return [];
             }
-            return Object.keys(this.schools_data[this.selectedCCAA].provincias[this.selectedProvince]['municipios']);
-        },
+            
 
-        filteredLocations(){
-            if (this.selectedCCAA === ''){
-                
-                /*markers = getAllMunicipalities(this.schools_data);
-                console.log(this.globeRef);
-                */
+            const province = this.schools_data[this.selectedCCAA].provincias[this.selectedProvince]
 
-                const {{municipios}} = this.schools_data;
-                this.$refs.globeRef.setMarkers(municipios);
+            //get info for globe
+            const items = [] 
+            for (const m in province.municipios){
+                if (this.locations[m]){
+                    let geoData = this.locations[m];
+                    items.push(geoData);
+                    items[items.length - 1].count = province.municipios[m]
+                }
             }
-        }
-        
+
+            this.$refs.globeRef.setMarkers(items);
+
+            return Object.keys(this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios);
+        }        
     }
 }
 </script>
