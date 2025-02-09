@@ -9,7 +9,7 @@
             />
         </div>
         <div class="bg-[#DD0031] h-auto pt-5 pb-6 ml-20 text-white text-4xl text-left grow">
-            <h1 class="mx-20">title</h1>
+            <h1 class="mx-20">{{title}}</h1>
         </div>
     </div>
     <div>
@@ -35,7 +35,7 @@
         </div>
         <div class="text-xl mx-10">
             <h2 >Descripción</h2>
-            <h2>lorem</h2>
+            <h2>{{ description }}</h2>
         </div>
     </div>
     <div class="flex justify-between w-screen items-start pt-20">
@@ -51,14 +51,14 @@
                 :style="{ top: '50px', left: '50px' }"
                 />
             </div>
-            <div class="text-2xl mx-10 pt-10">
+            <div class="text-2xl mx-10 pt-10" v-if="budget!==''">
                 <h2 class="text-bold ">Presupuesto</h2>
                 <h2>{{ budget }}</h2>            
 
             </div>
         </div>
         <div class="flex grow">
-            <Globe class="w-full h-full" :width="640" :height="576" :zoom="300"></Globe>
+            <Globe class="w-full h-full" :width="640" :height="576" :zoom="300" ref="globeRef"></Globe>
         </div>
     </div>
 
@@ -69,7 +69,13 @@ export default{
     
     data(){
         return{
-            image_url : this.project_data.image_url
+            image_url : this.project_data.picture,
+            euro: Intl.NumberFormat('en-DE', {style: 'currency', currency: 'EUR',})
+        }
+    },
+    methods:{
+        setMarkers(markers){
+            this.$refs.globeRef.setMarkers(markers);
         }
     },
     
@@ -96,7 +102,7 @@ export default{
             return (this.project_data.beneficiaries === "" ? "TODOS" : this.project_data.beneficiaries);
         },
         budget(){
-            return (this.project_data.budget === "" ? "TODOS" : this.project_data.budget);
+            return (this.project_data.budget === "" ? "" :  `${this.euro.format(this.project_data.budget)} ${this.project_data.budget_text}`);
         },
     }
     

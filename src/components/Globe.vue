@@ -115,7 +115,7 @@ export default{
                         
                         el.style['pointer-events'] = 'auto';
                         el.style.cursor = 'pointer';
-                        el.onclick = () => console.info(d);
+                        el.onclick = () => this.$emit("markerSelect", d);
                         return el;
                     });
 
