@@ -46,7 +46,7 @@ export default {
       this.sendMessageToWindow("awake");
       
       clearTimeout(this.inactivityTimer);
-      //this.inactivityTimer = setTimeout(this.handleInactivity, 60000);
+      this.inactivityTimer = setTimeout(this.handleInactivity, 60000);
     },
 
     handleInactivity(){

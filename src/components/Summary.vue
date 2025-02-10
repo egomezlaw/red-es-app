@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="flex grow">
-            <Globe class="w-full h-full" :width="640" :height="576" :zoom="300" ref="globeRef"></Globe>
+            <Globe class="w-full h-full" :width="640" :height="576" :zoom="300" ref="globeRef" :type="'static'"></Globe>
         </div>
     </div>
 

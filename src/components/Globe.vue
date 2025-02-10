@@ -20,7 +20,7 @@ import { nextTick } from 'vue';
 
 export default{
     
-    props: ['width', 'height', 'zoom', 'locations'],
+    props: ['width', 'height', 'zoom', 'locations', 'type'],
     data(){
         return{
             globeInstance:null,
@@ -130,12 +130,15 @@ export default{
                         return el;
                     });
 
-                    this.globeInstance.resumeAnimation();
-                    if (!this.animating){
-                        this.$nextTick(() => {
+                    if (this.type == 'static'){
+                        this.globeInstance.resumeAnimation();
+                        this.globeInstance.pointOfView( {lat:markers[0].lat, lng:markers[0].lng}, 300);
+                        setTimeout(() => {
                             this.globeInstance.pauseAnimation();
-                        });
+                        }, 400);
+
                     }
+
             },
             
             
