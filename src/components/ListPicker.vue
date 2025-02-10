@@ -20,7 +20,7 @@
     class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 flex flex-col items-left transition-transform duration-500 ease-out"
     @wheel.prevent="onScroll"
     >
-    <li v-for="(item, index) in visibleItems" :key="index" class="p-2 text-lg transition-opacity duration-500 ease-out " :class="[index == 1 ? 'opacity-100 font-bold':'opacity-50']">
+    <li v-for="(item, index) in visibleItems" :key="index" class="p-2 text-lg" :class="[index == 1 ? 'opacity-100 font-bold':'opacity-50']">
       {{item }}
     </li>
   </ul>
@@ -61,8 +61,8 @@ const visibleItems = computed(() => {
   return extendedItems.slice(start, start + visibleCount);
 });
 
-//const translateY = computed(() => -Math.floor(visibleCount / 2) * itemHeight);
-const translateY = 0;
+const translateY = computed(() => -Math.floor(visibleCount / 2) * itemHeight);
+//const translateY = 0;
 
 const onScroll = (event) => {
   if (event.deltaY > 0) {

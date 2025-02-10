@@ -12,7 +12,7 @@
     <template v-if="dataWnd">
       <NavButton v-if="!isIdle" @click="inProjects = !inProjects">{{navigationLabel}}</NavButton>
       <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital" image="/images/hand.png" :arrow="true"/>
-      <Schools v-if="!inProjects" :schools_data="schoolsData" :locations="locationsData" ></Schools>
+      <Schools v-if="!inProjects" :schools_data="schoolsData" :locations="locationsData" @on-message="sendMessageToWindow"></Schools>
      <Projects v-if="inProjects" :projects_data="projectsData" :locations="locationsData" @on-message="sendMessageToWindow"></Projects>
     </template>
   </div>
@@ -28,7 +28,7 @@ export default {
     return{
       isIdle:true,
       inProjects:true,
-      dataWnd:null,
+      childWnd:null,
       inactivityTimer:0,
       schoolsData: school_json,
       projectsData: projects_json,
@@ -58,9 +58,20 @@ export default {
 
     openDataWindow() {
       // Open the window
-      this.dataWnd = window.open('/results.html', 'fullscreen=yes');
-
+      this.childWnd = window.open('/results.html', 'fullscreen=yes');
+      //window.addEventListener('message', this.handleMessage);
     },
+
+    /*handleMessage(event) {
+      if (event.data.type === 'MESSAGE_FROM_CHILD') {
+        console.log(event);
+        this.message = event.data.data;
+        //console.log(this.message);
+        if (this.message == "closing"){
+           this.dataWnd = null;
+        }      
+      }
+    },*/
 
     sendMessageToWindow(message) {
       // Send a message to the new window
@@ -74,6 +85,9 @@ export default {
   },
 
   computed: {
+    dataWnd(){
+      return this.childWnd;
+    },
     navigationLabel(){
       if (this.inProjects){
         return "Escuelas Conectadas";

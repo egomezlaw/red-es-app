@@ -1,7 +1,7 @@
 <template>
     <div>
         <div ref="globeContainer"></div>
-        <div @click="toggleAnimation()">
+        <div @click="toggleAnimation()" v-if="false">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                 <!-- Ícono de Play -->
                 <path id="play" d="M8 5v14l11-7z" fill="currentColor" v-if="!animating" @click="pauseAnimation()"/>

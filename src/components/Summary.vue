@@ -102,7 +102,10 @@ export default{
             return (this.project_data.beneficiaries === "" ? "TODOS" : this.project_data.beneficiaries);
         },
         budget(){
-            return (this.project_data.budget === "" ? "" :  `${this.euro.format(this.project_data.budget)} ${this.project_data.budget_text}`);
+            return (this.project_data.budget === "" ? "" :  `${this.euro.format(this.project_data.budget)} ${this.budget_text}`);
+        },
+        budget_text(){
+            return (this.project_data.budget_text === "" || this.project_data.budget_text === null ? "" :  this.project_data.budget_text);
         },
     }
     

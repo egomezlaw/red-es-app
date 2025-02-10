@@ -1,24 +1,21 @@
 <template>
     <div class="flex flex-row items-center justify-center h-screen w-full">
         <div class="flex flex-col space-y-2 w-3xl ml-10 align-middle">
-            <!-- Primer ComboBox -->
+
             <div class="flex items-center justify-center">
-                <ListPicker :items="normalizedCCAA" v-model="selectedCCAA">Comunidad</ListPicker>
+                <SelectorBox :items="normalizedCCAA" v-model="selectedCCAA">Comunidad</SelectorBox>
             </div>
 
-            <!-- Segundo ComboBox -->
             <div class="flex items-center justify-center">
-                <ListPicker :items="provinces" v-model="selectedProvince">Provincia</ListPicker>
+                <SelectorBox :items="provinces" v-model="selectedProvince">Provincia</SelectorBox>
             </div>
-
-            <!-- Tercer ComboBox -->
             <div class="flex items-center justify-center">
-                <ListPicker :items="municipalities" v-model="selectedMunicipality">Municipio</ListPicker>
+                <SelectorBox :items="municipalities" v-model="selectedMunicipality">Municipio</SelectorBox>
             </div>
             
         </div>
         <div class="flex grow">
-            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250" ref="globeRef"></Globe>
+            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250" ref="globeRef" @marker-select="onMarkerSelected"></Globe>
         </div>
     </div>
 </template>
@@ -32,21 +29,15 @@ export default{
             selectedCCAA:'',
             selectedProvince:'',
             selectedMunicipality:'',
+            selectedPoints:[]
         }
     },
 
     methods:{
-        getAllMunicipalities(obj){
-            return Object.values(obj).reduce((acc, valor) => {
-                if (Array.isArray(valor) && obj.municipios) {
-                    return acc.concat(obj.municipios);
-                } else if (typeof valor === 'object' && valor !== null) {
-                    return acc.concat(this.getAllMunicipalities(valor));
-                }
-                return acc;
-             }, []);
-        }
-        
+        onMarkerSelected(markerData){
+            //console.log(markerData);
+            this.$emit('onMessage', JSON.parse(JSON.stringify(markerData)));
+        },        
     },
     
     computed: {
@@ -59,25 +50,28 @@ export default{
                 return [];
             }
             
-
             //get info for globe
             const provinces = this.schools_data[this.selectedCCAA].provincias; 
             const items = [];
+            let allCount = 0;
 
             for(const p in provinces){
                 for (const m in provinces[p].municipios){
                     if (this.locations[m]){
                         let geoData = this.locations[m];
                         items.push(geoData);
-                        items[items.length - 1].count = provinces[p].municipios[m]
+                        items[items.length - 1].count = provinces[p].municipios[m];
+                        allCount += parseInt(provinces[p].municipios[m]);
                     }
                 }
             }
 
             this.$refs.globeRef.setMarkers(items);
 
-            this.selectedProvince = '';
-            this.selectedMunicipality = '';
+            const budget = this.schools_data[this.selectedCCAA].budget ? this.schools_data[this.selectedCCAA].budget : null;
+            const desc = `Dentro de ${this.selectedCCAA}, contamos con ${allCount} sedes.`
+            const data = {items, budget, type:"school", desc};
+            this.$emit('onMessage', JSON.parse(JSON.stringify(data)));
 
             return Object.keys(this.schools_data[this.selectedCCAA].provincias);
         },
@@ -100,7 +94,8 @@ export default{
                 if (this.locations[m]){
                     let geoData = this.locations[m];
                     items.push(geoData);
-                    items[items.length - 1].count = province.municipios[m]
+                    items[items.length - 1].count = province.municipios[m];
+                    items[items.length - 1].desc = `En el municipio de ${this.selectedMunicipality}, ubicado en la provincia de ${this.selectedProvince} dentro de ${this.selectedCCAA}, contamos con ${province.municipios[m]} sedes.`
                 }
             }
 

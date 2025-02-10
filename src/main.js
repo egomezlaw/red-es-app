@@ -12,7 +12,8 @@ import Schools from './components/Schools.vue';
 import Projects from './components/Projects.vue';
 import Globe from './components/Globe.vue';
 
-import ListPicker from './components/ListPicker.vue';
+//import ListPicker from './components/ListPicker.vue';
+import SelectorBox from './components/SelectorBox.vue';
 import NavButton from './components/NavButton.vue';
 
 const app = createApp(App);
@@ -22,6 +23,7 @@ app.component('TextAnimator', TextAnimator);
 app.component('FilterHome', FilterHome);
 app.component('Schools', Schools);
 app.component('Projects', Projects);
-app.component('ListPicker', ListPicker);
+//app.component('ListPicker', ListPicker);
+app.component('SelectorBox', SelectorBox);
 app.component('NavButton', NavButton);
 app.mount('#app');

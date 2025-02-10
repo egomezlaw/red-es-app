@@ -1,21 +1,21 @@
 <template>
     <div class="flex flex-row items-center justify-center h-screen w-full">
-        <div class="flex flex-col space-y-2 w-3xl ml-10 align-middle">
+        <div class="flex flex-col space-y-2 w-3xl ml-10 align-middle">     
             <div class="flex items-center justify-center">
-                <ListPicker :items="beneficiaries" v-model="selectedBeneficiaries" @change="onBeneficiariesChange">Beneficiarios</ListPicker>
+                <SelectorBox :items="beneficiaries" v-model="selectedBeneficiaries" @change="onBeneficiariesChange">Beneficiarios</SelectorBox>
             </div>
 
             <div class="flex items-center justify-center">
-                <ListPicker :items="initiatives" v-model="selectedInitiative" @change="onInitiativeChange">Iniciativa</ListPicker>
-            </div>
-
-            <div class="flex items-center justify-center">
-                <ListPicker :items="projects" v-model="selectedProject" @change="onProjectsChange">Proyecto</ListPicker>
+                <SelectorBox :items="initiatives" v-model="selectedInitiative" @change="onInitiativeChange">Iniciativa</SelectorBox>
             </div>
             
             <div class="flex items-center justify-center">
-                <ListPicker :items="actings" v-model="selectedActing" @change="onActingsChange">Actuación</ListPicker>
-            </div>            
+                <SelectorBox :items="projects" v-model="selectedProject" @change="onProjectsChange">Proyecto</SelectorBox>
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <SelectorBox :items="actings" v-model="selectedActing" @change="onActingsChange">Actuación</SelectorBox>
+            </div>                        
         </div>
         <div class="flex grow">
             <Globe class="w-full h-full" :width="960" :height="720" :zoom="250"  ref="globeRef" @marker-select="onMarkerSelected"></Globe>
@@ -194,6 +194,9 @@ export default{
                 this.filteredProjects = this.projects_data.filter(project =>  project.beneficiaries == this.selectedBeneficiaries);
                 this.geMarkersData();
             }
+            this.selectedInitiative = '';
+            this.selectedProject = '';
+            this.selectedActing = '';
         },
 
         onInitiativeChange(){
@@ -202,6 +205,9 @@ export default{
                 this.filteredProjects = this.projects_data.filter(project =>  project.initiative == this.selectedInitiative);
                 this.geMarkersData();     
             }
+            this.selectedBeneficiaries = '';
+            this.selectedProject = '';
+            this.selectedActing = '';
 
         },
         onProjectsChange(){
@@ -210,6 +216,10 @@ export default{
                 this.filteredProjects = this.projects_data.filter(project =>  project.title == this.selectedProject);
                 this.geMarkersData();                
             }
+            this.selectedBeneficiaries = '';
+            this.selectedInitiative = '';
+            this.selectedActing = '';
+
         },
         onActingsChange(){
             if (this.selectedActing != "")
@@ -217,7 +227,9 @@ export default{
                 this.filteredProjects = this.projects_data.filter(project =>  project.acting == this.selectedActing);
                 this.geMarkersData();                
             }
-
+            this.selectedBeneficiaries = '';
+            this.selectedInitiative = '';
+            this.selectedProject = '';
         }
         
     }

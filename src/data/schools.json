@@ -1,6 +1,7 @@
 {
   "Andalucía": {
     "title": "Andalucía",
+    "budget":62511600,
     "provincias": {
       "Almería": {
         "title": "Almería",
@@ -728,6 +729,7 @@
   },
   "Canarias": {
     "title": "Canarias",
+    "budget": 12800700, 
     "provincias": {
       "Las Palmas": {
         "title": "Las Palmas",
@@ -834,6 +836,7 @@
   },
   "Cantabria": {
     "title": "Cantabria",
+    "budget": 2586600,
     "provincias": {
       "Cantabria": {
         "title": "Cantabria",
@@ -911,6 +914,7 @@
   },
   "Castilla - La Mancha": {
     "title": "Castilla - La Mancha",
+    "budget": 31885200,
     "provincias": {
       "Albacete": {
         "title": "Albacete",
@@ -1478,6 +1482,7 @@
   },
   "Castilla y León": {
     "title": "Castilla y León",
+    "budget": 39610800,
     "provincias": {
       "Ávila": {
         "title": "Ávila",
@@ -2261,6 +2266,7 @@
   },
   "Cataluña": {
     "title": "Cataluña",
+    "budget": 3285100,
     "provincias": {
       "Barcelona": {
         "title": "Barcelona",
@@ -2329,6 +2335,7 @@
   },
   "Ceuta": {
     "title": "Ceuta",
+    "budget":700000,
     "provincias": {
       "Ceuta": {
         "title": "Ceuta",
@@ -2340,6 +2347,7 @@
   },
   "Comunidad de Madrid": {
     "title": "Comunidad de Madrid",
+    "budget":9355200, 
     "provincias": {
       "Madrid": {
         "title": "Madrid",
@@ -2507,6 +2515,7 @@
   },
   "Comunidad Valenciana": {
     "title": "Comunidad Valenciana",
+    "budget": 8785400,
     "provincias": {
       "Alicante": {
         "title": "Alicante",
@@ -2974,6 +2983,7 @@
   },
   "Extremadura": {
     "title": "Extremadura",
+    "budget": 4499800,
     "provincias": {
       "Badajoz": {
         "title": "Badajoz",
@@ -3336,6 +3346,7 @@
   },
   "Galicia": {
     "title": "Galicia",
+    "budget": 17169300, 
     "provincias": {
       "A Coruña": {
         "title": "A Coruña",
@@ -3640,6 +3651,7 @@
   },
   "Illes Balears": {
     "title": "Illes Balears",
+    "budget": 5620800,
     "provincias": {
       "Illes Balears": {
         "title": "Illes Balears",
@@ -3717,6 +3729,7 @@
   },
   "La Rioja": {
     "title": "La Rioja",
+    "budget":3625000,
     "provincias": {
       "La Rioja": {
         "title": "La Rioja",
@@ -3795,6 +3808,7 @@
   },
   "Principado de Asturias": {
     "title": "Principado de Asturias",
+    "budget":7459600, 
     "provincias": {
       "Asturias": {
         "title": "Asturias",
@@ -3905,6 +3919,7 @@
   },
   "Región de Murcia": {
     "title": "Región de Murcia",
+    "budget":10407400, 
     "provincias": {
       "Murcia": {
         "title": "Murcia",

@@ -33,9 +33,11 @@ export default {
 
   mounted() {
     window.addEventListener('message', this.handleMessage);
+    //window.addEventListener('close', this.notifyClose);
   },
   methods: {
     handleMessage(event) {
+      const items = [];
       if (event.data.type === 'MESSAGE_FROM_PARENT') {
         this.message = event.data.data;
         //console.log(this.message);
@@ -43,11 +45,30 @@ export default {
            this.isIdle = true;
             return;
         }
-        this.isIdle = false;
 
+        const data = event.data.data;
         //Escuelas conectadas
+        if (data.type === 'school') {
+          console.log(data);
+          const budget = data.budget ? data.budget : 254052500;
+          const budget_text = data.budget ? "" : "TOTAL PROYECTO";
+          this.project = {id:0, title:"Escuelas Conectadas", desc:data.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget, budget_text};
+          this.$refs.summaryRef.setMarkers(event.data.items);
+
+        }
+
         if (this.message.count){
 
+          this.project = {id:0, title:"Escuelas Conectadas", desc:this.message.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget:254052500, budget_text:"TOTAL PROYECTO"};
+
+          for(let i = 0; i < points.length; i++){
+                const loc = points[i];
+                if (this.locations[loc]){
+                    let geoData = this.locations[loc];
+                    items.push(geoData);
+                }
+            }
+            this.$refs.summaryRef.setMarkers(items);
           return;
         }
 
@@ -56,7 +77,7 @@ export default {
         {
           this.project = this.message.project;
 
-          const items=[];
+          console.log(this.project)
           const points = this.project['location'].split(",");
             for(let i = 0; i < points.length; i++){
                 const loc = points[i];
@@ -68,10 +89,14 @@ export default {
             this.$refs.summaryRef.setMarkers(items);                
           return;
         }
-
+        this.isIdle = false;
 
       }
     },
+    notifyClose(){
+      //console.log("closing");
+      //window.opener.postMessage({ type: 'MESSAGE_FROM_CHILD', data: "closing" });
+    }
   },
   beforeUnmount() {
     window.removeEventListener('message', this.handleMessage);
