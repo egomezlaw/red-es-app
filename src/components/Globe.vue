@@ -24,7 +24,6 @@ export default{
     data(){
         return{
             globeInstance:null,
-            animating :true,
             selectedMarker:null,
         }
     },    
@@ -71,26 +70,7 @@ export default{
                 }
                 //this.setMarkers();
                 
-            },
-
-            toggleAnimation(){
-                this.animating = !this.animating;
-                this.globeInstance.pauseAnimation();
-                if (this.animating)
-                {
-                    this.globeInstance.resumeAnimation()
-                }
-            },
-
-            pauseAnimation(){
-                this.animating = false;
-                this.globeInstance.pauseAnimation();
-            },
-            
-            resumeAnimation(){
-                this.animating = true;
-                this.globeInstance.resumeAnimation();
-            },
+            },            
             
             clearMarkers(){
                 this.globeInstance.htmlElementsData([]);
@@ -130,6 +110,7 @@ export default{
                         return el;
                     });
 
+                    console.log(this.type);
                     if (this.type == 'static'){
                         this.globeInstance.resumeAnimation();
                         this.globeInstance.pointOfView( {lat:markers[0].lat, lng:markers[0].lng}, 300);

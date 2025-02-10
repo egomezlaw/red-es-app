@@ -15,7 +15,7 @@
             
         </div>
         <div class="flex grow">
-            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250" ref="globeRef" @marker-select="onMarkerSelected"></Globe>
+            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250" ref="globeRef" @marker-select="onMarkerSelected" :type="'dynamic'"></Globe>
         </div>
     </div>
 </template>
