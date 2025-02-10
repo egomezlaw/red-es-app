@@ -197,7 +197,6 @@
     "Galicia":{"lat": 42.5751, "lng":-8.1339,"color":"yellow"},
     "Castilla-La Mancha":{"lat": 39.2796, "lng":-3.0977,"color":"yellow"},
     "Cataluña":{"lat": 41.5912, "lng": 1.5209,"color":"yellow"},
-    "Extremadura ":{"lat": 39.4937, "lng":-6.0679,"color":"yellow"},
     "País Vasco":{"lat": 42.9896, "lng":-2.6189,"color":"yellow"},
     "Ayuntamiento de Almuñecar":{"lat": 36.7333, "lng":-3.6833,"color":"yellow"},
     "Ayuntamiento de Conil de la Frontera":{"lat": 36.2833, "lng":-6.0833,"color":"yellow"},

@@ -203,6 +203,7 @@ export default{
             if (this.selectedInitiative != "")
             {
                 this.filteredProjects = this.projects_data.filter(project =>  project.initiative == this.selectedInitiative);
+                console.log(this.filteredProjects);
                 this.geMarkersData();     
             }
             this.selectedBeneficiaries = '';

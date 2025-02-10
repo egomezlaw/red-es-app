@@ -1,7 +1,7 @@
 <template>
     <div>
         <div ref="globeContainer"></div>
-        <div @click="toggleAnimation()" v-if="false">
+        <div @click="toggleAnimation()" v-if="false ">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                 <!-- Ícono de Play -->
                 <path id="play" d="M8 5v14l11-7z" fill="currentColor" v-if="!animating" @click="pauseAnimation()"/>
@@ -25,6 +25,7 @@ export default{
         return{
             globeInstance:null,
             animating :true,
+            selectedMarker:null,
         }
     },    
     
@@ -98,7 +99,7 @@ export default{
             setMarkers(markers){
                 this.globeInstance.htmlElementsData([]);
 
-                const markerSvg = `<svg viewBox="-4 0 36 36">
+                const markerSvg = `<svg viewBox="-4 0 36 36" class="pointer-events-none">
                 <path fill="currentColor" d="M14,0 C21.732,0 28,5.641 28,12.6 C28,23.963 14,36 14,36 C14,36 0,24.064 0,12.6 C0,5.641 6.268,0 14,0 Z"></path>
                 <circle fill="black" cx="14" cy="14" r="7"></circle>
                 </svg>`;
@@ -109,13 +110,23 @@ export default{
                     .htmlElement(d => {
                         const el = document.createElement('div');
                         el.innerHTML = markerSvg;
+                        el.data = d;
                         el.style.color = d.color;
                         //el.style.width = `${d.size}px`;
                         el.style.width = `40px`;
                         
                         el.style['pointer-events'] = 'auto';
                         el.style.cursor = 'pointer';
-                        el.onclick = () => this.$emit("markerSelect", d);
+                        el.onclick = event => {
+                            if (this.selectedMarker){
+                                this.selectedMarker.style.width = `40px`;
+                                this.selectedMarker.style.color = this.selectedMarker.data.color;
+                            }
+                            event.target.style.width = `70px`;
+                            event.target.style.color = 'orange';
+                            this.selectedMarker =event.target;
+                            this.$emit("markerSelect", d);
+                        };
                         return el;
                     });
 
