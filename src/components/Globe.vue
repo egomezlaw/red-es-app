@@ -110,10 +110,16 @@ export default{
                         return el;
                     });
 
-                    console.log(this.type);
-                    if (this.type == 'static'){
+
+                    this.globeInstance.controls().autoRotateSpeed = 0.35;
+                    if (markers.length){
                         this.globeInstance.resumeAnimation();
-                        this.globeInstance.pointOfView( {lat:markers[0].lat, lng:markers[0].lng}, 300);
+                        this.globeInstance.pointOfView( {lat:markers[0].lat, lng:markers[0].lng}, 300);                    
+                        this.globeInstance.controls().autoRotateSpeed = 0;
+                    }
+
+
+                    if (this.type == 'static'){
                         setTimeout(() => {
                             this.globeInstance.pauseAnimation();
                         }, 400);
