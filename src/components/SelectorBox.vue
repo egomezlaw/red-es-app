@@ -4,8 +4,9 @@
     <div class="flex flex-row items-center grow">
       <!-- Label -->
       <span 
-        class="text-lg font-medium text-right mr-5 opacity-50"
+        class="text-lg font-medium text-right mr-5 opacity-50 select-none "
         :class="{'opacity-100': modelValue !== ''}"
+        @click="select()"
         ><slot></slot>
       </span>
       <!-- Icono de flecha -->
@@ -124,6 +125,10 @@ function oneItem(){
   return props.items[0];
 } 
 
+
+function select(){
+  selectItem(Math.floor(visibleCount / 2));
+}
 
 const onStart = (event) => {
   if(props.items.length < 4) return;
