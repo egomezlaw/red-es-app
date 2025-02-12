@@ -170,6 +170,7 @@ export default{
         },
 
         geMarkersData(){
+
             const items = [];
             for(const p in this.filteredProjects){
                 const points = this.filteredProjects[p]['location'].split(",");
@@ -185,8 +186,14 @@ export default{
 
             this.$refs.globeRef.setMarkers(items);
 
-            this.$emit('onMessage', JSON.parse(JSON.stringify(this.filteredProjects)));
+            if (this.filteredProjects.length == 1)
+            {
+                this.$emit('onMessage', JSON.parse(JSON.stringify({project:this.filteredProjects[0]})));
+            }else{            
+                this.$emit('onMessage', JSON.parse(JSON.stringify(this.filteredProjects)));
+            }
         },
+    
     
         onBeneficiariesChange(){
             if (this.selectedBeneficiaries != "")
@@ -203,7 +210,7 @@ export default{
             if (this.selectedInitiative != "")
             {
                 this.filteredProjects = this.projects_data.filter(project =>  project.initiative == this.selectedInitiative);
-                console.log(this.filteredProjects);
+                //console.log(this.filteredProjects);
                 this.geMarkersData();     
             }
             this.selectedBeneficiaries = '';
@@ -215,8 +222,11 @@ export default{
             if (this.selectedProject != "")
             {
                 this.filteredProjects = this.projects_data.filter(project =>  project.title == this.selectedProject);
-                this.geMarkersData();                
+                this.geMarkersData();
+                
             }
+
+
             this.selectedBeneficiaries = '';
             this.selectedInitiative = '';
             this.selectedActing = '';

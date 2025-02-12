@@ -59,19 +59,8 @@ export default {
     openDataWindow() {
       // Open the window
       this.childWnd = window.open('/results.html', 'fullscreen=yes');
-      //window.addEventListener('message', this.handleMessage);
     },
-
-    /*handleMessage(event) {
-      if (event.data.type === 'MESSAGE_FROM_CHILD') {
-        console.log(event);
-        this.message = event.data.data;
-        //console.log(this.message);
-        if (this.message == "closing"){
-           this.dataWnd = null;
-        }      
-      }
-    },*/
+    
 
     sendMessageToWindow(message) {
       // Send a message to the new window

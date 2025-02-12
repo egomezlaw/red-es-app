@@ -1,9 +1,10 @@
 <template>
+    <div>
     <div class="flex justify-between pb-5 align-middle">
         <div class="w-60 flex-none">
             <img
             src="/images/header_logo.png"
-            alt="Header Image"
+            alt="Project Image"
             class="absolute w-48 h-auto"
             :style="{ top: '50px', left: '50px' }"
             />
@@ -40,13 +41,14 @@
     </div>
     <div class="flex justify-between w-screen items-start pt-20">
         <div class="flex flex-col my-10 w-md">
-            <div class="bg-[#DD0031] h-26  pb-6 text-white text-2xl text-center">
-                <h1 class="mx-20">{{ ambit }}</h1>
+            <div class="bg-[#DD0031] h-26 text-white text-2xl text-center flex items-center justify-center">
+                <h1 
+                class="text-center line-clamp-3leading-snug">{{ ambit }}</h1>
             </div>
             <div class="my-5 mx-10" v-if="validImage">
                 <img
-                :src="image_url"
-                alt="Header Image"
+                :src="project_data.picture"
+                alt="Project Image" 
                 class="w-48 h-auto"
                 :style="{ top: '50px', left: '50px' }"
                 />
@@ -61,6 +63,7 @@
             <Globe class="w-full h-full" :width="640" :height="576" :zoom="300" ref="globeRef" :type="'static'"></Globe>
         </div>
     </div>
+</div>
 
 </template>
 <script>
@@ -69,7 +72,6 @@ export default{
     
     data(){
         return{
-            image_url : this.project_data.picture,
             euro: Intl.NumberFormat('en-DE', {style: 'currency', currency: 'EUR',})
         }
     },
@@ -80,8 +82,8 @@ export default{
     },
     
     computed: {
-        validImage(){
-            return (this.image_url !== "" && String(this.image_url).startsWith('http'));
+        validImage(){            
+            return (this.project_data.picture !== "" && String(this.project_data.picture).startsWith('http'));
         },
         initiative(){
             return (this.project_data.initiative === "" ? "TODOS" : this.project_data.initiative);

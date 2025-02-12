@@ -106,6 +106,7 @@ export default{
                             event.target.style.color = 'orange';
                             this.selectedMarker =event.target;
                             this.$emit("markerSelect", d);
+                            this.globeInstance.controls().autoRotateSpeed = 0.35;
                         };
                         return el;
                     });
