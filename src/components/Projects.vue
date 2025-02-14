@@ -186,6 +186,7 @@ export default{
 
             this.$refs.globeRef.setMarkers(items);
 
+            console.log(this.filteredProjects);
             if (this.filteredProjects.length == 1)
             {
                 this.$emit('onMessage', JSON.parse(JSON.stringify({project:this.filteredProjects[0]})));
