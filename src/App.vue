@@ -1,4 +1,5 @@
 <template>
+    <button @click="openDataWindow" class="bg-[#DD0031] text-white font-bold py-4 px-8 rounded mt-100" v-if="dataWnd==null">ABRIR VENTANA DE RESULTADOS</button>
   <div class="text-white bg-black"
     @click="handleUserEvent"
     @keydown="handleUserEvent"
@@ -7,8 +8,8 @@
     @touchend="handleUserEvent"
     @wheel="handleUserEvent"
     tabindex="0">
+    
     <Header></Header>
-    <button @click="openDataWindow"class="bg-[#DD0031] text-white font-bold py-4 px-8 rounded mt-100" v-if="dataWnd==null">ABRIR VENTANA DE RESULTADOS</button>
     <template v-if="dataWnd">
       <NavButton v-if="!isIdle" @click="inProjects = !inProjects">{{navigationLabel}}</NavButton>
       <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital" image="/images/hand.png" :arrow="true"/>
@@ -38,13 +39,14 @@ export default {
   methods: {
 
     handleUserEvent(){
+      console.log("activity detected");
       if(!this.dataWnd){
         return;
       }
 
       this.isIdle = false;
       this.sendMessageToWindow("awake");
-      
+
       clearTimeout(this.inactivityTimer);
       this.inactivityTimer = setTimeout(this.handleInactivity, 60000);
     },
@@ -56,8 +58,9 @@ export default {
 
     },
 
-    openDataWindow() {
+    openDataWindow(event) {
       // Open the window
+      event.preventDefault();
       this.childWnd = window.open('/results.html', 'fullscreen=yes');
     },
     

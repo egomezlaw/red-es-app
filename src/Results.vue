@@ -15,7 +15,7 @@ export default {
   data() {
     return {      
       message: '',
-      isIdle:false,
+      isIdle:true,
       project:{
         id:0,
         title:"",
