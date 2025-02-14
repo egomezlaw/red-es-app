@@ -4,7 +4,7 @@
     <template v-if="!isIdle" 
         class="flex items-start justify-items-start"
       >
-      <Summary :project_data="project" ref="summaryRef" class="transition-opacity duration-250  ease-out" :class="{'opacity-100': dataLoaded, 'opacity-0': !dataLoaded}"></Summary>
+      <Summary :project_data="project" ref="summaryRef"></Summary>
     </template>
   </div>
 </template>
@@ -14,7 +14,6 @@ import locations_json from './data/locations.json'
 export default {
   data() {
     return {      
-      loadingData: false,
       message: '',
       isIdle:false,
       project:{
@@ -35,11 +34,6 @@ export default {
   mounted() {
     window.addEventListener('message', this.handleMessage);
     //window.addEventListener('close', this.notifyClose);
-  },
-  computed: {
-    dataLoaded() {
-      return this.loadingData;
-    },
   },
   methods: {
 
@@ -72,19 +66,16 @@ export default {
           return;
         }
 
-        this.loadingData = false;
         const data = event.data.data;
+
         //Escuelas conectadas
         if (data.type === 'school') {
-          //console.log(data);
+            //console.log(data);
 
-          const budget = data.budget ? data.budget : 254052500;
+          const budget = data.budget ? data.budget : 0;
           const budget_text = data.budget ? "" : "TOTAL PROYECTO";
           this.project = {id:0, title:"Escuelas Conectadas", desc:data.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget, budget_text};
-          this.$refs.summaryRef.setMarkers(event.data.items);
-          setTimeout(() => {
-            this.loadingData = true;
-          }, 300);
+          this.$refs.summaryRef.setMarkers(data.items);
           return;
         }
 
@@ -94,6 +85,9 @@ export default {
 
           this.project = {id:0, title:"Escuelas Conectadas", desc:this.message.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget:254052500, budget_text:"TOTAL PROYECTO"};
 
+          if (this.project['location']){
+            const points = this.project['location'].split(",");
+
           for(let i = 0; i < points.length; i++){
                 const loc = points[i];
                 if (this.locations[loc]){
@@ -102,41 +96,32 @@ export default {
                 }
             }
             this.$refs.summaryRef.setMarkers(items);
-            setTimeout(() => {
-            this.loadingData = true;
-          }, 300);
-
+          }
           return;
         }
 
         //Project
+        //console.log(this.message);  
         if (this.message.project)
         {
           this.initProjectData();
-
-          this.project = this.message.project;
-
-          console.log(this.project)
-          if (this.project['location']){
-            const points = this.project['location'].split(",");
-            for(let i = 0; i < points.length; i++){
-                const loc = points[i];
-                if (this.locations[loc]){
-                    let geoData = this.locations[loc];
-                    items.push(geoData);
-                }
+          
+          this.project = Object.assign(this.project, this.message.project);
+          
+            if (this.project['location']){
+              const points = this.project['location'].split(",");
+              for(let i = 0; i < points.length; i++){
+                  const loc = points[i];
+                  if (this.locations[loc]){
+                      let geoData = this.locations[loc];
+                      items.push(geoData);
+                  }
+              }
             }
-          }
-          this.$refs.summaryRef.setMarkers(items);
-          setTimeout(() => {
-            this.loadingData = true;
-          }, 300);
-
-          return;
+            this.$refs.summaryRef.setMarkers(items);
+            return;
         }
-        setTimeout(() => {
-            this.loadingData = true;
-          }, 300);        
+
         this.initProjectData();
 
       }

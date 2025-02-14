@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
     <div class="flex justify-between pb-5 align-middle">
         <div class="w-60 flex-none">
             <img
@@ -13,7 +13,8 @@
             <h1 class="mx-20">{{title}}</h1>
         </div>
     </div>
-    <div>
+    <transition name="fade">
+    <div v-if="shouldAnimate">
         <div class="text-white flex  my-5 mx-10 text-xl justify-between gap-1 place-content-around">
             <div class=" ">
                 <h2>Beneficiarios</h2>
@@ -39,8 +40,11 @@
             <h2>{{ description }}</h2>
         </div>
     </div>
+    </transition>
+
     <div class="flex justify-between w-screen items-start pt-20">
-        <div class="flex flex-col my-10 w-md">
+        <transition name="fade">
+        <div class="flex flex-col my-10 w-md"  v-if="shouldAnimate">
             <div class="bg-[#DD0031] h-26 text-white text-2xl text-center flex items-center justify-center">
                 <h1 
                 class="text-center line-clamp-3leading-snug">{{ ambit }}</h1>
@@ -59,6 +63,7 @@
 
             </div>
         </div>
+        </transition>
         <div class="flex grow">
             <Globe class="w-full h-full" :width="640" :height="576" :zoom="300" ref="globeRef" :type="'static'"></Globe>
         </div>
@@ -67,18 +72,34 @@
 
 </template>
 <script>
+import { data } from 'autoprefixer';
+
 export default{
     props: ['project_data'],
     
     data(){
         return{
+            shouldAnimate: true,
             euro: Intl.NumberFormat('en-DE', {style: 'currency', currency: 'EUR',})
         }
     },
     methods:{
         setMarkers(markers){
             this.$refs.globeRef.setMarkers(markers);
-        }
+        },        
+    },
+
+    watch: {
+        project_data: {
+        handler(newVal, oldVal) {
+            // Si cualquier atributo del objeto cambia, activa la animación
+            this.shouldAnimate = false;
+            setTimeout(() => {
+            this.shouldAnimate = true; // Desactiva la animación después de 300 ms
+            }, 300);
+        },
+        deep: true, // Habilita la observación profunda
+        },
     },
     
     computed: {
@@ -86,28 +107,28 @@ export default{
             return (this.project_data.picture !== "" && String(this.project_data.picture).startsWith('http'));
         },
         initiative(){
-            return (this.project_data.initiative === "" ? "TODOS" : this.project_data.initiative);
+            return (this.project_data.initiative === ""  ? "TODOS" : this.project_data.initiative);
         },
         description(){
-            return (this.project_data.desc === "" ? "TODOS" : this.project_data.desc);
+            return (this.project_data.desc === ""  ? "TODOS" : this.project_data.desc);
         },
         acting(){
            return this.project_data.acting;
         },
         title(){
-            return (this.project_data.title === "" ? "TODOS" : this.project_data.title);
+            return (this.project_data.title === ""  ? "TODOS" : this.project_data.title);
         },
         ambit(){
-            return (this.project_data.ambit === "" ? "TODOS" : this.project_data.ambit);
+            return (this.project_data.ambit === ""  ? "TODOS" : this.project_data.ambit);
         },
         beneficiaries(){
-            return (this.project_data.beneficiaries === "" ? "TODOS" : this.project_data.beneficiaries);
+            return (this.project_data.beneficiaries === ""  ? "TODOS" : this.project_data.beneficiaries);
         },
         budget(){
-            return (this.project_data.budget === "" ? "" :  `${this.euro.format(this.project_data.budget)} ${this.budget_text}`);
+            return (this.project_data.budget === ""  ? "" :  `${this.euro.format(this.project_data.budget)} ${this.budget_text}`);
         },
         budget_text(){
-            return (this.project_data.budget_text === "" || this.project_data.budget_text === null ? "" :  this.project_data.budget_text);
+            return (this.project_data.budget_text === ""  || this.project_data.budget_text === null ? "" :  this.project_data.budget_text);
         },
     }
     
@@ -122,5 +143,21 @@ p{
     text-align: left;
     padding-bottom: 2rem;
     opacity: 70%;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 300ms;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active en versiones anteriores a 2.1.8 */ {
+  opacity: 0;
+}
+
+/* Estilos adicionales para el div */
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  margin-top: 20px;
 }
 </style>

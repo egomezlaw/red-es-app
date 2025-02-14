@@ -77,6 +77,10 @@ export default{
             },
 
             setMarkers(markers){
+                if (!markers){
+                    return;
+                }
+
                 this.globeInstance.htmlElementsData([]);
 
                 const markerSvg = `<svg viewBox="-4 0 36 36" class="pointer-events-none">
@@ -112,7 +116,6 @@ export default{
                     });
 
 
-                    this.globeInstance.controls().autoRotateSpeed = 0.35;
                     if (markers.length){
                         this.globeInstance.resumeAnimation();
                         this.globeInstance.pointOfView( {lat:markers[0].lat, lng:markers[0].lng}, 300);                    

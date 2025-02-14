@@ -169,7 +169,7 @@ export default{
             this.$emit('onMessage', JSON.parse(JSON.stringify(markerData)));
         },
 
-        geMarkersData(){
+        geMarkersData(project){
 
             const items = [];
             for(const p in this.filteredProjects){
@@ -189,8 +189,8 @@ export default{
             if (this.filteredProjects.length == 1)
             {
                 this.$emit('onMessage', JSON.parse(JSON.stringify({project:this.filteredProjects[0]})));
-            }else{            
-                this.$emit('onMessage', JSON.parse(JSON.stringify(this.filteredProjects)));
+            }else{           
+                this.$emit('onMessage', JSON.parse(JSON.stringify({project})));
             }
         },
     
@@ -199,7 +199,7 @@ export default{
             if (this.selectedBeneficiaries != "")
             {
                 this.filteredProjects = this.projects_data.filter(project =>  project.beneficiaries == this.selectedBeneficiaries);
-                this.geMarkersData();
+                this.geMarkersData({beneficiaries:this.selectedBeneficiaries});
             }
             this.selectedInitiative = '';
             this.selectedProject = '';
@@ -211,7 +211,7 @@ export default{
             {
                 this.filteredProjects = this.projects_data.filter(project =>  project.initiative == this.selectedInitiative);
                 //console.log(this.filteredProjects);
-                this.geMarkersData();     
+                this.geMarkersData({initiative:this.selectedInitiative});     
             }
             this.selectedBeneficiaries = '';
             this.selectedProject = '';
@@ -222,7 +222,7 @@ export default{
             if (this.selectedProject != "")
             {
                 this.filteredProjects = this.projects_data.filter(project =>  project.title == this.selectedProject);
-                this.geMarkersData();
+                this.geMarkersData({title:this.selectedProject});
                 
             }
 
@@ -236,7 +236,7 @@ export default{
             if (this.selectedActing != "")
             {
                 this.filteredProjects = this.projects_data.filter(project =>  project.acting == this.selectedActing);
-                this.geMarkersData();                
+                this.geMarkersData({acting:this.selectedActing});                
             }
             this.selectedBeneficiaries = '';
             this.selectedInitiative = '';
