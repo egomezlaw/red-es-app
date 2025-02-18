@@ -1266,5 +1266,6 @@
     "TOMELLOSO":{"lat": 39.1500, "lng":-3.0167,"color":"red"},
     "TORRALBA DE CALATRAVA":{"lat": 39.0167, "lng":-3.75,"color":"red"},
     "TORRE DE JUAN ABAD":{"lat": 38.5833, "lng":-3.0667,"color":"red"},
-    "TORRENUEVA":{"lat": 38.6333, "lng":-3.35,"color":"red"}   
+    "TORRENUEVA":{"lat": 38.6333, "lng":-3.35,"color":"red"},
+    "Illes Balears":{"lat": 39.6000, "lng": 3.0000,"color":"red"}
 }

@@ -14,7 +14,7 @@
     <div class="flex flex-row items-center">
       <!-- Label -->
       <span 
-        class="text-sm font-medium text-right mr-5 opacity-50 select-none "
+        class="text-sm font-medium text-right mr-5 opacity-50 select-none capitalize"
         :class="{'opacity-100': modelValue !== ''}"
         @click="select()"
         ><slot></slot>
@@ -44,7 +44,7 @@
         v-if="props.items.length > 1"
       >
         <li v-for="(item, index) in visibleItems" :key="index"         
-          class="p-2 text-xl opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none" 
+          class="p-2 text-xl opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none capitalize" 
           :class="{ 'opacity-100 font-bold': (index === Math.floor(visibleCount / 2) && modelValue !== '') }"
           @click="selectItem(index)">
           {{ item }}
@@ -60,7 +60,7 @@
       </div>
       <div v-else>
         <div v-for="(item, index) in props.items" :key="index"
-        class="p-2 text-lg opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none"
+        class="p-2 text-lg opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none capitalize"
         :class="{ 'opacity-100 font-bold': (item == modelValue) }"
         @click="selectItem(index)">
         {{item}}
@@ -220,5 +220,16 @@ const moveIndex = (index) => {
   -webkit-box-shadow:0px 0px 5px 3px rgba(255,255,255,0.9);
 -moz-box-shadow: 0px 0px 5px 3px rgba(255,255,255,0.9);
 box-shadow: 0px 0px 5px 3px rgba(255,255,255,0.9);
+}
+
+span,
+li,
+div {
+  text-transform: lowercase;
+}
+span:first-line,
+li:first-line,
+div:first-line {
+  text-transform: capitalize;
 }
 </style>

@@ -134,3 +134,11 @@ export default{
         }
     }
 </script>
+<style scoped>
+h1 {
+  text-transform: lowercase;
+}
+h1:first-line{
+  text-transform: capitalize;
+}
+</style>
