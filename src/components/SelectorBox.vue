@@ -52,10 +52,10 @@
       </ul>
       <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 right-0 h-10 bg-opacity-50 pointer-events-none"></div>
     </div>
-    <div v-else >
+    <div v-else class="w-full">
       <div
         v-if="props.items.length == 1"
-        class="p-2 text-lg opacity-100 font-bold transition-opacity duration-500 ease-out  whitespace-nowrap select-none">
+        class="p-2 text-lg opacity-100 font-bold transition-opacity duration-500 ease-out  whitespace-nowrap select-none items-center w-full">
         {{oneItem()}}
       </div>
       <div v-else>
@@ -131,8 +131,10 @@ onMounted(() => {
 });
 
 function oneItem(){
-  model.value = props.items[0];
-  emit("change");
+  if (model.value !== props.items[0]){
+    model.value = props.items[0];
+    emit("change");
+  }
   return props.items[0];
 } 
 
@@ -165,10 +167,10 @@ function onEnd(){
     currentTranslateY.value = translateY.value;
     deltaY = 0;
 
-    if (props.items[selectedIndex.value]){
+    if (model.value !== props.items[selectedIndex.value]){
       model.value = props.items[selectedIndex.value];
       emit("change");
-    }
+    } 
 };
 
 const selectItem = (index) => {
@@ -181,14 +183,19 @@ const selectItem = (index) => {
     else{
       selectedIndex.value = index;
     }
+
     if (selectedIndex.value < 0){
       selectedIndex.value = props.items.length - 1; 
     }
 
-   if (model.value != props.items[selectedIndex.value]){
+    if(selectedIndex.value > props.items.length - 1){
+      selectedIndex.value = 0;
+    }
+
+    if (model.value !== props.items[selectedIndex.value]){
       model.value = props.items[selectedIndex.value];
       emit("change");
-    }
+    } 
 };
 
 const moveIndex = (index) => {
@@ -200,9 +207,9 @@ const moveIndex = (index) => {
     selectedIndex.value = (selectedIndex.value + index );
   }
   
-  if (model.value != props.items[selectedIndex.value]){
-      model.value = props.items[selectedIndex.value];
-      emit("change");
+  if (model.value !== props.items[selectedIndex.value]){
+    model.value = props.items[selectedIndex.value];
+    emit("change");
   }
 };
 

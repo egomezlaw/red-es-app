@@ -77,14 +77,19 @@ export default{
                 const province = this.schools_data[this.selectedCCAA].provincias[this.selectedProvince];
                 
                 let count = 0;                
+                let geoData = null;
                 for (const m in province.municipios){
                     if (this.locations[m]){
-                        let geoData = this.locations[m];
-                        items.push(geoData);
-                        items[items.length - 1].count = province.municipios[m];
-                        items[items.length - 1].location = m;
-
+                        geoData = this.locations[m];
+                    }else if (this.locations[this.selectedProvince]){
+                        geoData = this.locations[this.selectedProvince];
+                    }else{
+                        geoData = this.locations[this.selectedCCAA];
                     }
+
+                    items.push(geoData);
+                    items[items.length - 1].count = province.municipios[m];
+                    items[items.length - 1].location = m;
                     count += parseInt(province.municipios[m]);
                 }
                 
@@ -98,12 +103,18 @@ export default{
         onMunicipalityChange(){
             if (this.selectedMunicipality){
                 const items = [];
-                let geoData = this.locations[this.selectedCCAA];
-                if (geoData){
-                    items.push(geoData);
-                }else{
-                    items.push({});
-                }
+                let geoData = null;
+
+                if (this.locations[this.selectedMunicipality]){
+                        geoData = this.locations[this.selectedMunicipality];
+                     }else if (this.locations[this.selectedProvince]){
+                        geoData = this.locations[this.selectedProvince];
+                    }else{
+                        geoData = this.locations[this.selectedCCAA];
+                    }
+
+                items.push(geoData);
+
                 items[0].count = this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality];
                 items[0].desc = `En el municipio de ${this.selectedMunicipality}, ubicado en la provincia de ${this.selectedProvince} dentro de ${this.selectedCCAA}, contamos con ${this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality]} sedes.`
                 items[0].location = this.selectedMunicipality;
