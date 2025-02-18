@@ -189,7 +189,7 @@
     "Retamar":{"lat": 36.8333, "lng":-2.3167,"color":"red"},
     "Andalucía":{"lat": 37.5443, "lng":-4.7278,"color":"red"},
     "Galicia":{"lat": 42.5751, "lng":-8.1339,"color":"red"},
-    "Castilla-La Mancha":{"lat": 39.2796, "lng":-3.0977,"color":"red"},
+    "Castilla - La Mancha":{"lat": 39.2796, "lng":-3.0977,"color":"red"},
     "Cataluña":{"lat": 41.5912, "lng": 1.5209,"color":"red"},
     "País Vasco":{"lat": 42.9896, "lng":-2.6189,"color":"red"},
     "Ayuntamiento de Almuñecar":{"lat": 36.7333, "lng":-3.6833,"color":"red"},

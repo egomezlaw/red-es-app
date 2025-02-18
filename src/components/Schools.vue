@@ -116,7 +116,7 @@ export default{
                 items.push(geoData);
 
                 items[0].count = this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality];
-                items[0].desc = `En el municipio de ${this.selectedMunicipality}, ubicado en la provincia de ${this.selectedProvince} dentro de ${this.selectedCCAA}, contamos con ${this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality]} sedes.`
+                items[0].desc = `En el municipio de ${this.selectedMunicipality.toLocaleLowerCase()}, ubicado en la provincia de ${this.selectedProvince} dentro de ${this.selectedCCAA}, contamos con ${this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality]} sedes.`
                 items[0].location = this.selectedMunicipality;
 
                 this.$refs.globeRef.setMarkers(items);
