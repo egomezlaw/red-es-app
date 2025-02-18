@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Web Summit",
     "acting": "Pabellón de España en Web Summit",
@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "South Summit",
     "acting": "Pabellón de España en South Summit",
@@ -29,9 +29,9 @@
   },
   {
     "id": 3,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
-    "title": " Smart City Expo World Congress",
+    "title": "Smart City Expo World Congress",
     "acting": "Pabellón de España en Smart City Expo World Congress",
     "desc": "Este congreso tiene lugar en Barcelona, España, específicamente en  Fira de Barcelona, centrado en tecnologías para ciudades inteligentes. ",
     "ambit": "Internacional",
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Desafía",
     "acting": "",
@@ -57,7 +57,7 @@
   },
   {
     "id": 5,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Desafía",
     "acting": "Desafía Nórdicos",
@@ -71,7 +71,7 @@
   },
   {
     "id": 6,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Desafía",
     "acting": "Desafía Suiza",
@@ -85,7 +85,7 @@
   },
   {
     "id": 7,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Desafía",
     "acting": "Desafía San Francisco",
@@ -99,7 +99,7 @@
   },
   {
     "id": 8,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Desafía",
     "acting": "Desafía Londres",
@@ -113,7 +113,7 @@
   },
   {
     "id": 9,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Desafía",
     "acting": "Desafía Berlín",
@@ -127,7 +127,7 @@
   },
   {
     "id": 10,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Desafía",
     "acting": "Desafía Tel Aviv",
@@ -141,7 +141,7 @@
   },
   {
     "id": 11,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "Desafía",
     "acting": "Desafía New York",
@@ -155,7 +155,7 @@
   },
   {
     "id": 12,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "MWC",
     "acting": "Pabellón de España en MWC Barcelona",
@@ -169,7 +169,7 @@
   },
   {
     "id": 13,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "MWC",
     "acting": "Cóctel Oficial del Pabellón de España en MWC Barcelona",
@@ -183,7 +183,7 @@
   },
   {
     "id": 14,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "MWC",
     "acting": "Pabellón de España en MWC Shanghái y Los Ángeles",
@@ -197,7 +197,7 @@
   },
   {
     "id": 15,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "MWC",
     "acting": "Pabellón de España en MWC Las Vegas",
@@ -211,7 +211,7 @@
   },
   {
     "id": 16,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "MWC",
     "acting": "Pabellón de España en eMerge Américas",
@@ -225,7 +225,7 @@
   },
   {
     "id": 17,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Internacionalización",
     "title": "4YFN",
     "acting": "Pabellón de España en 4YFN",
@@ -239,7 +239,7 @@
   },
   {
     "id": 18,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Sociedad Digital",
     "title": "Aporta - datos.gob.es",
     "acting": "",
@@ -267,7 +267,7 @@
   },
   {
     "id": 20,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Sociedad Digital",
     "title": "Aporta - datos.gob.es",
     "acting": "",
@@ -281,7 +281,7 @@
   },
   {
     "id": 21,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Sociedad Digital",
     "title": "Aporta - datos.gob.es",
     "acting": "Catálogo Digital",
@@ -309,7 +309,7 @@
   },
   {
     "id": 23,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Sociedad Digital",
     "title": "Aporta - datos.gob.es",
     "acting": "Catálogo Digital",
@@ -323,10 +323,10 @@
   },
   {
     "id": 24,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Sociedad Digital",
     "title": "Aporta - datos.gob.es",
-    "acting": "Dinamización y Sensibilización",
+    "acting": "Dinamización y Sensibilización.",
     "desc": "Fomenta el conocimiento y la cultura del dato mediante actividades formativas, talleres y foros dirigidos a diferentes públicos.",
     "ambit": "Nacional",
     "location": "España",
@@ -351,7 +351,7 @@
   },
   {
     "id": 26,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Sociedad Digital",
     "title": "Innovación basada en datos. Aporta - datos.gob.es ",
     "acting": "Dinamización y Sensibilización.",
@@ -365,7 +365,7 @@
   },
   {
     "id": 27,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Sociedad Digital",
     "title": " Aporta - datos.gob.es ",
     "acting": "Innovación basada en datos",
@@ -393,7 +393,7 @@
   },
   {
     "id": 29,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Sociedad Digital",
     "title": "Innovación basada en datos. Aporta - datos.gob.es ",
     "acting": "",
@@ -407,7 +407,7 @@
   },
   {
     "id": 30,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Sociedad Digital",
     "title": "Aporta - datos.gob.es ",
     "acting": "Soporte, asesoramiento y desarrollo tecnológico ",
@@ -435,7 +435,7 @@
   },
   {
     "id": 32,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Sociedad Digital",
     "title": "",
     "acting": "",
@@ -449,7 +449,7 @@
   },
   {
     "id": 33,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Sociedad Digital",
     "title": " Aporta - datos.gob.es ",
     "acting": "Apoyo a la regularización",
@@ -477,7 +477,7 @@
   },
   {
     "id": 35,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Sociedad Digital",
     "title": "",
     "acting": "",
@@ -491,7 +491,7 @@
   },
   {
     "id": 36,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Sociedad Digital",
     "title": "Aporta - datos.gob.es ",
     "acting": "Colaboración nacional e internacional",
@@ -519,7 +519,7 @@
   },
   {
     "id": 38,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Sociedad Digital",
     "title": "Aporta - datos.gob.es ",
     "acting": "Colaboración nacional e internacional",
@@ -533,7 +533,7 @@
   },
   {
     "id": 39,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "",
@@ -547,7 +547,7 @@
   },
   {
     "id": 40,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": " Acelera pyme",
     "acting": "Plataforma Acelera pyme",
@@ -561,7 +561,7 @@
   },
   {
     "id": 41,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -575,7 +575,7 @@
   },
   {
     "id": 42,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -589,7 +589,7 @@
   },
   {
     "id": 43,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -603,7 +603,7 @@
   },
   {
     "id": 44,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -617,7 +617,7 @@
   },
   {
     "id": 45,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -631,7 +631,7 @@
   },
   {
     "id": 46,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -645,7 +645,7 @@
   },
   {
     "id": 47,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -659,7 +659,7 @@
   },
   {
     "id": 48,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -673,7 +673,7 @@
   },
   {
     "id": 49,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -687,7 +687,7 @@
   },
   {
     "id": 50,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -701,7 +701,7 @@
   },
   {
     "id": 51,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -715,7 +715,7 @@
   },
   {
     "id": 52,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -729,7 +729,7 @@
   },
   {
     "id": 53,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -743,7 +743,7 @@
   },
   {
     "id": 54,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -757,7 +757,7 @@
   },
   {
     "id": 55,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -771,7 +771,7 @@
   },
   {
     "id": 56,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -785,7 +785,7 @@
   },
   {
     "id": 57,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -799,7 +799,7 @@
   },
   {
     "id": 58,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -813,7 +813,7 @@
   },
   {
     "id": 59,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -827,7 +827,7 @@
   },
   {
     "id": 60,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -841,7 +841,7 @@
   },
   {
     "id": 61,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -855,7 +855,7 @@
   },
   {
     "id": 62,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -869,7 +869,7 @@
   },
   {
     "id": 63,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -883,7 +883,7 @@
   },
   {
     "id": 64,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -897,7 +897,7 @@
   },
   {
     "id": 65,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -911,7 +911,7 @@
   },
   {
     "id": 66,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -925,7 +925,7 @@
   },
   {
     "id": 67,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -939,7 +939,7 @@
   },
   {
     "id": 68,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -953,7 +953,7 @@
   },
   {
     "id": 69,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -967,7 +967,7 @@
   },
   {
     "id": 70,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -981,7 +981,7 @@
   },
   {
     "id": 71,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -995,7 +995,7 @@
   },
   {
     "id": 72,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1009,7 +1009,7 @@
   },
   {
     "id": 73,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1023,7 +1023,7 @@
   },
   {
     "id": 74,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1037,7 +1037,7 @@
   },
   {
     "id": 75,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1051,7 +1051,7 @@
   },
   {
     "id": 76,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1065,7 +1065,7 @@
   },
   {
     "id": 77,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1079,7 +1079,7 @@
   },
   {
     "id": 78,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1093,7 +1093,7 @@
   },
   {
     "id": 79,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1107,7 +1107,7 @@
   },
   {
     "id": 80,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1121,7 +1121,7 @@
   },
   {
     "id": 81,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1135,7 +1135,7 @@
   },
   {
     "id": 82,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1149,7 +1149,7 @@
   },
   {
     "id": 83,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1163,7 +1163,7 @@
   },
   {
     "id": 84,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1177,7 +1177,7 @@
   },
   {
     "id": 85,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1191,7 +1191,7 @@
   },
   {
     "id": 86,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1205,7 +1205,7 @@
   },
   {
     "id": 87,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1219,7 +1219,7 @@
   },
   {
     "id": 88,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1233,7 +1233,7 @@
   },
   {
     "id": 89,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1247,7 +1247,7 @@
   },
   {
     "id": 90,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1261,7 +1261,7 @@
   },
   {
     "id": 91,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1275,7 +1275,7 @@
   },
   {
     "id": 92,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1289,7 +1289,7 @@
   },
   {
     "id": 93,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1303,7 +1303,7 @@
   },
   {
     "id": 94,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1317,7 +1317,7 @@
   },
   {
     "id": 95,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1331,7 +1331,7 @@
   },
   {
     "id": 96,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1345,7 +1345,7 @@
   },
   {
     "id": 97,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1359,7 +1359,7 @@
   },
   {
     "id": 98,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1373,7 +1373,7 @@
   },
   {
     "id": 99,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1387,7 +1387,7 @@
   },
   {
     "id": 100,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1401,7 +1401,7 @@
   },
   {
     "id": 101,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1415,7 +1415,7 @@
   },
   {
     "id": 102,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1429,7 +1429,7 @@
   },
   {
     "id": 103,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1443,7 +1443,7 @@
   },
   {
     "id": 104,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1457,7 +1457,7 @@
   },
   {
     "id": 105,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1471,7 +1471,7 @@
   },
   {
     "id": 106,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1485,7 +1485,7 @@
   },
   {
     "id": 107,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1499,7 +1499,7 @@
   },
   {
     "id": 108,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1513,7 +1513,7 @@
   },
   {
     "id": 109,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1527,7 +1527,7 @@
   },
   {
     "id": 110,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1541,7 +1541,7 @@
   },
   {
     "id": 111,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1555,7 +1555,7 @@
   },
   {
     "id": 112,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1569,7 +1569,7 @@
   },
   {
     "id": 113,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1583,7 +1583,7 @@
   },
   {
     "id": 114,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1597,7 +1597,7 @@
   },
   {
     "id": 115,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1611,7 +1611,7 @@
   },
   {
     "id": 116,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1625,7 +1625,7 @@
   },
   {
     "id": 117,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1639,7 +1639,7 @@
   },
   {
     "id": 118,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1653,7 +1653,7 @@
   },
   {
     "id": 119,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1667,7 +1667,7 @@
   },
   {
     "id": 120,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1681,7 +1681,7 @@
   },
   {
     "id": 121,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1695,7 +1695,7 @@
   },
   {
     "id": 122,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1709,7 +1709,7 @@
   },
   {
     "id": 123,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1723,7 +1723,7 @@
   },
   {
     "id": 124,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1737,7 +1737,7 @@
   },
   {
     "id": 125,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1751,7 +1751,7 @@
   },
   {
     "id": 126,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1765,7 +1765,7 @@
   },
   {
     "id": 127,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1779,7 +1779,7 @@
   },
   {
     "id": 128,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1793,7 +1793,7 @@
   },
   {
     "id": 129,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1807,7 +1807,7 @@
   },
   {
     "id": 130,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1821,7 +1821,7 @@
   },
   {
     "id": 131,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1835,7 +1835,7 @@
   },
   {
     "id": 132,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1849,7 +1849,7 @@
   },
   {
     "id": 133,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1863,7 +1863,7 @@
   },
   {
     "id": 134,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1877,7 +1877,7 @@
   },
   {
     "id": 135,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1891,7 +1891,7 @@
   },
   {
     "id": 136,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1905,7 +1905,7 @@
   },
   {
     "id": 137,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1919,7 +1919,7 @@
   },
   {
     "id": 138,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1933,7 +1933,7 @@
   },
   {
     "id": 139,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1947,7 +1947,7 @@
   },
   {
     "id": 140,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1961,7 +1961,7 @@
   },
   {
     "id": 141,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1975,7 +1975,7 @@
   },
   {
     "id": 142,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -1989,7 +1989,7 @@
   },
   {
     "id": 143,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2003,7 +2003,7 @@
   },
   {
     "id": 144,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2017,7 +2017,7 @@
   },
   {
     "id": 145,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2031,7 +2031,7 @@
   },
   {
     "id": 146,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2045,7 +2045,7 @@
   },
   {
     "id": 147,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2059,7 +2059,7 @@
   },
   {
     "id": 148,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2073,7 +2073,7 @@
   },
   {
     "id": 149,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2087,7 +2087,7 @@
   },
   {
     "id": 150,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2101,7 +2101,7 @@
   },
   {
     "id": 151,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2115,7 +2115,7 @@
   },
   {
     "id": 152,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2129,7 +2129,7 @@
   },
   {
     "id": 153,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2143,7 +2143,7 @@
   },
   {
     "id": 154,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2157,7 +2157,7 @@
   },
   {
     "id": 155,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2171,7 +2171,7 @@
   },
   {
     "id": 156,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2185,7 +2185,7 @@
   },
   {
     "id": 157,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2199,7 +2199,7 @@
   },
   {
     "id": 158,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2213,7 +2213,7 @@
   },
   {
     "id": 159,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2227,7 +2227,7 @@
   },
   {
     "id": 160,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2241,7 +2241,7 @@
   },
   {
     "id": 161,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2255,7 +2255,7 @@
   },
   {
     "id": 162,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2269,7 +2269,7 @@
   },
   {
     "id": 163,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2283,7 +2283,7 @@
   },
   {
     "id": 164,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2297,7 +2297,7 @@
   },
   {
     "id": 165,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2311,7 +2311,7 @@
   },
   {
     "id": 166,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2325,7 +2325,7 @@
   },
   {
     "id": 167,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2339,7 +2339,7 @@
   },
   {
     "id": 168,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2353,7 +2353,7 @@
   },
   {
     "id": 169,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2367,7 +2367,7 @@
   },
   {
     "id": 170,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2381,7 +2381,7 @@
   },
   {
     "id": 171,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2395,7 +2395,7 @@
   },
   {
     "id": 172,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2409,7 +2409,7 @@
   },
   {
     "id": 173,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2423,7 +2423,7 @@
   },
   {
     "id": 174,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2437,7 +2437,7 @@
   },
   {
     "id": 175,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2451,7 +2451,7 @@
   },
   {
     "id": 176,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2465,7 +2465,7 @@
   },
   {
     "id": 177,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2479,7 +2479,7 @@
   },
   {
     "id": 178,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2493,7 +2493,7 @@
   },
   {
     "id": 179,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2507,7 +2507,7 @@
   },
   {
     "id": 180,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2521,7 +2521,7 @@
   },
   {
     "id": 181,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2535,7 +2535,7 @@
   },
   {
     "id": 182,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2549,7 +2549,7 @@
   },
   {
     "id": 183,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2563,7 +2563,7 @@
   },
   {
     "id": 184,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2577,7 +2577,7 @@
   },
   {
     "id": 185,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2591,7 +2591,7 @@
   },
   {
     "id": 186,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2605,7 +2605,7 @@
   },
   {
     "id": 187,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2619,7 +2619,7 @@
   },
   {
     "id": 188,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2633,7 +2633,7 @@
   },
   {
     "id": 189,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2647,7 +2647,7 @@
   },
   {
     "id": 190,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2661,7 +2661,7 @@
   },
   {
     "id": 191,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2675,7 +2675,7 @@
   },
   {
     "id": 192,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2689,7 +2689,7 @@
   },
   {
     "id": 193,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2703,7 +2703,7 @@
   },
   {
     "id": 194,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2717,7 +2717,7 @@
   },
   {
     "id": 195,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2731,7 +2731,7 @@
   },
   {
     "id": 196,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2745,7 +2745,7 @@
   },
   {
     "id": 197,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2759,7 +2759,7 @@
   },
   {
     "id": 198,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2773,7 +2773,7 @@
   },
   {
     "id": 199,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2787,7 +2787,7 @@
   },
   {
     "id": 200,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2801,7 +2801,7 @@
   },
   {
     "id": 201,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2815,7 +2815,7 @@
   },
   {
     "id": 202,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2829,7 +2829,7 @@
   },
   {
     "id": 203,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2843,7 +2843,7 @@
   },
   {
     "id": 204,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2857,7 +2857,7 @@
   },
   {
     "id": 205,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2871,7 +2871,7 @@
   },
   {
     "id": 206,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2885,7 +2885,7 @@
   },
   {
     "id": 207,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2899,7 +2899,7 @@
   },
   {
     "id": 208,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2913,7 +2913,7 @@
   },
   {
     "id": 209,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2927,7 +2927,7 @@
   },
   {
     "id": 210,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2941,7 +2941,7 @@
   },
   {
     "id": 211,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2955,7 +2955,7 @@
   },
   {
     "id": 212,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2969,7 +2969,7 @@
   },
   {
     "id": 213,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2983,7 +2983,7 @@
   },
   {
     "id": 214,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -2997,7 +2997,7 @@
   },
   {
     "id": 215,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3011,7 +3011,7 @@
   },
   {
     "id": 216,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3025,7 +3025,7 @@
   },
   {
     "id": 217,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3039,7 +3039,7 @@
   },
   {
     "id": 218,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3053,7 +3053,7 @@
   },
   {
     "id": 219,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3067,7 +3067,7 @@
   },
   {
     "id": 220,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3081,7 +3081,7 @@
   },
   {
     "id": 221,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3095,7 +3095,7 @@
   },
   {
     "id": 222,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3109,7 +3109,7 @@
   },
   {
     "id": 223,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3123,7 +3123,7 @@
   },
   {
     "id": 224,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3137,7 +3137,7 @@
   },
   {
     "id": 225,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3151,7 +3151,7 @@
   },
   {
     "id": 226,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3165,7 +3165,7 @@
   },
   {
     "id": 227,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3179,7 +3179,7 @@
   },
   {
     "id": 228,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3193,7 +3193,7 @@
   },
   {
     "id": 229,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3207,7 +3207,7 @@
   },
   {
     "id": 230,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3221,7 +3221,7 @@
   },
   {
     "id": 231,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3235,7 +3235,7 @@
   },
   {
     "id": 232,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3249,7 +3249,7 @@
   },
   {
     "id": 233,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3263,7 +3263,7 @@
   },
   {
     "id": 234,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3277,7 +3277,7 @@
   },
   {
     "id": 235,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3291,7 +3291,7 @@
   },
   {
     "id": 236,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3305,7 +3305,7 @@
   },
   {
     "id": 237,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3319,7 +3319,7 @@
   },
   {
     "id": 238,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3333,7 +3333,7 @@
   },
   {
     "id": 239,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3347,7 +3347,7 @@
   },
   {
     "id": 240,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3361,7 +3361,7 @@
   },
   {
     "id": 241,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3375,7 +3375,7 @@
   },
   {
     "id": 242,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3389,7 +3389,7 @@
   },
   {
     "id": 243,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3403,7 +3403,7 @@
   },
   {
     "id": 244,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3417,7 +3417,7 @@
   },
   {
     "id": 245,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3431,7 +3431,7 @@
   },
   {
     "id": 246,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3445,7 +3445,7 @@
   },
   {
     "id": 247,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3459,7 +3459,7 @@
   },
   {
     "id": 248,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3473,7 +3473,7 @@
   },
   {
     "id": 249,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3487,7 +3487,7 @@
   },
   {
     "id": 250,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3501,7 +3501,7 @@
   },
   {
     "id": 251,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3515,7 +3515,7 @@
   },
   {
     "id": 252,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3529,7 +3529,7 @@
   },
   {
     "id": 253,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3543,7 +3543,7 @@
   },
   {
     "id": 254,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3557,7 +3557,7 @@
   },
   {
     "id": 255,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3571,7 +3571,7 @@
   },
   {
     "id": 256,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3585,7 +3585,7 @@
   },
   {
     "id": 257,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3599,7 +3599,7 @@
   },
   {
     "id": 258,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3613,7 +3613,7 @@
   },
   {
     "id": 259,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3627,7 +3627,7 @@
   },
   {
     "id": 260,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3641,7 +3641,7 @@
   },
   {
     "id": 261,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3655,7 +3655,7 @@
   },
   {
     "id": 262,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3669,7 +3669,7 @@
   },
   {
     "id": 263,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3683,7 +3683,7 @@
   },
   {
     "id": 264,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3697,7 +3697,7 @@
   },
   {
     "id": 265,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3711,7 +3711,7 @@
   },
   {
     "id": 266,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3725,7 +3725,7 @@
   },
   {
     "id": 267,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3739,7 +3739,7 @@
   },
   {
     "id": 268,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3753,7 +3753,7 @@
   },
   {
     "id": 269,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3767,7 +3767,7 @@
   },
   {
     "id": 270,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3781,7 +3781,7 @@
   },
   {
     "id": 271,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3795,7 +3795,7 @@
   },
   {
     "id": 272,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3809,7 +3809,7 @@
   },
   {
     "id": 273,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3823,7 +3823,7 @@
   },
   {
     "id": 274,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3837,7 +3837,7 @@
   },
   {
     "id": 275,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3851,7 +3851,7 @@
   },
   {
     "id": 276,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Oficinas Acelera pyme",
@@ -3865,7 +3865,7 @@
   },
   {
     "id": 277,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": "Acelera pyme",
     "acting": "Kit Digital",
@@ -3879,7 +3879,7 @@
   },
   {
     "id": 278,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": " Acelera pyme",
     "acting": "Kit Consulting",
@@ -3893,7 +3893,7 @@
   },
   {
     "id": 279,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Transformación Digital PYMES",
     "title": " Acelera pyme",
     "acting": "Bono de Conectividad",
@@ -3907,7 +3907,7 @@
   },
   {
     "id": 280,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto piloto en Andalucía (1ª convocatoria)",
@@ -3921,7 +3921,7 @@
   },
   {
     "id": 281,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto Piloto en Galicia (1ª convocatoria)",
@@ -3935,13 +3935,13 @@
   },
   {
     "id": 282,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto piloto en Andalucía (2ª convocatoria)",
     "desc": "Continuó ampliando los casos de uso con enfoque en redes privadas para aplicaciones industriales, conectividad vehicular, y realidad virtual. Se desarrollaron con la colaboración de empresas como Intel y la Universidad de Málaga, cofinanciado por fondos FEDER",
     "ambit": "Autonómico",
-    "location": "Andalucia",
+    "location": "Andalucía",
     "pin_color": "red",
     "budget": 1228014,
     "budget_text": null,
@@ -3949,7 +3949,7 @@
   },
   {
     "id": 283,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto Piloto 5G Castilla-La Mancha (2ª convocatoria)",
@@ -3963,7 +3963,7 @@
   },
   {
     "id": 284,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto Piloto 5G Cataluña (2ª convocatoria)",
@@ -3977,13 +3977,13 @@
   },
   {
     "id": 285,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto Piloto 5G Extremadura (2ª convocatoria)",
     "desc": "Este piloto abordó aplicaciones de 5G para agricultura avanzada y gestión de recursos naturales, con un enfoque particular en tecnologías sostenibles.",
     "ambit": "Autonómico",
-    "location": "Extremadura ",
+    "location": "Extremadura",
     "pin_color": "red",
     "budget": 3141628,
     "budget_text": null,
@@ -3991,7 +3991,7 @@
   },
   {
     "id": 286,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto Piloto 5G Galicia (2ª convocatoria)",
@@ -4005,7 +4005,7 @@
   },
   {
     "id": 287,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto Piloto 5G Madrid (2ª convocatoria)",
@@ -4019,7 +4019,7 @@
   },
   {
     "id": 288,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto Piloto 5G País Vasco (2ª convocatoria)",
@@ -4033,7 +4033,7 @@
   },
   {
     "id": 289,
-    "beneficiaries": "PYMES y emprendedores",
+    "beneficiaries": "Empresas",
     "initiative": "Tecnología 5G",
     "title": "Piloto 5G",
     "acting": "Proyecto Piloto 5G Valencia (2ª convocatoria)",
@@ -4134,7 +4134,7 @@
     "beneficiaries": "Ciudadanía",
     "initiative": "Servicios Sociales",
     "title": "Historia Social Única Electrónica en Andalucía",
-    "acting": "Aplicación de las TIC para la transformación digital de los servicios sociales",
+    "acting": "TIC y Transformación Digital en los Servicios Sociales",
     "desc": "Iniciativa para implementar soluciones tecnológicas que optimicen la gestión de enfermedades crónicas, mejorando la atención sanitaria y la calidad de vida de los pacientes.",
     "ambit": "Autonómico",
     "location": "Andalucía",
@@ -4159,7 +4159,7 @@
   },
   {
     "id": 298,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Educación",
     "title": "Educa en Digital",
     "acting": "",
@@ -4173,7 +4173,7 @@
   },
   {
     "id": 299,
-    "beneficiaries": "Iniciativas para la ciudadanía",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Educa en Digital",
     "acting": "",
@@ -4187,7 +4187,7 @@
   },
   {
     "id": 300,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Educación",
     "title": "Educa en Digital",
     "acting": "",
@@ -4215,7 +4215,7 @@
   },
   {
     "id": 302,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Educación",
     "title": "Educa en Digital",
     "acting": "",
@@ -4243,7 +4243,7 @@
   },
   {
     "id": 304,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4257,7 +4257,7 @@
   },
   {
     "id": 305,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4271,7 +4271,7 @@
   },
   {
     "id": 306,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4285,7 +4285,7 @@
   },
   {
     "id": 307,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4299,7 +4299,7 @@
   },
   {
     "id": 308,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4313,7 +4313,7 @@
   },
   {
     "id": 309,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4327,7 +4327,7 @@
   },
   {
     "id": 310,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4341,7 +4341,7 @@
   },
   {
     "id": 311,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4355,7 +4355,7 @@
   },
   {
     "id": 312,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4369,7 +4369,7 @@
   },
   {
     "id": 313,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4383,7 +4383,7 @@
   },
   {
     "id": 314,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4397,7 +4397,7 @@
   },
   {
     "id": 315,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4411,7 +4411,7 @@
   },
   {
     "id": 316,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4425,7 +4425,7 @@
   },
   {
     "id": 317,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4439,7 +4439,7 @@
   },
   {
     "id": 318,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4453,7 +4453,7 @@
   },
   {
     "id": 319,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4467,7 +4467,7 @@
   },
   {
     "id": 320,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4481,7 +4481,7 @@
   },
   {
     "id": 321,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4495,7 +4495,7 @@
   },
   {
     "id": 322,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4509,7 +4509,7 @@
   },
   {
     "id": 323,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4523,7 +4523,7 @@
   },
   {
     "id": 324,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4537,7 +4537,7 @@
   },
   {
     "id": 325,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4551,7 +4551,7 @@
   },
   {
     "id": 326,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4565,7 +4565,7 @@
   },
   {
     "id": 327,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4579,7 +4579,7 @@
   },
   {
     "id": 328,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4593,7 +4593,7 @@
   },
   {
     "id": 329,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4607,7 +4607,7 @@
   },
   {
     "id": 330,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Territorios Inteligentes",
     "acting": "Destinos Turísticos Inteligentes y Objetos Internos de Ciudad",
@@ -4621,7 +4621,7 @@
   },
   {
     "id": 331,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Islas Inteligentes",
     "acting": "",
@@ -4635,7 +4635,7 @@
   },
   {
     "id": 332,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Islas Inteligentes",
     "acting": "",
@@ -4649,7 +4649,7 @@
   },
   {
     "id": 333,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4663,7 +4663,7 @@
   },
   {
     "id": 334,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4677,7 +4677,7 @@
   },
   {
     "id": 335,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4691,7 +4691,7 @@
   },
   {
     "id": 336,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4705,7 +4705,7 @@
   },
   {
     "id": 337,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4719,7 +4719,7 @@
   },
   {
     "id": 338,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4733,7 +4733,7 @@
   },
   {
     "id": 339,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4747,7 +4747,7 @@
   },
   {
     "id": 340,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4761,7 +4761,7 @@
   },
   {
     "id": 341,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4775,7 +4775,7 @@
   },
   {
     "id": 342,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4789,7 +4789,7 @@
   },
   {
     "id": 343,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4803,7 +4803,7 @@
   },
   {
     "id": 344,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4817,7 +4817,7 @@
   },
   {
     "id": 345,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4831,7 +4831,7 @@
   },
   {
     "id": 346,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4845,7 +4845,7 @@
   },
   {
     "id": 347,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4859,7 +4859,7 @@
   },
   {
     "id": 348,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4873,7 +4873,7 @@
   },
   {
     "id": 349,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4887,7 +4887,7 @@
   },
   {
     "id": 350,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4901,7 +4901,7 @@
   },
   {
     "id": 351,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4915,7 +4915,7 @@
   },
   {
     "id": 352,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4929,7 +4929,7 @@
   },
   {
     "id": 353,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4943,7 +4943,7 @@
   },
   {
     "id": 354,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4957,7 +4957,7 @@
   },
   {
     "id": 355,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4971,7 +4971,7 @@
   },
   {
     "id": 356,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4985,7 +4985,7 @@
   },
   {
     "id": 357,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -4999,7 +4999,7 @@
   },
   {
     "id": 358,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -5013,7 +5013,7 @@
   },
   {
     "id": 359,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -5027,7 +5027,7 @@
   },
   {
     "id": 360,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Plan Nacional de Ciudades Inteligentes",
     "acting": "",
@@ -5041,7 +5041,7 @@
   },
   {
     "id": 361,
-    "beneficiaries": "Administraciones y servicios públicos",
+    "beneficiaries": "Administración",
     "initiative": "Ciudades y Territorios Inteligentes",
     "title": "Edificios Inteligentes",
     "acting": "",
@@ -5951,7 +5951,7 @@
   },
   {
     "id": 426,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -5965,7 +5965,7 @@
   },
   {
     "id": 427,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -5979,7 +5979,7 @@
   },
   {
     "id": 428,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -5993,7 +5993,7 @@
   },
   {
     "id": 429,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6007,7 +6007,7 @@
   },
   {
     "id": 430,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6021,7 +6021,7 @@
   },
   {
     "id": 431,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6035,7 +6035,7 @@
   },
   {
     "id": 432,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6049,7 +6049,7 @@
   },
   {
     "id": 433,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6063,7 +6063,7 @@
   },
   {
     "id": 434,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6077,7 +6077,7 @@
   },
   {
     "id": 435,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6091,7 +6091,7 @@
   },
   {
     "id": 436,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6105,7 +6105,7 @@
   },
   {
     "id": 437,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6119,7 +6119,7 @@
   },
   {
     "id": 438,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6133,7 +6133,7 @@
   },
   {
     "id": 439,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6147,7 +6147,7 @@
   },
   {
     "id": 440,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6161,7 +6161,7 @@
   },
   {
     "id": 441,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6175,7 +6175,7 @@
   },
   {
     "id": 442,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "Educación",
     "title": "Escuelas Conectadas",
     "acting": "",
@@ -6191,7 +6191,7 @@
     "id": 443,
     "beneficiaries": "Empresas",
     "initiative": "Emprendimiento",
-    "title": "Incubadora de Realidades Inmersivas (IRIA) de Almendralejo (VR/AR)",
+    "title": "Incubadora de Realidades Inmersivas (IRIA) de Almendralejo",
     "acting": "",
     "desc": "Espacio de incubación para proyectos en realidad virtual y aumentada, promoviendo el emprendimiento tecnológico en esta región.",
     "ambit": "Autonómico",
@@ -6203,7 +6203,7 @@
   },
   {
     "id": 444,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "RedIRIS",
     "title": "UNI-DIGITAL RedIRIS Infraestructuras Digitales",
     "acting": "",
@@ -6217,7 +6217,7 @@
   },
   {
     "id": 445,
-    "beneficiaries": "Alumnos y centros docentes",
+    "beneficiaries": "Ciudadanía",
     "initiative": "RedIRIS",
     "title": "UNI-DIGITAL RedIRIS Servicios TIC comunes",
     "acting": "",

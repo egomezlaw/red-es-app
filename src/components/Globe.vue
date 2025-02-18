@@ -1,16 +1,8 @@
 <template>
     <div>
-        <div ref="globeContainer"></div>
-        <div @click="toggleAnimation()" v-if="false ">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <!-- Ícono de Play -->
-                <path id="play" d="M8 5v14l11-7z" fill="currentColor" v-if="!animating" @click="pauseAnimation()"/>
-                <!-- Ícono de Pausa -->
-                <path id="pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor" v-if="animating" @click="resumeAnimation()"/>
-            </svg>
-        </div>
+        <div class="text-center" ref="globeContainer"></div>
         <div class="flex items-center justify-center">
-            <h1 class="text-center text-2xl text-white">{{ selectedLocation }}</h1>
+            <h1 class="text-center text-2xl text-white w-[960px]">{{ selectedLocation }}</h1>
         </div>
     </div>
 </template>

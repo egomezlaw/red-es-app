@@ -36,12 +36,9 @@ export default{
             selectedProject:'',
             selectedActing:'',
             beneficiaries: [
-                "PYMES y emprendedores", 
                 "Ciudadanía",
-                "Administraciones y servicios públicos",
-                "Iniciativas para la ciudadanía",
-                "Empresas",
-                "Alumnos y centros docentes"
+                "Administración",
+                "Empresas"
             ],
             initiatives : [
                 "Internacionalización",
@@ -59,24 +56,7 @@ export default{
                 "RedIRIS",
                 "Dominios.es",
                 "Red FabLabs"
-            ],
-            initiatives : [
-                "Internacionalización",
-                "Sociedad Digital",
-                "Transformación Digital PYMES",
-                "Tecnología 5G",
-                "Talento Digital",
-                "Sanidad",
-                "Servicios Sociales",
-                "Educación",
-                "Ciudades y Territorios Inteligentes",
-                "IA y Tecnología Habilitadoras Digitales",
-                "ONTSI",
-                "Emprendimiento",
-                "RedIRIS",
-                "Dominios.es",
-                "Red FabLabs"
-            ],        
+            ],                  
             projects : [
                 "Web Summit",
                 "South Summit",
@@ -126,7 +106,6 @@ export default{
                 "Pabellón de España en eMerge Américas",
                 "Pabellón de España en 4YFN",
                 "Catálogo Digital",
-                "Dinamización y Sensibilización",
                 "Dinamización y Sensibilización.",
                 "Innovación basada en datos",
                 "Soporte, asesoramiento y desarrollo tecnológico ",
