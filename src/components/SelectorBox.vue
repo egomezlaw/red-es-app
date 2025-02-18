@@ -1,23 +1,33 @@
 <template>
-  <div class="flex flex-row items-center gap-2">
-    
-    <div class="flex flex-row items-center grow">
+  <div class="relative flex flex-row items-center gap-2 border-4 mb-3 border-white p-2 w-full shadow-md inset-shadow rounded-lg mr-2 glow opacity-50"
+    :class="{'opacity-100': modelValue !== ''}">
+    <div class="absolute top-1 right-1 z-50" @click="moveIndex(-1)">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="miter" stroke-linejoin="miter" stroke-width="4" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </div>
+  <div class="absolute bottom-1 right-1 z-50" @click="moveIndex(1)">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="miter" stroke-linejoin="miter" stroke-width="4" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </div>
+    <div class="flex flex-row items-center">
       <!-- Label -->
       <span 
-        class="text-lg font-medium text-right mr-5 opacity-50 select-none "
+        class="text-sm font-medium text-right mr-5 opacity-50 select-none "
         :class="{'opacity-100': modelValue !== ''}"
         @click="select()"
         ><slot></slot>
       </span>
       <!-- Icono de flecha -->
-      <svg class="w-5 h-5 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      <svg class="w-8 h-8 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="miter" stroke-linejoin="miter" stroke-width="4" d="M9 5l7 7-7 7" />
       </svg>
     </div>
     
     <div
       v-if="props.items.length > 2  " 
-      class="relative w-160 h-40 overflow-hidden grow"
+      class="relative w-full h-40 overflow-hidden grow"
       :style="{ width: maxWidth + 'px' }"
       @touchstart="onStart" 
       @touchmove="onMove" 
@@ -29,12 +39,12 @@
     >
       <ul 
         ref="listRef"
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-10 flex flex-col items-center gap-2 "
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-10 flex flex-col items-center gap-2 w-xl"
         :style="{ transform: `translateY(${currentTranslateY}px)`, width: maxWidth + 'px' }"
         v-if="props.items.length > 1"
       >
         <li v-for="(item, index) in visibleItems" :key="index"         
-          class="p-2 text-lg opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none" 
+          class="p-2 text-xl opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none" 
           :class="{ 'opacity-100 font-bold': (index === Math.floor(visibleCount / 2) && modelValue !== '') }"
           @click="selectItem(index)">
           {{ item }}
@@ -122,6 +132,7 @@ onMounted(() => {
 
 function oneItem(){
   model.value = props.items[0];
+  emit("change");
   return props.items[0];
 } 
 
@@ -152,25 +163,55 @@ function onEnd(){
       selectedIndex.value = (selectedIndex.value + 1) % props.items.length;
     }
     currentTranslateY.value = translateY.value;
-    model.value = props.items[selectedIndex.value];
     deltaY = 0;
-    emit("change");
+
+    if (props.items[selectedIndex.value]){
+      model.value = props.items[selectedIndex.value];
+      emit("change");
+    }
 };
 
 const selectItem = (index) => {
+  //console.log("selectItem", index, props.items.length);
   if (props.items.length > 2)
     {
       selectedIndex.value = index + selectedIndex.value - Math.floor(visibleCount / 2);
       currentTranslateY.value = translateY.value;
     }
     else{
-      console.log(index);
       selectedIndex.value = index;
     }
-    model.value = props.items[selectedIndex.value];
-    emit("change");
+    if (selectedIndex.value < 0){
+      selectedIndex.value = props.items.length - 1; 
+    }
+
+   if (model.value != props.items[selectedIndex.value]){
+      model.value = props.items[selectedIndex.value];
+      emit("change");
+    }
 };
+
+const moveIndex = (index) => {
+  if (selectedIndex.value + index  < 0){
+    selectedIndex.value = props.items.length - 1;
+  }else if(selectedIndex.value + index >= props.items.length){
+    selectedIndex.value = 0;
+  }else{
+    selectedIndex.value = (selectedIndex.value + index );
+  }
+  
+  if (model.value != props.items[selectedIndex.value]){
+      model.value = props.items[selectedIndex.value];
+      emit("change");
+  }
+};
+
 </script>
 
 <style scoped>
+.glow {
+  -webkit-box-shadow:0px 0px 5px 3px rgba(255,255,255,0.9);
+-moz-box-shadow: 0px 0px 5px 3px rgba(255,255,255,0.9);
+box-shadow: 0px 0px 5px 3px rgba(255,255,255,0.9);
+}
 </style>

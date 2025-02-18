@@ -39,7 +39,7 @@ export default {
   methods: {
 
     handleUserEvent(){
-      console.log("activity detected");
+      //console.log("activity detected");
       if(!this.dataWnd){
         return;
       }
