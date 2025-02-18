@@ -55,6 +55,7 @@ export default{
                             let geoData = this.locations[m];
                             items.push(geoData);
                             items[items.length - 1].count = provinces[p].municipios[m];
+                            items[items.length - 1].location = m;
                             count += parseInt(provinces[p].municipios[m]);
                         }
                     }
@@ -81,6 +82,8 @@ export default{
                         let geoData = this.locations[m];
                         items.push(geoData);
                         items[items.length - 1].count = province.municipios[m];
+                        items[items.length - 1].location = m;
+
                     }
                     count += parseInt(province.municipios[m]);
                 }
@@ -103,7 +106,10 @@ export default{
                 }
                 items[0].count = this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality];
                 items[0].desc = `En el municipio de ${this.selectedMunicipality}, ubicado en la provincia de ${this.selectedProvince} dentro de ${this.selectedCCAA}, contamos con ${this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality]} sedes.`
+                items[0].location = this.selectedMunicipality;
+
                 this.$refs.globeRef.setMarkers(items);
+                this.$refs.globeRef.selectedLocation = this.selectedMunicipality;
 
                 this.$emit('onMessage', JSON.parse(JSON.stringify(items[0])));
             }

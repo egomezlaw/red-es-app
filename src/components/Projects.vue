@@ -21,6 +21,8 @@
             <Globe class="w-full h-full" :width="960" :height="720" :zoom="250"  ref="globeRef" @marker-select="onMarkerSelected" :type="'dynamic'"></Globe>
         </div>
     </div>
+    <div>
+    </div>
 </template>
 <script>
 
@@ -165,7 +167,6 @@ export default{
 
     methods:{
         onMarkerSelected(markerData){
-            //console.log(markerData);
             this.$emit('onMessage', JSON.parse(JSON.stringify(markerData)));
         },
 
@@ -179,6 +180,7 @@ export default{
                     if (this.locations[loc]){
                         let geoData = this.locations[loc];
                         items.push(geoData);
+                        items[items.length - 1].location = loc;
                         items[items.length - 1].project = this.filteredProjects[p];
                     }
                 }
@@ -226,7 +228,6 @@ export default{
                 this.geMarkersData({title:this.selectedProject});
                 
             }
-
 
             this.selectedBeneficiaries = '';
             this.selectedInitiative = '';

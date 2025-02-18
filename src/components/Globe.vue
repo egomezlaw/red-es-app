@@ -9,6 +9,9 @@
                 <path id="pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor" v-if="animating" @click="resumeAnimation()"/>
             </svg>
         </div>
+        <div class="flex items-center justify-center">
+            <h1 class="text-center text-2xl text-white">{{ selectedLocation }}</h1>
+        </div>
     </div>
 </template>
 <script>
@@ -25,6 +28,7 @@ export default{
         return{
             globeInstance:null,
             selectedMarker:null,
+            selectedLocation:'',
         }
     },    
     
@@ -82,6 +86,7 @@ export default{
                 }
 
                 this.globeInstance.htmlElementsData([]);
+                this.selectedLocation = '';
 
                 const markerSvg = `<svg viewBox="-4 0 36 36" class="pointer-events-none">
                 <path fill="currentColor" d="M14,0 C21.732,0 28,5.641 28,12.6 C28,23.963 14,36 14,36 C14,36 0,24.064 0,12.6 C0,5.641 6.268,0 14,0 Z"></path>
@@ -108,6 +113,7 @@ export default{
                             }
                             event.target.style.width = `70px`;
                             event.target.style.color = 'orange';
+                            this.selectedLocation = d.location;
                             this.selectedMarker =event.target;
                             this.$emit("markerSelect", d);
                         };
