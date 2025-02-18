@@ -14,7 +14,7 @@
     <div class="flex flex-row items-center">
       <!-- Label -->
       <span 
-        class="text-sm font-medium text-right mr-5 opacity-50 select-none capitalize"
+        class="text-sm font-medium text-right mr-5 opacity-50 select-none capitalize click click-option"
         :class="{'opacity-100': modelValue !== ''}"
         @click="select()"
         ><slot></slot>
@@ -44,7 +44,7 @@
         v-if="props.items.length > 1"
       >
         <li v-for="(item, index) in visibleItems" :key="index"         
-          class="p-2 text-xl opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none capitalize" 
+          class="p-2 text-xl opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none capitalize click-option" 
           :class="{ 'opacity-100 font-bold': (index === Math.floor(visibleCount / 2) && modelValue !== '') }"
           @click="selectItem(index)">
           {{ item }}
@@ -55,12 +55,12 @@
     <div v-else class="w-full">
       <div
         v-if="props.items.length == 1"
-        class="p-2 text-lg opacity-100 font-bold transition-opacity duration-500 ease-out  whitespace-nowrap select-none items-center w-full">
+        class="p-2 text-lg opacity-100 font-bold transition-opacity duration-500 ease-out  whitespace-nowrap select-none items-center w-full click-option">
         {{oneItem()}}
       </div>
       <div v-else>
         <div v-for="(item, index) in props.items" :key="index"
-        class="p-2 text-lg opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none capitalize"
+        class="p-2 text-lg opacity-50 transition-opacity duration-500 ease-out  whitespace-nowrap select-none capitalize click-option"
         :class="{ 'opacity-100 font-bold': (item == modelValue) }"
         @click="selectItem(index)">
         {{item}}

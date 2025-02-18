@@ -90,6 +90,7 @@ export default{
                     .htmlElementsData(markers)
                     .htmlElement(d => {
                         const el = document.createElement('div');
+                        el.classList.add('click-option');
                         el.innerHTML = markerSvg;
                         el.data = d;
                         el.style.color = d.color;
