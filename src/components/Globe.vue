@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="text-center" ref="globeContainer"></div>
-        <div class="flex items-center justify-center">
-            <h1 class="text-center text-2xl text-white w-[960px]">{{ selectedLocation }}</h1>
+        <div class="flex items-center justify-center w-[960px]">
+            <h1 class="text-center text-2xl text-white ">{{ selectedLocation }}</h1>
         </div>
     </div>
 </template>
