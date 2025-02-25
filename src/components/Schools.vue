@@ -24,6 +24,8 @@
     </div>
 </template>
 <script>
+import DataProject from '../data/DataProject';
+
 export default{
     props: ['projects_data'],
     
@@ -82,7 +84,7 @@ export default{
                 this.selectedProvince = '';
                 this.selectedMunicipality = '';
 
-                const caa = this.projects_data.getByIdentifier(this.selectedCCAA)[0];
+                const caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_CCAA, this.selectedCCAA)[0];
 
                 this.$refs.globeRef.setMarkers(caa.items);
                 this.$emit('onMessage', JSON.parse(caa.asJSON()));
@@ -93,7 +95,7 @@ export default{
             if (this.selectedProvince){
                 this.selectedMunicipality = '';
                 
-                const province = this.projects_data.getByIdentifier(this.selectedProvince)[0];
+                const province = this.projects_data.getByIdentifierAndType(DataProject.TYPE_PROVINCE, this.selectedProvince)[0];
 
                 this.$refs.globeRef.setMarkers(province.items);
                 this.$emit('onMessage', JSON.parse(province.asJSON()));
@@ -102,8 +104,9 @@ export default{
         
         onMunicipalityChange(){
             if (this.selectedMunicipality){
-                const municipality = this.projects_data.getByIdentifier(this.selectedMunicipality)[0];
+                const municipality = this.projects_data.getByIdentifierAndType(DataProject.TYPE_MUNICIPALITY, this.selectedMunicipality)[0];
 
+                this.$refs.globeRef.setMarkers(municipality.items);
                 this.$emit('onMessage', JSON.parse(municipality.asJSON()));
             }
         }

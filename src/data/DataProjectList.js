@@ -29,6 +29,7 @@ export default class DataProjectList{
         let ccaa_count = 0;
         let p_count = 0;
         let geoData = null;
+        let location = "";
 
         for(const ccaa in schools){
             ccaa_count = 0;
@@ -36,42 +37,52 @@ export default class DataProjectList{
             
             for(const p in provinces){
                 p_count = 0;
+                p_items = [];
+
                 for (const m in provinces[p].municipios){
                     geoData = null;
 
                     if (this.locations[m]){
                         geoData = this.locations[m];
+                        location = m;
                     }
                     else if (this.locations[p]){
                         geoData = this.locations[p];
+                        location = p;
                     }
                     else if (this.locations[ccaa]){
                         geoData = this.locations[ccaa];
+                        location = ccaa;
                     }
+
                     items.push(geoData);
                     items[items.length - 1].count = provinces[p].municipios[m];
-                    items[items.length - 1].location = m;
+                    items[items.length - 1].location = location;
 
                     p_items.push(geoData);
                     p_items[p_items.length - 1].count = provinces[p].municipios[m];
-                    p_items[p_items.length - 1].location = m;
+                    p_items[p_items.length - 1].location = location;
 
                     p_count += parseInt(provinces[p].municipios[m]);
                     ccaa_count += parseInt(provinces[p].municipios[m]);
 
                     let m_items = [];
                     m_items.push(geoData);
-
                     m_items[0].count = parseInt(provinces[p].municipios[m]);
+
                     desc = `En el municipio de ${m.toLocaleLowerCase()}, ubicado en la provincia de ${p} dentro de ${ccaa}, contamos con ${parseInt(provinces[p].municipios[m])} sedes.`
                     this.addProject({items:m_items, identifier:m, desc, type:DataProject.TYPE_MUNICIPALITY });
                 }
+
                 desc = `En la provincia de ${p} dentro de ${ccaa}, contamos con ${p_count} sedes.`
+
                 this.addProject({items:p_items, desc, identifier:p, type:DataProject.TYPE_PROVINCE });
             }
+
             budget = schools[ccaa].budget ? schools[ccaa].budget : null;
             desc = `Dentro de ${ccaa}, contamos con ${ccaa_count} sedes.`
             this.addProject({items:items, budget, type:"school", desc, identifier:ccaa, type:DataProject.TYPE_CCAA, ambit:"Autonómico" });
+
             ccaa_count = 0;
         }
         this.sortProjects();
@@ -96,8 +107,8 @@ export default class DataProjectList{
         this.list.push(new DataProject(project));
     }
 
-    getByIdentifier(identifier){
-        return this.list.filter(project => project.identifier === identifier);
+    getByIdentifierAndType(type, identifier){
+        return this.list.filter(project => project.identifier === identifier && project.type === type);
     }
 
     getItemsByAmbit(ambit){

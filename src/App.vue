@@ -30,7 +30,7 @@ export default {
   data(){
     return{
       isIdle:true,
-      inProjects:true,
+      inProjects:false,
       childWnd:null,
       inactivityTimer:0,
       schoolsData: null,
@@ -41,7 +41,7 @@ export default {
   },
 
   mounted(){
-    console.log("App mounted");
+    // console.log("App mounted");
     this.allProjects = new DataProjectList({projects:projects_json, locations:locations_json});
     this.allProjects.fromSchools(school_json);
     
@@ -66,7 +66,7 @@ export default {
 
     handleInactivity(){
       this.isIdle = true;
-      this.inProjects = true;
+      this.inProjects = false;
       this.sendMessageToWindow("sleep");
 
     },
