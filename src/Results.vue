@@ -55,54 +55,43 @@ export default {
       const items = [];
       if (event.data.type === 'MESSAGE_FROM_PARENT') {
         this.message = event.data.data;
-        console.log(this.message);
         if (this.message == "sleep"){
           this.isIdle = true;
           return;
         }
-
+        
         if (this.message == "awake"){
           this.isIdle = false;
           return;
         }
-
+        
         const data = event.data.data;
-
-        //Escuelas conectadas
-        if (data.type !== 'project') {
-            //console.log(data);
-
-          const budget = data.budget ? data.budget : 0;
-          const budget_text = data.budget ? "" : "TOTAL PROYECTO";
-          this.project = {id:0, title:"Escuelas Conectadas", desc:data.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget, budget_text};
-          this.$refs.summaryRef.setMarkers(data.items);
-          return;
-        }
+        console.log(data);
 
         
-        if (this.message.count){
-          this.initProjectData();
+        // if (this.message.count){
+        //   this.initProjectData();
 
-          this.project = {id:0, title:"Escuelas Conectadas", desc:this.message.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget:254052500, budget_text:"TOTAL PROYECTO"};
+        //   this.project = {id:0, title:"Escuelas Conectadas", desc:this.message.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget:254052500, budget_text:"TOTAL PROYECTO"};
 
-          if (this.project['location']){
-            const points = this.project['location'].split(",");
+        //   if (this.project['location']){
+        //     const points = this.project['location'].split(",");
 
-          for(let i = 0; i < points.length; i++){
-                const loc = points[i];
-                if (this.locations[loc]){
-                    let geoData = this.locations[loc];
-                    items.push(geoData);
-                }
-            }
-            this.$refs.summaryRef.setMarkers(items);
-          }
-          return;
-        }
+        //   for(let i = 0; i < points.length; i++){
+        //         const loc = points[i];
+        //         if (this.locations[loc]){
+        //             let geoData = this.locations[loc];
+        //             items.push(geoData);
+        //         }
+        //     }
+        //     this.$refs.summaryRef.setMarkers(items);
+        //   }
+        //   return;
+        // }
 
         //Project
         //console.log(this.message);  
-        if (this.message.project)
+        if (data.project)
         {
           this.initProjectData();
           
@@ -120,6 +109,15 @@ export default {
             }
             this.$refs.summaryRef.setMarkers(items);
             return;
+        }
+        else {
+            //console.log(data);
+
+          const budget = data.budget ? data.budget : 0;
+          const budget_text = data.budget ? "" : "TOTAL PROYECTO";
+          this.project = {id:0, title:"Escuelas Conectadas", desc:data.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget, budget_text};
+          this.$refs.summaryRef.setMarkers(data.items);
+          return;
         }
 
         this.initProjectData();

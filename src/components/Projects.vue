@@ -156,7 +156,6 @@ export default{
         },
 
         geMarkersData(project){
-
             const items = [];
             for(const p in this.filteredProjects){
                 const points = this.filteredProjects[p]['location'].split(",");
@@ -169,6 +168,19 @@ export default{
                         items[items.length - 1].project = this.filteredProjects[p].clone();
                     }
                 }
+            }
+
+            console.log(project);
+            if (!project.budget)
+            {
+                project.budget = 0;
+                let total_budget = 0;
+                project.budget = items.reduce(
+                    (accumulator, item) => accumulator + item.project.budget, 
+                    total_budget,
+                );
+
+                project.budget_text = " ";
             }
 
             this.$refs.globeRef.setMarkers(items);

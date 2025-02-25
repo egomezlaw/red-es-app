@@ -23,65 +23,72 @@ export default class DataProjectList{
         this.raw_schools_data = schools;
 
         let budget = 0;
+        let budget_text = "";
         let desc = ""
         let items = [];
         let p_items = [];
         let ccaa_count = 0;
         let p_count = 0;
         let geoData = null;
-        let location = "";
 
         for(const ccaa in schools){
+            items = [];
             ccaa_count = 0;
             const provinces = schools[ccaa].provincias;
+
+            budget = schools[ccaa].budget ? schools[ccaa].budget : null;
+            budget_text = "TOTAL DEL PROYECTO";
             
             for(const p in provinces){
                 p_count = 0;
                 p_items = [];
+
 
                 for (const m in provinces[p].municipios){
                     geoData = null;
 
                     if (this.locations[m]){
                         geoData = this.locations[m];
-                        location = m;
                     }
                     else if (this.locations[p]){
                         geoData = this.locations[p];
-                        location = p;
                     }
                     else if (this.locations[ccaa]){
                         geoData = this.locations[ccaa];
-                        location = ccaa;
                     }
 
                     items.push(geoData);
                     items[items.length - 1].count = provinces[p].municipios[m];
-                    items[items.length - 1].location = location;
+                    items[items.length - 1].location = m;
 
                     p_items.push(geoData);
-                    p_items[p_items.length - 1].count = provinces[p].municipios[m];
-                    p_items[p_items.length - 1].location = location;
+                    p_items[p_items.length - 1].location = m;
 
                     p_count += parseInt(provinces[p].municipios[m]);
                     ccaa_count += parseInt(provinces[p].municipios[m]);
 
                     let m_items = [];
                     m_items.push(geoData);
-                    m_items[0].count = parseInt(provinces[p].municipios[m]);
+                    m_items[0].location = m;
 
                     desc = `En el municipio de ${m.toLocaleLowerCase()}, ubicado en la provincia de ${p} dentro de ${ccaa}, contamos con ${parseInt(provinces[p].municipios[m])} sedes.`
-                    this.addProject({items:m_items, identifier:m, desc, type:DataProject.TYPE_MUNICIPALITY });
+                    this.addProject({items:m_items, budget, budget_text, identifier:m, desc, type:DataProject.TYPE_MUNICIPALITY });
                 }
 
-                desc = `En la provincia de ${p} dentro de ${ccaa}, contamos con ${p_count} sedes.`
+                if (this.locations[p]){
+                    geoData = this.locations[p];
+                }
+                
+                p_items.push(geoData);
+                //p_items[p_items.length - 1].count = p_count;
+                p_items[p_items.length - 1].location = p;
 
-                this.addProject({items:p_items, desc, identifier:p, type:DataProject.TYPE_PROVINCE });
+                desc = `En la provincia de ${p} dentro de ${ccaa}, contamos con ${p_count} sedes.`
+                this.addProject({items:p_items, budget, budget_text, desc, identifier:p, type:DataProject.TYPE_PROVINCE });
             }
 
-            budget = schools[ccaa].budget ? schools[ccaa].budget : null;
             desc = `Dentro de ${ccaa}, contamos con ${ccaa_count} sedes.`
-            this.addProject({items:items, budget, type:"school", desc, identifier:ccaa, type:DataProject.TYPE_CCAA, ambit:"Autonómico" });
+            this.addProject({items:items, budget, budget_text, type:"school", desc, identifier:ccaa, type:DataProject.TYPE_CCAA, ambit:"Autonómico" });
 
             ccaa_count = 0;
         }

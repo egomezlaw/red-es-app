@@ -86,6 +86,7 @@ export default{
 
                 const caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_CCAA, this.selectedCCAA)[0];
 
+                console.log(caa);
                 this.$refs.globeRef.setMarkers(caa.items);
                 this.$emit('onMessage', JSON.parse(caa.asJSON()));
             }
@@ -97,6 +98,7 @@ export default{
                 
                 const province = this.projects_data.getByIdentifierAndType(DataProject.TYPE_PROVINCE, this.selectedProvince)[0];
 
+                //console.log(province);
                 this.$refs.globeRef.setMarkers(province.items);
                 this.$emit('onMessage', JSON.parse(province.asJSON()));
             }
@@ -106,6 +108,7 @@ export default{
             if (this.selectedMunicipality){
                 const municipality = this.projects_data.getByIdentifierAndType(DataProject.TYPE_MUNICIPALITY, this.selectedMunicipality)[0];
 
+                //console.log(municipality);
                 this.$refs.globeRef.setMarkers(municipality.items);
                 this.$emit('onMessage', JSON.parse(municipality.asJSON()));
             }
