@@ -45,7 +45,7 @@ export default{
         }
     },
     mounted(){
-        this.$refs.globeRef.setMarkers(this.projects_data.getItems());
+        this.onAmbitChange();
     },
     
     methods:{
@@ -60,6 +60,7 @@ export default{
         },    
         
         onAmbitChange(){
+
             if ( !this.LocalAmbit)
             {
                 this.selectedMunicipality = "";
@@ -67,15 +68,34 @@ export default{
                 this.selectedCCAA = "";
             }
 
+            let title = "";
+            let total_budget = 0;
+            let filteredItems = [];
+            let budget = 0;
+
             if (this.selectedAmbit === "Todos")
             {
-                this.$refs.globeRef.setMarkers(this.projects_data.getItems());
-
+                title = "TODOS LOS PROYECTOS"
+                filteredItems = this.projects_data.getItems(); 
+                
             }else{
-                this.$refs.globeRef.setMarkers(this.projects_data.getItemsByAmbit(this.selectedAmbit));
-                this.$emit('onMessage', JSON.parse(JSON.stringify({title:""})));
+                title = `PROYECTOS DE ÁMBITO ${this.selectedAmbit.toUpperCase()}`;
+                filteredItems = this.projects_data.getItemsByAmbit(this.selectedAmbit);
             }
 
+
+            budget = filteredItems.reduce(
+                    (accumulator, item) => { 
+                        if (item.project){
+                            return accumulator + item.project.budget;
+                        }
+                        return accumulator;
+                    }, 
+                    total_budget,
+                );
+
+            this.$refs.globeRef.setMarkers(filteredItems);
+            this.$emit('onMessage', JSON.parse(JSON.stringify({title, budget})));
         },
 
         onCAAChange(){
@@ -86,7 +106,6 @@ export default{
 
                 const caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_CCAA, this.selectedCCAA)[0];
 
-                console.log(caa);
                 this.$refs.globeRef.setMarkers(caa.items);
                 this.$emit('onMessage', JSON.parse(caa.asJSON()));
             }

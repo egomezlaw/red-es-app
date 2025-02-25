@@ -13,7 +13,7 @@ export default class DataProject{
         this.acting = acting ??= "";
         this.ambit = ambit;
         this.location = location;
-        this.budget = budget  ??= 0;
+        this.budget = budget ??= 0;
         this.budget_text = budget_text ??= "";;
         this.picture = picture;
         this.items = items ??= [];

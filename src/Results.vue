@@ -68,29 +68,6 @@ export default {
         const data = event.data.data;
         console.log(data);
 
-        
-        // if (this.message.count){
-        //   this.initProjectData();
-
-        //   this.project = {id:0, title:"Escuelas Conectadas", desc:this.message.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget:254052500, budget_text:"TOTAL PROYECTO"};
-
-        //   if (this.project['location']){
-        //     const points = this.project['location'].split(",");
-
-        //   for(let i = 0; i < points.length; i++){
-        //         const loc = points[i];
-        //         if (this.locations[loc]){
-        //             let geoData = this.locations[loc];
-        //             items.push(geoData);
-        //         }
-        //     }
-        //     this.$refs.summaryRef.setMarkers(items);
-        //   }
-        //   return;
-        // }
-
-        //Project
-        //console.log(this.message);  
         if (data.project)
         {
           this.initProjectData();
@@ -115,7 +92,7 @@ export default {
 
           const budget = data.budget ? data.budget : 0;
           const budget_text = data.budget ? "" : "TOTAL PROYECTO";
-          this.project = {id:0, title:"Escuelas Conectadas", desc:data.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"Alumnos y centros docentes", budget, budget_text};
+          this.project = {id:0, title:data.title, desc:data.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"TODOS", budget, budget_text};
           this.$refs.summaryRef.setMarkers(data.items);
           return;
         }
