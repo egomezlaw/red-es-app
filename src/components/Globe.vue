@@ -107,7 +107,7 @@ export default{
                             event.target.style.width = `70px`;
                             event.target.style.color = 'orange';
                             this.selectedLocation = d.location;
-                            this.selectedMarker =event.target;
+                            this.selectedMarker = event.target;
                             this.$emit("markerSelect", d);
                         };
                         return el;

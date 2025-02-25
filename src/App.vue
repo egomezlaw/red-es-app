@@ -13,8 +13,8 @@
     <template v-if="dataWnd">
       <NavButton v-if="!isIdle" @click="inProjects = !inProjects" class="click-option">{{navigationLabel}}</NavButton>
       <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital" image="/images/hand.png" :arrow="true"/>
-      <Schools v-if="!inProjects" :schools_data="schoolsData" :locations="locationsData" @on-message="sendMessageToWindow"></Schools>
-     <Projects v-if="inProjects" :projects_data="projectsData" :locations="locationsData" @on-message="sendMessageToWindow"></Projects>
+      <Schools v-if="!inProjects" :projects_data="allProjects" @on-message="sendMessageToWindow"></Schools>
+      <Projects v-if="inProjects" :projects_data="projectsData" :locations="locationsData" @on-message="sendMessageToWindow"></Projects>
     </template>
   </div>
 </template>
@@ -23,6 +23,8 @@
 import school_json from './data/schools.json'
 import projects_json from './data/projects.json'
 import locations_json from './data/locations.json'
+import DataProject from './data/DataProject';
+import DataProjectList from './data/DataProjectList';
 export default {
   name: 'App', 
   data(){
@@ -31,13 +33,24 @@ export default {
       inProjects:true,
       childWnd:null,
       inactivityTimer:0,
-      schoolsData: school_json,
-      projectsData: projects_json,
-      locationsData: locations_json
+      schoolsData: null,
+      projectsData: null,
+      locationsData: locations_json,
+      allProjects: DataProjectList,
     }
   },
-  methods: {
 
+  mounted(){
+    console.log("App mounted");
+    this.allProjects = new DataProjectList({projects:projects_json, locations:locations_json});
+    this.allProjects.fromSchools(school_json);
+    
+    this.projectsData = this.allProjects.filterByType(DataProject.TYPE_PROJECT);
+    //this.projectsData = projects_json;
+    this.schoolsData = this.allProjects;
+  },
+
+  methods: {
     handleUserEvent(){
       //console.log("activity detected");
       if(!this.dataWnd){
@@ -82,9 +95,9 @@ export default {
     },
     navigationLabel(){
       if (this.inProjects){
-        return "Escuelas Conectadas";
+        return "Búsqueda por Ámbito";
       }
-        return  "Proyectos Zona red.es";
+        return  "Búsqueda Avanzada";
     }
   }
 };

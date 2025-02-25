@@ -1,6 +1,6 @@
 <template>
   <div class="relative flex flex-row items-center gap-2 border-4 mb-3 border-white p-2 w-full shadow-md inset-shadow rounded-lg mr-2 glow opacity-50"
-    :class="{'opacity-100': modelValue !== ''}">
+    :class="{'opacity-100': modelValue !== '', 'pointer-events-none': disabled }">
     <div class="absolute top-1 right-1 z-50" @click="moveIndex(-1)">
     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="miter" stroke-linejoin="miter" stroke-width="4" d="M5 15l7-7 7 7"></path>
@@ -82,7 +82,11 @@ const props = defineProps({
     type: Array,
     required: true,
     default: () => [],
-  }
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 watch(() => props.items, () => {

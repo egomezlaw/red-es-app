@@ -55,7 +55,7 @@ export default {
       const items = [];
       if (event.data.type === 'MESSAGE_FROM_PARENT') {
         this.message = event.data.data;
-        //console.log(this.message);
+        console.log(this.message);
         if (this.message == "sleep"){
           this.isIdle = true;
           return;
@@ -69,7 +69,7 @@ export default {
         const data = event.data.data;
 
         //Escuelas conectadas
-        if (data.type === 'school') {
+        if (data.type !== 'project') {
             //console.log(data);
 
           const budget = data.budget ? data.budget : 0;

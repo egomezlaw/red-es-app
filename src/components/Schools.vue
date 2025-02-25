@@ -3,14 +3,18 @@
         <div class="flex flex-col space-y-2 w-3xl ml-10 align-middle">
             
             <div class="flex items-center justify-center">
-                <SelectorBox :items="normalizedCCAA" v-model="selectedCCAA" @change="onCAAChange">Comunidad</SelectorBox>
+                <SelectorBox :items="ambits" v-model="selectedAmbit" @change="onAmbitChange">Ámbito</SelectorBox>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <SelectorBox :items="normalizedCCAA" v-model="selectedCCAA" :disabled="!LocalAmbit" @change="onCAAChange">Comunidad</SelectorBox>
             </div>
             
             <div class="flex items-center justify-center">
-                <SelectorBox :items="provinces" v-model="selectedProvince" @change="onProvinceChange">Provincia</SelectorBox>
+                <SelectorBox :items="provinces" v-model="selectedProvince" :disabled="!LocalAmbit" @change="onProvinceChange">Provincia</SelectorBox>
             </div>
             <div class="flex items-center justify-center">
-                <SelectorBox :items="municipalities" v-model="selectedMunicipality" @change="onMunicipalityChange">Municipio</SelectorBox>
+                <SelectorBox :items="municipalities" v-model="selectedMunicipality" :disabled="!LocalAmbit" @change="onMunicipalityChange">Municipio</SelectorBox>
             </div>
             
         </div>
@@ -20,52 +24,68 @@
     </div>
 </template>
 <script>
-
 export default{
-    props: ['schools_data', 'locations'],
+    props: ['projects_data'],
     
     data(){
         return{
+            selectedAmbit:'Todos',
             selectedCCAA:'',
             selectedProvince:'',
             selectedMunicipality:'',
-            selectedPoints:[]
+            selectedPoints:[],
+            ambits: [
+                "Todos",
+                "Autonómico",
+                "Internacional",
+                "Nacional",
+            ]
         }
+    },
+    mounted(){
+        this.$refs.globeRef.setMarkers(this.projects_data.getItems());
     },
     
     methods:{
         onMarkerSelected(markerData){
+            if (markerData.project){
+                if (markerData.project.items){
+                    markerData.project.items = [];
+                }
+            }
+
             this.$emit('onMessage', JSON.parse(JSON.stringify(markerData)));
         },    
         
+        onAmbitChange(){
+            if ( !this.LocalAmbit)
+            {
+                this.selectedMunicipality = "";
+                this.selectedProvince = "";
+                this.selectedCCAA = "";
+            }
+
+            if (this.selectedAmbit === "Todos")
+            {
+                this.$refs.globeRef.setMarkers(this.projects_data.getItems());
+
+            }else{
+                this.$refs.globeRef.setMarkers(this.projects_data.getItemsByAmbit(this.selectedAmbit));
+                this.$emit('onMessage', JSON.parse(JSON.stringify({title:""})));
+            }
+
+        },
+
         onCAAChange(){
             if (this.selectedCCAA){
                 
                 this.selectedProvince = '';
                 this.selectedMunicipality = '';
-                
-                const items = [];
-                let count = 0;
-                
-                const provinces = this.schools_data[this.selectedCCAA].provincias;
-                
-                for(const p in provinces){
-                    for (const m in provinces[p].municipios){
-                        if (this.locations[m]){
-                            let geoData = this.locations[m];
-                            items.push(geoData);
-                            items[items.length - 1].count = provinces[p].municipios[m];
-                            items[items.length - 1].location = m;
-                            count += parseInt(provinces[p].municipios[m]);
-                        }
-                    }
-                }
-                
-                const budget = this.schools_data[this.selectedCCAA].budget ? this.schools_data[this.selectedCCAA].budget : null;
-                const desc = `Dentro de ${this.selectedCCAA}, contamos con ${count} sedes.`
-                const data = {items:items, budget, type:"school", desc};
-                this.$refs.globeRef.setMarkers(items);
-                this.$emit('onMessage', JSON.parse(JSON.stringify(data)));
+
+                const caa = this.projects_data.getByIdentifier(this.selectedCCAA)[0];
+
+                this.$refs.globeRef.setMarkers(caa.items);
+                this.$emit('onMessage', JSON.parse(caa.asJSON()));
             }
         },
         
@@ -73,83 +93,53 @@ export default{
             if (this.selectedProvince){
                 this.selectedMunicipality = '';
                 
-                const items = [];
-                const province = this.schools_data[this.selectedCCAA].provincias[this.selectedProvince];
-                
-                let count = 0;                
-                let geoData = null;
-                for (const m in province.municipios){
-                    if (this.locations[m]){
-                        geoData = this.locations[m];
-                    }else if (this.locations[this.selectedProvince]){
-                        geoData = this.locations[this.selectedProvince];
-                    }else{
-                        geoData = this.locations[this.selectedCCAA];
-                    }
+                const province = this.projects_data.getByIdentifier(this.selectedProvince)[0];
 
-                    items.push(geoData);
-                    items[items.length - 1].count = province.municipios[m];
-                    items[items.length - 1].location = m;
-                    count += parseInt(province.municipios[m]);
-                }
-                
-                const desc = `En la provincia de ${this.selectedProvince} dentro de ${this.selectedCCAA}, contamos con ${count} sedes.`
-                const data = {items:items, type:"school", desc};
-                this.$refs.globeRef.setMarkers(items);
-                this.$emit('onMessage', JSON.parse(JSON.stringify(data)));
+                this.$refs.globeRef.setMarkers(province.items);
+                this.$emit('onMessage', JSON.parse(province.asJSON()));
             }
         },
         
         onMunicipalityChange(){
             if (this.selectedMunicipality){
-                const items = [];
-                let geoData = null;
+                const municipality = this.projects_data.getByIdentifier(this.selectedMunicipality)[0];
 
-                if (this.locations[this.selectedMunicipality]){
-                        geoData = this.locations[this.selectedMunicipality];
-                     }else if (this.locations[this.selectedProvince]){
-                        geoData = this.locations[this.selectedProvince];
-                    }else{
-                        geoData = this.locations[this.selectedCCAA];
-                    }
-
-                items.push(geoData);
-
-                items[0].count = this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality];
-                items[0].desc = `En el municipio de ${this.selectedMunicipality.toLocaleLowerCase()}, ubicado en la provincia de ${this.selectedProvince} dentro de ${this.selectedCCAA}, contamos con ${this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios[this.selectedMunicipality]} sedes.`
-                items[0].location = this.selectedMunicipality;
-
-                this.$refs.globeRef.setMarkers(items);
-                this.$refs.globeRef.selectedLocation = this.selectedMunicipality;
-
-                this.$emit('onMessage', JSON.parse(JSON.stringify(items[0])));
+                this.$emit('onMessage', JSON.parse(municipality.asJSON()));
             }
         }
     },
     
-    computed: {
-        normalizedCCAA(){
-            return Object.keys(this.schools_data);
+    computed: {        
+        LocalAmbit(){
+            return this.selectedAmbit === "Nacional" || this.selectedAmbit === "Autonómico";
         },
-        
+
+        normalizedCCAA(){
+            if (this.LocalAmbit)
+            {
+                return this.projects_data.getCCAAs();                
+            }
+            return [];
+        },
+
         provinces(){
             if (this.selectedCCAA === '' || this.selectedCCAA === undefined){
                 return [];
             }
             
-            return Object.keys(this.schools_data[this.selectedCCAA].provincias);
+            return this.projects_data.getProvinces(this.selectedCCAA);
         },
         
         municipalities(){
             if (this.selectedCCAA === '' || this.selectedProvince === ''){
                 return [];
             }
-            if (!this.schools_data[this.selectedCCAA].provincias[this.selectedProvince])
+            /*if (!this.schools_data[this.selectedCCAA].provincias[this.selectedProvince])
             {                
                 return [];
-            }
+            }*/
             
-            return Object.keys(this.schools_data[this.selectedCCAA].provincias[this.selectedProvince].municipios);
+            return this.projects_data.getMunicipalities(this.selectedCCAA, this.selectedProvince);
         }        
     }
 }
