@@ -25,14 +25,12 @@
             <div class=" ">
                 <h2>Actuación</h2>
                 <p>{{ acting }}</p>
-                <h2>Proyecto</h2>
-                <p>{{ title }}</p>
+                <h2>Actuaciones</h2>
+                <p>{{ count }}</p>
             </div>
             <div class="">
                 <h2>Ámbito</h2>
                 <p>{{ ambit }}</p>
-               <!-- 
-                -->
             </div>
         </div>
         <div class="text-xl mx-10">
@@ -107,29 +105,35 @@ export default{
             return (this.project_data.picture !== "" && String(this.project_data.picture).startsWith('http'));
         },
         initiative(){
-            return (this.project_data.initiative === ""  ? "TODOS" : this.project_data.initiative);
+            return (this.project_data.initiative === ""  ? "NA" : this.project_data.initiative);
         },
         description(){
-            return (this.project_data.desc === ""  ? "TODOS" : this.project_data.desc);
+            return (this.project_data.desc === ""  ? "NA" : this.project_data.desc);
         },
         acting(){
            return this.project_data.acting;
         },
         title(){
-            return (this.project_data.title === ""  ? "TODOS" : this.project_data.title);
+            return (this.project_data.title === ""  ? "NA" : this.project_data.title);
         },
         ambit(){
-            return (this.project_data.ambit === ""  ? "TODOS" : this.project_data.ambit);
+            return (this.project_data.ambit === ""  ? "NA" : this.project_data.ambit);
         },
         beneficiaries(){
-            return (this.project_data.beneficiaries === ""  ? "TODOS" : this.project_data.beneficiaries);
+            return (this.project_data.beneficiaries === ""  ? "NA" : this.project_data.beneficiaries);
         },
         budget(){
-            return (this.project_data.budget === ""  ? "" :  `${this.euro.format(this.project_data.budget)} ${this.budget_text}`);
+            return ((this.project_data.budget === ""  || this.project_data.budget == 0)  ?  `${this.budget_text}` :  `${this.euro.format(this.project_data.budget)} ${this.budget_text}`);
         },
         budget_text(){
-            return (this.project_data.budget_text === ""  || this.project_data.budget_text === null ? "" :  this.project_data.budget_text);
+            return ((
+                (this.project_data.budget === "" || this.project_data.budget === 0) && 
+                (this.project_data.budget_text === ""  || this.project_data.budget_text === null)
+            ) ? "Sin Información" :  this.project_data.budget_text);
         },
+        count(){
+            return ( (this.project_data.count === 0 || !this.project_data.count) ? "NA" : this.project_data.count);
+        }
     }
     
 }

@@ -7,14 +7,14 @@
             </div>
 
             <div class="flex items-center justify-center">
-                <SelectorBox :items="normalizedCCAA" v-model="selectedCCAA" :disabled="!LocalAmbit" @change="onCAAChange">Comunidad</SelectorBox>
+                <SelectorBox :items="normalizedCCAA" v-model="selectedCCAA" :disabled="!localAmbit" @change="onCAAChange">Comunidad</SelectorBox>
             </div>
             
             <div class="flex items-center justify-center">
-                <SelectorBox :items="provinces" v-model="selectedProvince" :disabled="!LocalAmbit" @change="onProvinceChange">Provincia</SelectorBox>
+                <SelectorBox :items="provinces" v-model="selectedProvince" :disabled="!localAmbit" @change="onProvinceChange">Provincia</SelectorBox>
             </div>
             <div class="flex items-center justify-center">
-                <SelectorBox :items="municipalities" v-model="selectedMunicipality" :disabled="!LocalAmbit" @change="onMunicipalityChange">Municipio</SelectorBox>
+                <SelectorBox :items="municipalities" v-model="selectedMunicipality" :disabled="!localAmbit" @change="onMunicipalityChange">Municipio</SelectorBox>
             </div>
             
         </div>
@@ -31,6 +31,7 @@ export default{
     
     data(){
         return{
+            currentType: "",
             selectedAmbit:'Todos',
             selectedCCAA:'',
             selectedProvince:'',
@@ -50,18 +51,34 @@ export default{
     
     methods:{
         onMarkerSelected(markerData){
-            if (markerData.project){
-                if (markerData.project.items){
-                    markerData.project.items = [];
-                }
-            }
 
+            console.log(markerData);
+            
+            let location = markerData.location;
+            if (this.localAmbit){
+                let region = null;
+                if (this.selectedMunicipality !== ""){
+                    region = this.projects_data.getByIdentifierAndType(DataProject.TYPE_MUNICIPALITY, this.selectedMunicipality)[0];
+                    location = this.selectedMunicipality;
+                }else if(this.selectedProvince !== ""){
+                    region = this.projects_data.getByIdentifierAndType(DataProject.TYPE_PROVINCE, this.selectedProvince)[0];
+                    location = this.selectedProvince;
+                }else if (this.selectedCCAA !== ""){
+                    region = this.projects_data.getByIdentifierAndType(DataProject.TYPE_CCAA, this.selectedCCAA)[0];
+                    location = this.selectedCCAA;
+                }
+                
+                //console.log(region);
+                //this.$emit('onMessage', JSON.parse(region.asJSON()));                
+            }
+            this.$refs.globeRef.setLocationLabel(location);
             this.$emit('onMessage', JSON.parse(JSON.stringify(markerData)));
+
         },    
         
         onAmbitChange(){
 
-            if ( !this.LocalAmbit)
+            if ( !this.localAmbit)
             {
                 this.selectedMunicipality = "";
                 this.selectedProvince = "";
@@ -101,12 +118,14 @@ export default{
         onCAAChange(){
             if (this.selectedCCAA){
                 
+                this.currentType = DataProject.TYPE_CCAA;
                 this.selectedProvince = '';
                 this.selectedMunicipality = '';
 
                 const caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_CCAA, this.selectedCCAA)[0];
 
-                this.$refs.globeRef.setMarkers(caa.items);
+                //this.$refs.globeRef.setMarkers(caa.items);
+                this.$refs.globeRef.setMarkers(this.projects_data.getProvinceItemsOf(this.selectedCCAA));
                 this.$emit('onMessage', JSON.parse(caa.asJSON()));
             }
         },
@@ -114,20 +133,28 @@ export default{
         onProvinceChange(){
             if (this.selectedProvince){
                 this.selectedMunicipality = '';
-                
-                const province = this.projects_data.getByIdentifierAndType(DataProject.TYPE_PROVINCE, this.selectedProvince)[0];
 
-                //console.log(province);
-                this.$refs.globeRef.setMarkers(province.items);
+                this.currentType = DataProject.TYPE_PROVINCE;
+                
+                let province = this.projects_data.getByIdentifierAndType(DataProject.TYPE_PROVINCE, this.selectedProvince)[0];
+
+                if(!province){
+                    province = this.projects_data.list.filter(project => project.province === this.selectedProvince && project.type === DataProject.TYPE_MUNICIPALITY)[0];
+                }
+//                this.$refs.globeRef.setMarkers(province.items);
+                this.$refs.globeRef.setMarkers(this.projects_data.getMunicipalityItemsOf(this.selectedProvince));
                 this.$emit('onMessage', JSON.parse(province.asJSON()));
             }
         },
         
         onMunicipalityChange(){
-            if (this.selectedMunicipality){
-                const municipality = this.projects_data.getByIdentifierAndType(DataProject.TYPE_MUNICIPALITY, this.selectedMunicipality)[0];
+            if (this.selectedMunicipality){ 
 
-                //console.log(municipality);
+                this.currentType = DataProject.TYPE_MUNICIPALITY;
+                console.log(this.selectedMunicipality);
+                
+                const municipality = this.projects_data.getMunicipality(this.selectedMunicipality)[0];
+
                 this.$refs.globeRef.setMarkers(municipality.items);
                 this.$emit('onMessage', JSON.parse(municipality.asJSON()));
             }
@@ -135,12 +162,12 @@ export default{
     },
     
     computed: {        
-        LocalAmbit(){
+        localAmbit(){
             return this.selectedAmbit === "Nacional" || this.selectedAmbit === "Autonómico";
         },
 
         normalizedCCAA(){
-            if (this.LocalAmbit)
+            if (this.localAmbit)
             {
                 return this.projects_data.getCCAAs();                
             }
@@ -159,10 +186,6 @@ export default{
             if (this.selectedCCAA === '' || this.selectedProvince === ''){
                 return [];
             }
-            /*if (!this.schools_data[this.selectedCCAA].provincias[this.selectedProvince])
-            {                
-                return [];
-            }*/
             
             return this.projects_data.getMunicipalities(this.selectedCCAA, this.selectedProvince);
         }        

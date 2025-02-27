@@ -14,14 +14,14 @@
       <NavButton v-if="!isIdle" @click="inProjects = !inProjects" class="click-option">{{navigationLabel}}</NavButton>
       <TextAnimator v-if="isIdle" text="Descubre, punto por punto, un mundo de transformación digital" image="/images/hand.png" :arrow="true"/>
       <Schools v-if="!inProjects" :projects_data="allProjects" @on-message="sendMessageToWindow"></Schools>
-      <Projects v-if="inProjects" :projects_data="projectsData" :locations="locationsData" @on-message="sendMessageToWindow"></Projects>
+      <Projects v-if="inProjects" :projects_data="allProjects" @on-message="sendMessageToWindow"></Projects>
     </template>
   </div>
 </template>
 
 <script>
 import school_json from './data/schools.json'
-import projects_json from './data/projects.json'
+import projects_json from './data/data.json'
 import locations_json from './data/locations.json'
 import DataProject from './data/DataProject';
 import DataProjectList from './data/DataProjectList';
@@ -33,8 +33,8 @@ export default {
       inProjects:false,
       childWnd:null,
       inactivityTimer:0,
-      schoolsData: null,
-      projectsData: null,
+      schoolsData: school_json,
+      //projectsData: null,
       locationsData: locations_json,
       allProjects: DataProjectList,
     }
@@ -43,11 +43,9 @@ export default {
   mounted(){
     // console.log("App mounted");
     this.allProjects = new DataProjectList({projects:projects_json, locations:locations_json});
-    this.allProjects.fromSchools(school_json);
-    
-    this.projectsData = this.allProjects.filterByType(DataProject.TYPE_PROJECT);
-    //this.projectsData = projects_json;
-    this.schoolsData = this.allProjects;
+    this.allProjects.raw_schools_data = school_json;
+
+    //console.log(this.allProjects);
   },
 
   methods: {

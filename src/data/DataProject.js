@@ -1,26 +1,35 @@
 export default class DataProject{
     static TYPE_PROJECT = "project";
+    static TYPE_SCHOOL = "schools";
     static TYPE_CCAA = "ccaa";
     static TYPE_PROVINCE = "PROVINCE";
     static TYPE_MUNICIPALITY = "municipality";
 
-    constructor({title, identifier, desc, beneficiaries, initiative, acting, ambit, location, budget, budget_text, picture, items, type}){
-        this.title = title ??= "TODOS";
+    static AMBIT_INTERNATIONAL = "InternaciOnal";
+    static AMBIT_NATIONAL = "Nacional";
+    static AMBIT_AUTONOMIC = "Autonómico";
+
+    constructor({title, identifier, desc, beneficiaries, initiative, acting, venues, ambit, location, budget, budget_text, picture, items, type, province, municipality}){
+        this.title = title ??= "NA";
         this.identifier = identifier ??= "";
         this.desc = desc ??= "";
-        this.beneficiaries = beneficiaries ??= "TODOS";
-        this.initiative = initiative ??= "TODOS";
+        this.beneficiaries = beneficiaries ??= "NA";
+        this.initiative = initiative ??= "NA";
         this.acting = acting ??= "";
+        this.count = venues ??= "NA";
         this.ambit = ambit;
         this.location = location;
         this.budget = budget ??= 0;
-        this.budget_text = budget_text ??= "";;
+        this.budget_text = budget_text ??= "";
         this.picture = picture;
         this.items = items ??= [];
         this.type = type;
+        this.province = province;
+        this.municipality = municipality ??= "";
     }
 
     asJSON(){
+        this.venues = this.count;
         return JSON.stringify(this.clone());
     }
 

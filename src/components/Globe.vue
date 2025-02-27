@@ -72,6 +72,10 @@ export default{
                 this.globeInstance.htmlElementsData([]);
             },
 
+            setLocationLabel(label){
+                this.selectedLocation = label;
+            },
+
             setMarkers(markers){
                 if (!markers){
                     return;

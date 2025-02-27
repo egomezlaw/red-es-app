@@ -4,8 +4,7 @@ export default class DataProjectList{
     constructor({projects, locations}){
         this.list = [];
         this.locations = locations;
-        for(const p in projects){
-            projects[p].type = DataProject.TYPE_PROJECT;
+        for(const p in projects){            
             this.addProject(projects[p]);
         }
 
@@ -18,6 +17,7 @@ export default class DataProjectList{
         });
     }
 
+    //deprecated
     fromSchools(schools){
 
         this.raw_schools_data = schools;
@@ -27,6 +27,7 @@ export default class DataProjectList{
         let desc = ""
         let items = [];
         let p_items = [];
+        let m_items = [];
         let ccaa_count = 0;
         let p_count = 0;
         let geoData = null;
@@ -45,6 +46,9 @@ export default class DataProjectList{
 
 
                 for (const m in provinces[p].municipios){
+
+                    
+
                     geoData = null;
 
                     if (this.locations[m]){
@@ -59,36 +63,38 @@ export default class DataProjectList{
 
                     items.push(geoData);
                     items[items.length - 1].count = provinces[p].municipios[m];
-                    items[items.length - 1].location = m;
+                    //items[items.length - 1].location = m;
 
                     p_items.push(geoData);
-                    p_items[p_items.length - 1].location = m;
+                    //p_items[p_items.length - 1].location = m;
 
                     p_count += parseInt(provinces[p].municipios[m]);
                     ccaa_count += parseInt(provinces[p].municipios[m]);
 
-                    let m_items = [];
-                    m_items.push(geoData);
-                    m_items[0].location = m;
 
                     desc = `En el municipio de ${m.toLocaleLowerCase()}, ubicado en la provincia de ${p} dentro de ${ccaa}, contamos con ${parseInt(provinces[p].municipios[m])} sedes.`
-                    this.addProject({items:m_items, budget, budget_text, identifier:m, desc, type:DataProject.TYPE_MUNICIPALITY });
+
+                    let pj = this.addProject({budget, budget_text, identifier:m, desc, type:DataProject.TYPE_MUNICIPALITY, ambit:"Autonómico" });
+                    pj.items = [];
+                    pj.items.push(geoData);
+                    pj.items[0].location = pj.identifier;
+                    
+                    /*if (p === "Murcia")
+                    {
+                        console.log(pj.type);
+                        console.log(pj.identifier);
+                        console.log(pj.items[0].location);
+                        console.log(pj.items[0]);
+                    }*/
                 }
 
-                if (this.locations[p]){
-                    geoData = this.locations[p];
-                }
-                
-                p_items.push(geoData);
-                //p_items[p_items.length - 1].count = p_count;
-                p_items[p_items.length - 1].location = p;
 
                 desc = `En la provincia de ${p} dentro de ${ccaa}, contamos con ${p_count} sedes.`
-                this.addProject({items:p_items, budget, budget_text, desc, identifier:p, type:DataProject.TYPE_PROVINCE });
+                this.addProject({items:p_items, budget, budget_text, desc, identifier:p, type:DataProject.TYPE_PROVINCE, ambit:"Autonómico" });
             }
 
             desc = `Dentro de ${ccaa}, contamos con ${ccaa_count} sedes.`
-            this.addProject({items:items, budget, budget_text, type:"school", desc, identifier:ccaa, type:DataProject.TYPE_CCAA, ambit:"Autonómico" });
+            this.addProject({items:items, budget, budget_text, desc, identifier:ccaa, type:DataProject.TYPE_CCAA, ambit:"Autonómico" });
 
             ccaa_count = 0;
         }
@@ -96,26 +102,99 @@ export default class DataProjectList{
     }
 
     addProject(project){
+        if (project.ambit === DataProject.AMBIT_AUTONOMIC){
+            if (project.municipality){
+                project.type = DataProject.TYPE_MUNICIPALITY;
+            }else if (project.province){
+                project.type = DataProject.TYPE_PROVINCE;                    
+            }else{
+                project.type = DataProject.TYPE_CCAA;
+            }
+        }else{
+            project.type = DataProject.TYPE_PROJECT;
+        }
 
         if (project['location']){
             project.items = [];
             const points = project['location'].split(",");
             for(let i = 0; i < points.length; i++){
-                const loc = points[i];
-                if (this.locations[loc]){
-                    let geoData = this.locations[loc];
+                let loc = points[i];
+                if (project.municipality){
+                    if(this.locations[project.municipality]){
+                        loc = project.municipality;
+                    }
+                }else if (project.province){
+                    if(this.locations[project.province]){
+                        loc = project.province;
+                    }
+                }
+                let location = this.locations[loc];
+
+                if (location){
+                    let geoData = location;
                     project.items.push(geoData);
                     project.items[project.items.length - 1].location = loc;
-                    project.items[project.items.length - 1].project = project;
+                    project.items[project.items.length - 1].project = {
+                        title:project.title, 
+                        desc:project.desc, 
+                        beneficiaries:project.beneficiaries, 
+                        initiative:project.initiative, 
+                        acting:project.acting, 
+                        count:project.venues, 
+                        ambit:project.ambit, 
+                        budget:project.budget, 
+                        budget_text:project.budget_text, 
+                        picture:project.picture
+                    };
                 }
             }
         }
+        
+        /*if (project.municipality){
+            project.location = project.municipality;
+        }else if (project.province){
+            project.location = project.province;
+        }*/
 
-        this.list.push(new DataProject(project));
+        if (project.location === "Canarias" && project.province === "Las Palmas" && project.type === DataProject.TYPE_MUNICIPALITY)
+        {
+            console.log(project);
+        }
+
+        let dataProject = new DataProject(project);
+        this.list.push(dataProject);
+
+        return dataProject;
     }
 
     getByIdentifierAndType(type, identifier){
-        return this.list.filter(project => project.identifier === identifier && project.type === type);
+        //console.log(type, identifier);
+        return this.list.filter(project => project.location === identifier && project.type === type);
+    }
+
+    getProvinceItemsOf(caa){
+        let filteredProjects = this.list.filter(project => project.location === caa && project.type === DataProject.TYPE_PROVINCE);
+
+        let items = [];
+        for (let index = 0; index < filteredProjects.length; index++) {
+            items = items.concat(filteredProjects[index].items);
+        }
+        //console.log(items);
+        return [...new Set(items)];
+    }
+
+    getMunicipality(municipality){
+        let filteredProjects = this.list.filter(project => project.municipality.toLocaleLowerCase() === municipality.toLocaleLowerCase());
+        return filteredProjects;
+    }
+
+    getMunicipalityItemsOf(province){
+        let filteredProjects = this.list.filter(project => project.province === province && project.type === DataProject.TYPE_MUNICIPALITY);
+        let items = [];
+        for (let index = 0; index < filteredProjects.length; index++) {
+            items = items.concat(filteredProjects[index].items);
+        }
+        return [...new Set(items)];
     }
 
     getItemsByAmbit(ambit){
@@ -129,6 +208,18 @@ export default class DataProjectList{
             items = items.concat(filteredProjects[index].items);
         }
         return [...new Set(items)];
+    }
+
+    getItemsByProp(prop, value){
+        let filteredProjects = this.list.filter(project =>  project[prop] === value);
+
+        //console.log(filteredProjects);
+        let items = [];
+        for (let index = 0; index < filteredProjects.length; index++) {
+            items = items.concat(filteredProjects[index].items);
+        }
+        return [...new Set(items)];
+
     }
 
     getItems(){

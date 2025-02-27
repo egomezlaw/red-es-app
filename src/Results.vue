@@ -25,6 +25,7 @@ export default {
         ambit:"",
         beneficiaries:"",
         budget:"",
+        count:0,
         image_url:""
       },
       locations: locations_json,
@@ -40,14 +41,15 @@ export default {
     initProjectData() {
       this.project = {
             picture : "",
-            initiative : "TODOS",
-            desc : "TODOS",
+            initiative : "NA",
+            desc : "NA",
             acting : "",
-            title : "TODOS",
-            ambit : "TODOS",
-            beneficiaries : "TODOS",
-            budget : 0 ,
-            budget_text :"TOTAL PROYECTO"
+            title : "NA",
+            ambit : "",
+            beneficiaries : "NA",
+            budget : 0,
+            count : 0,
+            budget_text :""
       }
     },
     handleMessage(event) {
@@ -60,19 +62,19 @@ export default {
           return;
         }
         
+        this.isIdle = false;
+        
         if (this.message == "awake"){
-          this.isIdle = false;
           return;
         }
-        
-        const data = event.data.data;
-        console.log(data);
 
+        const data = event.data.data;
+        
         if (data.project)
         {
-          this.initProjectData();
-          
-          this.project = Object.assign(this.project, this.message.project);
+          console.log(data);
+          this.initProjectData();          
+          this.project = Object.assign(this.project, data.project);
           
             if (this.project['location']){
               const points = this.project['location'].split(",");
@@ -84,21 +86,31 @@ export default {
                   }
               }
             }
-            this.$refs.summaryRef.setMarkers(items);
+            if (this.project.items){
+              this.$refs.summaryRef.setMarkers(this.project.items);
+            }else if (data.lat){
+              let temp_items = [];
+              temp_items.push(data);
+              this.$refs.summaryRef.setMarkers(temp_items);
+            }
             return;
         }
         else {
-            //console.log(data);
+          console.log(data);
 
           const budget = data.budget ? data.budget : 0;
-          const budget_text = data.budget ? "" : "TOTAL PROYECTO";
-          this.project = {id:0, title:data.title, desc:data.desc,acting:" ",initiative:"",ambit:"",beneficiaries:"TODOS", budget, budget_text};
-          this.$refs.summaryRef.setMarkers(data.items);
+          // const budget_text = data.budget ? "" : "TOTAL PROYECTO";
+          const budget_text = "";
+          this.initProjectData();          
+          this.project = Object.assign(this.project, data);
+
+          if (data.items){
+            this.$refs.summaryRef.setMarkers(data.items);
+          }else if (data.lat){
+            this.$refs.summaryRef.setMarkers([...data]);
+          }
           return;
         }
-
-        this.initProjectData();
-
       }
     },
 

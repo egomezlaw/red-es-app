@@ -25,6 +25,8 @@
     </div>
 </template>
 <script>
+import DataProject from '../data/DataProject';
+
 
 export default{
     props: ['projects_data', 'locations'],
@@ -147,41 +149,11 @@ export default{
 
     methods:{
         onMarkerSelected(markerData){
-            if (markerData.project){
-                if (markerData.project.items){
-                    markerData.project.items = [];
-                }
-            }
             this.$emit('onMessage', JSON.parse(JSON.stringify(markerData)));
         },
 
-        geMarkersData(project){
-            const items = [];
-            for(const p in this.filteredProjects){
-                const points = this.filteredProjects[p]['location'].split(",");
-                for(let i = 0; i < points.length; i++){
-                    const loc = points[i];
-                    if (this.locations[loc]){
-                        let geoData = this.locations[loc];
-                        items.push(geoData);
-                        items[items.length - 1].location = loc;
-                        items[items.length - 1].project = this.filteredProjects[p].clone();
-                    }
-                }
-            }
-
-            console.log(project);
-            if (!project.budget)
-            {
-                project.budget = 0;
-                let total_budget = 0;
-                project.budget = items.reduce(
-                    (accumulator, item) => accumulator + item.project.budget, 
-                    total_budget,
-                );
-
-                project.budget_text = " ";
-            }
+        geMarkersData(prop, value){
+            const items = this.projects_data.getItemsByProp(prop, value);
 
             this.$refs.globeRef.setMarkers(items);
 
@@ -189,7 +161,18 @@ export default{
             if (this.filteredProjects.length == 1)
             {
                 this.$emit('onMessage', JSON.parse(JSON.stringify({project:this.filteredProjects[0]})));
-            }else{           
+            }else{                
+                let project_summary = new DataProject({title: `Proyectos de ${value}`, desc:"", beneficiaries:"TODOS", initiative:"TODOS", acting:"TODOS", venues:"NA", ambit:"TODOS", budget:0, items});
+                project_summary[prop] = value;
+                project_summary.budget = 0;
+                let total_budget = 0;
+
+                project_summary.budget = this.filteredProjects.reduce(
+                    (accumulator, item) => accumulator + parseInt(item.budget), 
+                    total_budget,
+                );
+
+                const project = project_summary;
                 this.$emit('onMessage', JSON.parse(JSON.stringify({project})));
             }
         },
@@ -198,8 +181,9 @@ export default{
         onBeneficiariesChange(){
             if (this.selectedBeneficiaries != "")
             {
-                this.filteredProjects = this.projects_data.filter(project =>  project.beneficiaries == this.selectedBeneficiaries);
-                this.geMarkersData({beneficiaries:this.selectedBeneficiaries});
+                this.filteredProjects = this.projects_data.list.filter(project =>  project.beneficiaries == this.selectedBeneficiaries && project.type === DataProject.TYPE_PROJECT );
+                // this.geMarkersData({beneficiaries:this.selectedBeneficiaries});
+                this.geMarkersData("beneficiaries", this.selectedBeneficiaries);
             }
             this.selectedInitiative = '';
             this.selectedProject = '';
@@ -209,9 +193,10 @@ export default{
         onInitiativeChange(){
             if (this.selectedInitiative != "")
             {
-                this.filteredProjects = this.projects_data.filter(project =>  project.initiative == this.selectedInitiative);
+                this.filteredProjects = this.projects_data.list.filter(project =>  project.initiative == this.selectedInitiative && project.type === DataProject.TYPE_PROJECT);
                 //console.log(this.filteredProjects);
-                this.geMarkersData({initiative:this.selectedInitiative});     
+                // this.geMarkersData({initiative:this.selectedInitiative});     
+                this.geMarkersData("initiative", this.selectedInitiative);
             }
             this.selectedBeneficiaries = '';
             this.selectedProject = '';
@@ -221,8 +206,9 @@ export default{
         onProjectsChange(){
             if (this.selectedProject != "")
             {
-                this.filteredProjects = this.projects_data.filter(project =>  project.title == this.selectedProject);
-                this.geMarkersData({title:this.selectedProject});
+                this.filteredProjects = this.projects_data.list.filter(project =>  project.title == this.selectedProject && project.type === DataProject.TYPE_PROJECT);
+                // this.geMarkersData({title:this.selectedProject});
+                this.geMarkersData("title",this.selectedProject);
                 
             }
 
@@ -234,8 +220,9 @@ export default{
         onActingsChange(){
             if (this.selectedActing != "")
             {
-                this.filteredProjects = this.projects_data.filter(project =>  project.acting == this.selectedActing);
-                this.geMarkersData({acting:this.selectedActing});                
+                this.filteredProjects = this.projects_data.list.filter(project =>  project.acting == this.selectedActing && project.type === DataProject.TYPE_PROJECT);
+                //this.geMarkersData({acting:this.selectedActing});                
+                this.geMarkersData("acting",this.selectedActing);
             }
             this.selectedBeneficiaries = '';
             this.selectedInitiative = '';
