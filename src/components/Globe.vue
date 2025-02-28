@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="text-center" ref="globeContainer"></div>
-        <div class="flex items-center justify-center w-[960px]">
+        <div class="flex items-center justify-center"
+        :class="{'w-[960px]': !small, 'w-[640px]':small}">
             <h1 class="text-center text-2xl text-white ">{{ selectedLocation }}</h1>
         </div>
     </div>
@@ -15,7 +16,7 @@ import { nextTick } from 'vue';
 
 export default{
     
-    props: ['width', 'height', 'zoom', 'locations', 'type'],
+    props: ['width', 'height', 'zoom', 'locations', 'type', "small"],
     data(){
         return{
             globeInstance:null,
@@ -123,6 +124,10 @@ export default{
                         this.globeInstance.resumeAnimation();
                         this.globeInstance.pointOfView( {lat:markers[0].lat, lng:markers[0].lng}, 300);                    
                         this.globeInstance.controls().autoRotateSpeed = 0;
+                    }
+                    if (markers.length == 1)
+                    {
+                        this.selectedLocation = markers[0].location;
                     }
 
 

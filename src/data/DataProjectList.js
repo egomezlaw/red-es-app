@@ -120,11 +120,11 @@ export default class DataProjectList{
             for(let i = 0; i < points.length; i++){
                 let loc = points[i];
                 if (project.municipality){
-                    if(this.locations[project.municipality]){
+                    if(this.locations[project.municipality] || this.locations[project.municipality.toUpperCase()]){
                         loc = project.municipality;
                     }
                 }else if (project.province){
-                    if(this.locations[project.province]){
+                    if(this.locations[project.province] || this.locations[project.province.toUpperCase()]){
                         loc = project.province;
                     }
                 }
@@ -135,6 +135,7 @@ export default class DataProjectList{
                     project.items.push(geoData);
                     project.items[project.items.length - 1].location = loc;
                     project.items[project.items.length - 1].project = {
+                        location: loc,
                         title:project.title, 
                         desc:project.desc, 
                         beneficiaries:project.beneficiaries, 
@@ -156,7 +157,7 @@ export default class DataProjectList{
             project.location = project.province;
         }*/
 
-        if (project.location === "Canarias" && project.province === "Las Palmas" && project.type === DataProject.TYPE_MUNICIPALITY)
+        if (project.location === "Región de Murcia")
         {
             console.log(project);
         }
@@ -184,12 +185,16 @@ export default class DataProjectList{
     }
 
     getMunicipality(municipality){
-        let filteredProjects = this.list.filter(project => project.municipality.toLocaleLowerCase() === municipality.toLocaleLowerCase());
+        let filteredProjects = this.list.filter(
+            
+            project => (((project.municipality.toLocaleLowerCase() === municipality.toLocaleLowerCase()) || 
+            (project.municipality.toUpperCase() === municipality.toUpperCase())) && project.type === DataProject.TYPE_MUNICIPALITY)
+        );
         return filteredProjects;
     }
 
     getMunicipalityItemsOf(province){
-        let filteredProjects = this.list.filter(project => project.province === province && project.type === DataProject.TYPE_MUNICIPALITY);
+        let filteredProjects = this.list.filter(project => project.province.toLocaleLowerCase() === province.toLocaleLowerCase() && project.type === DataProject.TYPE_MUNICIPALITY);
         let items = [];
         for (let index = 0; index < filteredProjects.length; index++) {
             items = items.concat(filteredProjects[index].items);
@@ -244,7 +249,24 @@ export default class DataProjectList{
     }
 
     getMunicipalities(caa, province){
-        return Object.keys(this.raw_schools_data[caa].provincias[province].municipios);
+
+       let validItems = [];
+       const municipalites = Object.keys(this.raw_schools_data[caa].provincias[province].municipios);
+
+        for (let index = 0; index < municipalites.length; index++) {
+            const element = municipalites[index];
+            if (this.list.filter(project => project.municipality === element))
+            {
+                validItems.push(element);
+            }
+            else{
+                console.log(ccaa, province, element);
+            }
+            
+        }
+        return validItems;
+
+        //return Object.keys(this.raw_schools_data[caa].provincias[province].municipios);
     }
 
 }

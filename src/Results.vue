@@ -107,8 +107,14 @@ export default {
           if (data.items){
             this.$refs.summaryRef.setMarkers(data.items);
           }else if (data.lat){
-            this.$refs.summaryRef.setMarkers([...data]);
+            let temp_items = [];
+              temp_items.push(data);
+              this.$refs.summaryRef.setMarkers(temp_items);
           }
+          if (data.municipality){
+                this.$refs.summaryRef.setLocationLabel(data.municipality);
+              }
+
           return;
         }
       }

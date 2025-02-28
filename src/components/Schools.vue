@@ -19,7 +19,7 @@
             
         </div>
         <div class="flex grow">
-            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250" ref="globeRef" @marker-select="onMarkerSelected" :type="'dynamic'"></Globe>
+            <Globe class="w-full h-full" :width="960" :height="720" :zoom="250" ref="globeRef" @marker-select="onMarkerSelected" :type="'dynamic'" :small="false"></Globe>
         </div>
     </div>
 </template>
@@ -55,7 +55,7 @@ export default{
             console.log(markerData);
             
             let location = markerData.location;
-            if (this.localAmbit){
+            /*if (this.localAmbit){
                 let region = null;
                 if (this.selectedMunicipality !== ""){
                     region = this.projects_data.getByIdentifierAndType(DataProject.TYPE_MUNICIPALITY, this.selectedMunicipality)[0];
@@ -70,9 +70,15 @@ export default{
                 
                 //console.log(region);
                 //this.$emit('onMessage', JSON.parse(region.asJSON()));                
-            }
+            }*/
             this.$refs.globeRef.setLocationLabel(location);
-            this.$emit('onMessage', JSON.parse(JSON.stringify(markerData)));
+
+            if (this.selectedProvince !== ""){
+                const municipality = this.projects_data.getMunicipality(markerData.location)[0];
+                this.$emit('onMessage', JSON.parse(municipality.asJSON()));
+            }else{
+                this.$emit('onMessage', JSON.parse(JSON.stringify(markerData)));
+            }
 
         },    
         
@@ -118,20 +124,29 @@ export default{
         onCAAChange(){
             if (this.selectedCCAA){
                 
+                console.log("onCCAAChange", this.selectedCCAA);
                 this.currentType = DataProject.TYPE_CCAA;
                 this.selectedProvince = '';
                 this.selectedMunicipality = '';
 
-                const caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_CCAA, this.selectedCCAA)[0];
+                let caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_CCAA, this.selectedCCAA)[0];
+                if (!caa){
+                    caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_PROVINCE, this.selectedCCAA)[0];
+                }
+                if (!caa){
+                    caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_MUNICIPALITY, this.selectedCCAA)[0];
+                }
 
-                //this.$refs.globeRef.setMarkers(caa.items);
-                this.$refs.globeRef.setMarkers(this.projects_data.getProvinceItemsOf(this.selectedCCAA));
+
+                this.$refs.globeRef.setMarkers(caa.items);
+                //this.$refs.globeRef.setMarkers(this.projects_data.getProvinceItemsOf(this.selectedCCAA));
                 this.$emit('onMessage', JSON.parse(caa.asJSON()));
             }
         },
         
         onProvinceChange(){
             if (this.selectedProvince){
+                console.log("onProvinceChange");
                 this.selectedMunicipality = '';
 
                 this.currentType = DataProject.TYPE_PROVINCE;
@@ -140,22 +155,29 @@ export default{
 
                 if(!province){
                     province = this.projects_data.list.filter(project => project.province === this.selectedProvince && project.type === DataProject.TYPE_MUNICIPALITY)[0];
+                    province.items = this.projects_data.getMunicipalityItemsOf(this.selectedProvince);
                 }
+
+                console.log(province);
 //                this.$refs.globeRef.setMarkers(province.items);
-                this.$refs.globeRef.setMarkers(this.projects_data.getMunicipalityItemsOf(this.selectedProvince));
+                this.$refs.globeRef.setMarkers(province.items);
                 this.$emit('onMessage', JSON.parse(province.asJSON()));
             }
         },
         
         onMunicipalityChange(){
             if (this.selectedMunicipality){ 
-
+                //console.log("onMunicipalityChange");
                 this.currentType = DataProject.TYPE_MUNICIPALITY;
                 console.log(this.selectedMunicipality);
                 
                 const municipality = this.projects_data.getMunicipality(this.selectedMunicipality)[0];
 
+                //console.log(municipality);
+
                 this.$refs.globeRef.setMarkers(municipality.items);
+                this.$refs.globeRef.setLocationLabel(this.selectedMunicipality);
+
                 this.$emit('onMessage', JSON.parse(municipality.asJSON()));
             }
         }

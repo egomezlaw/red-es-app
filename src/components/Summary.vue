@@ -45,7 +45,7 @@
         <div class="flex flex-col my-10 w-md"  v-if="shouldAnimate">
             <div class="bg-[#DD0031] h-26 text-white text-2xl text-center flex items-center justify-center">
                 <h1 
-                class="text-center line-clamp-3leading-snug">{{ ambit }}</h1>
+                class="text-center line-clamp-3leading-snug">{{ location }}</h1>
             </div>
             <div class="my-5 mx-10" v-if="validImage">
                 <img
@@ -63,7 +63,7 @@
         </div>
         </transition>
         <div class="flex grow">
-            <Globe class="w-full h-full" :width="640" :height="576" :zoom="300" ref="globeRef" :type="'static'"></Globe>
+            <Globe class="w-full h-full" :width="640" :height="576" :zoom="300" ref="globeRef" :type="'static'" :small="true"></Globe>
         </div>
     </div>
 </div>
@@ -85,6 +85,10 @@ export default{
         setMarkers(markers){
             this.$refs.globeRef.setMarkers(markers);
         },        
+
+        setLocationLabel(label){
+            this.$refs.globeRef.setLocationLabel(label);
+        }
     },
 
     watch: {
@@ -127,12 +131,15 @@ export default{
         },
         budget_text(){
             return ((
-                (this.project_data.budget === "" || this.project_data.budget === 0) && 
+                (this.project_data.budget === "" || this.project_data.budget == 0) && 
                 (this.project_data.budget_text === ""  || this.project_data.budget_text === null)
             ) ? "Sin Información" :  this.project_data.budget_text);
         },
         count(){
             return ( (this.project_data.count === 0 || !this.project_data.count) ? "NA" : this.project_data.count);
+        },
+        location(){
+            return ( (this.project_data.location === "" || !this.project_data.location) ? "" : this.project_data.location);
         }
     }
     

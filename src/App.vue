@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import school_json from './data/schools.json'
-import projects_json from './data/data.json'
-import locations_json from './data/locations.json'
+import school_json from './data/schools.json';
+import projects_json from './data/data.json?';
+import locations_json from './data/locations.json';
 import DataProject from './data/DataProject';
 import DataProjectList from './data/DataProjectList';
 export default {
@@ -41,16 +41,12 @@ export default {
   },
 
   mounted(){
-    // console.log("App mounted");
     this.allProjects = new DataProjectList({projects:projects_json, locations:locations_json});
     this.allProjects.raw_schools_data = school_json;
-
-    //console.log(this.allProjects);
   },
 
   methods: {
     handleUserEvent(){
-      //console.log("activity detected");
       if(!this.dataWnd){
         return;
       }
@@ -59,14 +55,13 @@ export default {
       this.sendMessageToWindow("awake");
 
       clearTimeout(this.inactivityTimer);
-      this.inactivityTimer = setTimeout(this.handleInactivity, 60000);
+      this.inactivityTimer = setTimeout(this.handleInactivity, 120000);
     },
 
     handleInactivity(){
       this.isIdle = true;
       this.inProjects = false;
       this.sendMessageToWindow("sleep");
-
     },
 
     openDataWindow(event) {
