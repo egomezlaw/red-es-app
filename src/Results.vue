@@ -1,10 +1,10 @@
 <template>
   <div class="h-screen w-screen text-white bg-black overflow-hidden">
-    <TextAnimator v-if="isIdle" text="Punto por punto, el camino hacia la transformación digital" image="/images/globe.png"/>
+    <TextAnimator v-if="isIdle" text="Punto por punto, el camino hacia la transformación digital" class="mr-[100px]" image="/images/globe.png"/>
     <template v-if="!isIdle" 
         class="flex items-start justify-items-start"
       >
-      <Summary :project_data="project" ref="summaryRef"></Summary>
+      <Summary :project_data="project" ref="summaryRef" ></Summary>
     </template>
   </div>
 </template>

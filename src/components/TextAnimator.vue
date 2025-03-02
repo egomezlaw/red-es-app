@@ -21,7 +21,8 @@ const wordVariants = {
 </script>
 
 <template>
-  <div class="flex justify-center items-center h-screen bg-black text-5xl text-white">
+  <div class="flex justify-center h-screen bg-black text-5xl text-white"
+      :class="{'items-center':arrow, 'items-start mt-[20%]':!arrow}">
     <div class="flex flex-col items-center space-y-4">
       <div class="words-container">
         <span v-for="(word, index) in sentence" 

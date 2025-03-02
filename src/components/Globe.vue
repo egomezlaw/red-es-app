@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-center" ref="globeContainer"></div>
+        <div class="globe text-center" ref="globeContainer"></div>
         <div class="flex items-center justify-center"
         :class="{'w-[960px]': !small, 'w-[640px]':small}">
             <h1 class="text-center text-2xl text-white ">{{ selectedLocation }}</h1>
@@ -150,5 +150,9 @@ h1 {
 }
 h1:first-line{
   text-transform: capitalize;
+}
+
+.globe{
+    touch-action: pan-x pan-y;
 }
 </style>

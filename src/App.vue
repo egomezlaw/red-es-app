@@ -99,6 +99,7 @@ export default {
 <style>
 html {
   background-color: black;
+  touch-action: none;
   /*color: white;*/
 }
 
