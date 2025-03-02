@@ -116,7 +116,7 @@ export default{
                     }, 
                     total_budget,
                 );*/
-                
+
 
             this.$refs.globeRef.setMarkers(filteredItems);
             this.$emit('onMessage', JSON.parse(JSON.stringify({title, budget})));
@@ -155,16 +155,13 @@ export default{
                 this.currentType = DataProject.TYPE_PROVINCE;
                 
                 let province = this.projects_data.getProvince(this.selectedProvince)[0];
+
+               // console.log(province);
                 
-                /*if(!province){
-                    province = this.projects_data.list.filter(project => project.province.toUpperCase() === this.selectedProvince.toUpperCase() && project.type === DataProject.TYPE_PROVINCE)[0];
-                    province.items = this.projects_data.getMunicipalityItemsOf(this.selectedProvince);
-                }*/
+               
 
                 const items = this.projects_data.getMunicipalityItemsOf(this.selectedProvince);
                 
-                //console.log("pins", items);
-//                this.$refs.globeRef.setMarkers(province.items);
                 this.$refs.globeRef.setMarkers(items);
                 this.$emit('onMessage', JSON.parse(province.asJSON()));
             }

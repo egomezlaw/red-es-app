@@ -9,8 +9,7 @@ export default class DataProject{
     static AMBIT_NATIONAL = "Nacional";
     static AMBIT_AUTONOMIC = "Autonómico";
 
-    constructor(id, {title, identifier, desc, beneficiaries, initiative, acting, venues, ambit, location, budget, budget_text, picture, type, province, municipality}){
-        this.id = id;
+    constructor({title, identifier, desc, beneficiaries, initiative, acting, venues, ambit, location, budget, budget_text, picture, type, province, municipality}){
         this.title = title ??= "NA";
         this.identifier = identifier ??= "";
         this.desc = desc ??= "";
