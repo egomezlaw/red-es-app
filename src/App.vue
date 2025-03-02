@@ -34,12 +34,10 @@ export default {
       childWnd:null,
       inactivityTimer:0,
       schoolsData: school_json,
-      //projectsData: null,
       locationsData: locations_json,
-      allProjects: DataProjectList,
     }
   },
-
+  allProjects:null, 
   mounted(){
     this.allProjects = new DataProjectList({projects:projects_json, locations:locations_json});
     this.allProjects.raw_schools_data = school_json;

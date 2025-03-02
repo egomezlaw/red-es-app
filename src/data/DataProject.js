@@ -9,7 +9,8 @@ export default class DataProject{
     static AMBIT_NATIONAL = "Nacional";
     static AMBIT_AUTONOMIC = "Autonómico";
 
-    constructor({title, identifier, desc, beneficiaries, initiative, acting, venues, ambit, location, budget, budget_text, picture, items, type, province, municipality}){
+    constructor(id, {title, identifier, desc, beneficiaries, initiative, acting, venues, ambit, location, budget, budget_text, picture, type, province, municipality}){
+        this.id = id;
         this.title = title ??= "NA";
         this.identifier = identifier ??= "";
         this.desc = desc ??= "";
@@ -22,7 +23,7 @@ export default class DataProject{
         this.budget = budget ??= 0;
         this.budget_text = budget_text ??= "";
         this.picture = picture;
-        this.items = items ??= [];
+        this.items = [];
         this.type = type;
         this.province = province;
         this.municipality = municipality ??= "";

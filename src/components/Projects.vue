@@ -62,9 +62,8 @@ export default{
             projects : [
                 "4YFN",
                 "Acelera pyme",
-                "Aporta - datos.gob.es ",
                 "Aporta - datos.gob.es",
-                "Apoyo a la regulación. Aporta - datos.gob.es ",
+                "Apoyo a la regulación. Aporta - datos.gob.es",
                 "Cronicidad",
                 "Derechos Digitales",
                 "Desafía",
@@ -76,7 +75,7 @@ export default{
                 "Generación D",
                 "Historia Social Única Electrónica en Andalucía",
                 "Incubadora de Realidades Inmersivas (IRIA) de Almendralejo",
-                "Innovación basada en datos. Aporta - datos.gob.es ",
+                "Innovación basada en datos. Aporta - datos.gob.es",
                 "Inteligencia Artificial",
                 "Islas Inteligentes",
                 "MWC",
@@ -92,7 +91,6 @@ export default{
 
             ],
             actings : [
-                "Aplicación de las TIC en la gestión de patologías crónicas",
                 "Apoyo a la regularización",
                 "Bono de Conectividad",
                 "Capacitación Digital de la Ciudadanía",
@@ -155,16 +153,17 @@ export default{
         geMarkersData(prop, value){
             const items = this.projects_data.getItemsByProp(prop, value);
 
+            //console.log(items); 
             this.$refs.globeRef.setMarkers(items);
 
             //console.log(this.filteredProjects);
-            if (this.filteredProjects.length == 1)
+            this.$emit('onMessage', JSON.parse(JSON.stringify({project:this.filteredProjects[0]})));
+            /*if (this.filteredProjects.length == 1)
             {
-                this.$emit('onMessage', JSON.parse(JSON.stringify({project:this.filteredProjects[0]})));
             }else{                
                 let project_summary = new DataProject({title: `Proyectos de ${value}`, desc:"", beneficiaries:"TODOS", initiative:"TODOS", acting:"TODOS", venues:"NA", ambit:"TODOS", budget:0, items});
                 project_summary[prop] = value;
-                project_summary.budget = 0;
+                /*project_summary.budget = 0;
                 let total_budget = 0;
 
                 project_summary.budget = this.filteredProjects.reduce(
@@ -174,14 +173,14 @@ export default{
 
                 const project = project_summary;
                 this.$emit('onMessage', JSON.parse(JSON.stringify({project})));
-            }
+            }*/
         },
     
     
         onBeneficiariesChange(){
             if (this.selectedBeneficiaries != "")
             {
-                this.filteredProjects = this.projects_data.list.filter(project =>  project.beneficiaries == this.selectedBeneficiaries && project.type === DataProject.TYPE_PROJECT );
+                this.filteredProjects = this.projects_data.list.filter(project =>  project.beneficiaries.toUpperCase() == this.selectedBeneficiaries.toUpperCase() && project.type === DataProject.TYPE_PROJECT );
                 // this.geMarkersData({beneficiaries:this.selectedBeneficiaries});
                 this.geMarkersData("beneficiaries", this.selectedBeneficiaries);
             }
@@ -193,8 +192,7 @@ export default{
         onInitiativeChange(){
             if (this.selectedInitiative != "")
             {
-                this.filteredProjects = this.projects_data.list.filter(project =>  project.initiative == this.selectedInitiative && project.type === DataProject.TYPE_PROJECT);
-                //console.log(this.filteredProjects);
+                this.filteredProjects = this.projects_data.list.filter(project =>  project.initiative.toUpperCase() == this.selectedInitiative.toUpperCase());
                 // this.geMarkersData({initiative:this.selectedInitiative});     
                 this.geMarkersData("initiative", this.selectedInitiative);
             }
@@ -204,9 +202,12 @@ export default{
 
         },
         onProjectsChange(){
+            //console.log(this.selectedProject);
             if (this.selectedProject != "")
             {
-                this.filteredProjects = this.projects_data.list.filter(project =>  project.title == this.selectedProject && project.type === DataProject.TYPE_PROJECT);
+                this.filteredProjects = this.projects_data.list.filter(project =>  project.title == this.selectedProject);
+
+                //console.log(this.filteredProjects);
                 // this.geMarkersData({title:this.selectedProject});
                 this.geMarkersData("title",this.selectedProject);
                 
@@ -218,9 +219,11 @@ export default{
 
         },
         onActingsChange(){
+            console.log(this.selectedActing);   
             if (this.selectedActing != "")
             {
-                this.filteredProjects = this.projects_data.list.filter(project =>  project.acting == this.selectedActing && project.type === DataProject.TYPE_PROJECT);
+                this.filteredProjects = this.projects_data.list.filter(project =>  project.acting.toUpperCase() == this.selectedActing.toUpperCase());
+                console.log(this.filteredProjects);
                 //this.geMarkersData({acting:this.selectedActing});                
                 this.geMarkersData("acting",this.selectedActing);
             }

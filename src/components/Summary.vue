@@ -58,6 +58,7 @@
             <div class="text-2xl mx-10 pt-10" v-if="budget!==''">
                 <h2 class="text-bold ">Presupuesto</h2>
                 <h2>{{ budget }}</h2>            
+                <h2>{{ budget_text }}</h2>            
 
             </div>
         </div>

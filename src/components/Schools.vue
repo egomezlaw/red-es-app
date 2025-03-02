@@ -107,7 +107,7 @@ export default{
             }
 
 
-            budget = filteredItems.reduce(
+            budget = null;/*filteredItems.reduce(
                     (accumulator, item) => { 
                         if (item.project){
                             return accumulator + item.project.budget;
@@ -115,7 +115,8 @@ export default{
                         return accumulator;
                     }, 
                     total_budget,
-                );
+                );*/
+                
 
             this.$refs.globeRef.setMarkers(filteredItems);
             this.$emit('onMessage', JSON.parse(JSON.stringify({title, budget})));
@@ -124,7 +125,7 @@ export default{
         onCAAChange(){
             if (this.selectedCCAA){
                 
-                console.log("onCCAAChange", this.selectedCCAA);
+                //console.log("onCCAAChange", this.selectedCCAA);
                 this.currentType = DataProject.TYPE_CCAA;
                 this.selectedProvince = '';
                 this.selectedMunicipality = '';
@@ -137,8 +138,10 @@ export default{
                     caa = this.projects_data.getByIdentifierAndType(DataProject.TYPE_MUNICIPALITY, this.selectedCCAA)[0];
                 }
 
+                const items = this.projects_data.getProvinceItemsOf(this.selectedCCAA);
 
-                this.$refs.globeRef.setMarkers(caa.items);
+
+                this.$refs.globeRef.setMarkers(items);
                 //this.$refs.globeRef.setMarkers(this.projects_data.getProvinceItemsOf(this.selectedCCAA));
                 this.$emit('onMessage', JSON.parse(caa.asJSON()));
             }
@@ -146,21 +149,23 @@ export default{
         
         onProvinceChange(){
             if (this.selectedProvince){
-                console.log("onProvinceChange");
+                //console.log("onProvinceChange", this.selectedProvince);
                 this.selectedMunicipality = '';
 
                 this.currentType = DataProject.TYPE_PROVINCE;
                 
-                let province = this.projects_data.getByIdentifierAndType(DataProject.TYPE_PROVINCE, this.selectedProvince)[0];
-
-                if(!province){
-                    province = this.projects_data.list.filter(project => project.province === this.selectedProvince && project.type === DataProject.TYPE_MUNICIPALITY)[0];
+                let province = this.projects_data.getProvince(this.selectedProvince)[0];
+                
+                /*if(!province){
+                    province = this.projects_data.list.filter(project => project.province.toUpperCase() === this.selectedProvince.toUpperCase() && project.type === DataProject.TYPE_PROVINCE)[0];
                     province.items = this.projects_data.getMunicipalityItemsOf(this.selectedProvince);
-                }
+                }*/
 
-                console.log(province);
+                const items = this.projects_data.getMunicipalityItemsOf(this.selectedProvince);
+                
+                //console.log("pins", items);
 //                this.$refs.globeRef.setMarkers(province.items);
-                this.$refs.globeRef.setMarkers(province.items);
+                this.$refs.globeRef.setMarkers(items);
                 this.$emit('onMessage', JSON.parse(province.asJSON()));
             }
         },

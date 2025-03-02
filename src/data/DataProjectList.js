@@ -2,10 +2,13 @@ import DataProject from './DataProject';
 
 export default class DataProjectList{
     constructor({projects, locations}){
-        this.list = [];
+        console.log("CONSTRUCTOR");
+        this.list = Array();
         this.locations = locations;
-        for(const p in projects){            
-            this.addProject(projects[p]);
+
+        for(const p in projects){
+            let dataProject = this.addProject(p, projects[p]);
+            this.list.push(dataProject);             
         }
 
         this.raw_schools_data = null;
@@ -18,7 +21,7 @@ export default class DataProjectList{
     }
 
     //deprecated
-    fromSchools(schools){
+    /*fromSchools(schools){
 
         this.raw_schools_data = schools;
 
@@ -85,7 +88,7 @@ export default class DataProjectList{
                         console.log(pj.identifier);
                         console.log(pj.items[0].location);
                         console.log(pj.items[0]);
-                    }*/
+                    }
                 }
 
 
@@ -99,39 +102,64 @@ export default class DataProjectList{
             ccaa_count = 0;
         }
         this.sortProjects();
-    }
+    }*/
 
-    addProject(project){
-        if (project.ambit === DataProject.AMBIT_AUTONOMIC){
-            if (project.municipality){
-                project.type = DataProject.TYPE_MUNICIPALITY;
-            }else if (project.province){
-                project.type = DataProject.TYPE_PROVINCE;                    
+    addProject(id, raw_project){
+        if (raw_project.ambit === DataProject.AMBIT_AUTONOMIC){
+            if (raw_project.municipality){
+                raw_project.type = DataProject.TYPE_MUNICIPALITY;
+            }else if (raw_project.province){
+                raw_project.type = DataProject.TYPE_PROVINCE;                    
             }else{
-                project.type = DataProject.TYPE_CCAA;
+                raw_project.type = DataProject.TYPE_CCAA;
+                        //custom validation
+                if (raw_project.title !== "Escuelas Conectadas"){
+                    raw_project.type = DataProject.TYPE_PROJECT;
+                }
             }
         }else{
-            project.type = DataProject.TYPE_PROJECT;
+            raw_project.type = DataProject.TYPE_PROJECT;
         }
 
-        if (project['location']){
-            project.items = [];
-            const points = project['location'].split(",");
+        let dataProject = new DataProject(id, raw_project);
+
+
+        if (dataProject.location){
+            const points = dataProject.location.split(",");
+
             for(let i = 0; i < points.length; i++){
                 let loc = points[i];
-                if (project.municipality){
-                    if(this.locations[project.municipality] || this.locations[project.municipality.toUpperCase()]){
-                        loc = project.municipality;
+                if (dataProject.municipality){
+                    if(this.locations[dataProject.municipality] || this.locations[dataProject.municipality.toUpperCase()]){
+                        loc = dataProject.municipality;
                     }
-                }else if (project.province){
-                    if(this.locations[project.province] || this.locations[project.province.toUpperCase()]){
-                        loc = project.province;
+                }else if (dataProject.province){
+                    if(this.locations[dataProject.province] || this.locations[dataProject.province.toUpperCase()]){
+                        loc = dataProject.province;
                     }
                 }
-                let location = this.locations[loc];
 
-                if (location){
-                    let geoData = location;
+                let location = {...this.locations[loc]};
+
+                if (location){            
+                    
+                    let data = location;
+                    data.location = loc;
+                    data.project = {
+                        location: loc,
+                        title:dataProject.title, 
+                        desc:dataProject.desc, 
+                        beneficiaries:dataProject.beneficiaries, 
+                        initiative:dataProject.initiative, 
+                        acting:dataProject.acting, 
+                        count:dataProject.venues, 
+                        ambit:dataProject.ambit, 
+                        budget:dataProject.budget, 
+                        budget_text:dataProject.budget_text, 
+                        picture:dataProject.picture};
+                    
+                        dataProject.items.push(data);
+                    /*
                     project.items.push(geoData);
                     project.items[project.items.length - 1].location = loc;
                     project.items[project.items.length - 1].project = {
@@ -145,8 +173,7 @@ export default class DataProjectList{
                         ambit:project.ambit, 
                         budget:project.budget, 
                         budget_text:project.budget_text, 
-                        picture:project.picture
-                    };
+                        picture:project.picture};*/
                 }
             }
         }
@@ -157,14 +184,16 @@ export default class DataProjectList{
             project.location = project.province;
         }*/
 
-        if (project.location === "Región de Murcia")
-        {
-            console.log(project);
+/*        let dataProject = new DataProject(raw_project);
+        this.list.push(dataProject);
+*/
+
+        if (dataProject.acting === "TIC y Transformación Digital en los Servicios Sociales" && dataProject.location === "Andalucía"){
+            console.log(dataProject);
         }
 
-        let dataProject = new DataProject(project);
-        this.list.push(dataProject);
 
+        //console.log(dataProject);
         return dataProject;
     }
 
@@ -174,14 +203,23 @@ export default class DataProjectList{
     }
 
     getProvinceItemsOf(caa){
-        let filteredProjects = this.list.filter(project => project.location === caa && project.type === DataProject.TYPE_PROVINCE);
+        let filteredProjects = this.list.filter(project => project.location === caa);
 
         let items = [];
         for (let index = 0; index < filteredProjects.length; index++) {
             items = items.concat(filteredProjects[index].items);
         }
-        //console.log(items);
         return [...new Set(items)];
+    }
+
+    getProvince(province){
+        let filteredProjects = this.list.filter(
+            
+            project => (((project.province.toLocaleLowerCase() === province.toLocaleLowerCase()) || 
+            (project.province.toUpperCase() === province.toUpperCase())))
+        );
+        //console.log("getProvince", province, filteredProjects);
+        return filteredProjects;
     }
 
     getMunicipality(municipality){
@@ -194,12 +232,15 @@ export default class DataProjectList{
     }
 
     getMunicipalityItemsOf(province){
-        let filteredProjects = this.list.filter(project => project.province.toLocaleLowerCase() === province.toLocaleLowerCase() && project.type === DataProject.TYPE_MUNICIPALITY);
+        let filteredProjects = this.list.filter(project => project.province.toLocaleLowerCase() === province.toLocaleLowerCase() && project.municipality !== "");
+
+        ///console.log(filteredProjects);
         let items = [];
         for (let index = 0; index < filteredProjects.length; index++) {
             items = items.concat(filteredProjects[index].items);
         }
-        return [...new Set(items)];
+        console.log("getMunicipalityItemsOf", province, items);
+        return items;
     }
 
     getItemsByAmbit(ambit){
@@ -218,12 +259,13 @@ export default class DataProjectList{
     getItemsByProp(prop, value){
         let filteredProjects = this.list.filter(project =>  project[prop] === value);
 
-        //console.log(filteredProjects);
+        console.log(filteredProjects);
         let items = [];
         for (let index = 0; index < filteredProjects.length; index++) {
             items = items.concat(filteredProjects[index].items);
         }
-        return [...new Set(items)];
+        console.log(items);
+        return items;
 
     }
 

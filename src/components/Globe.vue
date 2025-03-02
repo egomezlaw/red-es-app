@@ -77,10 +77,25 @@ export default{
                 this.selectedLocation = label;
             },
 
+            variate(){
+                const   variation = (Math.floor(Math.random() * 100))/10000;
+                return variation;
+            },
+
             setMarkers(markers){
                 if (!markers){
                     return;
                 }
+
+                //console.log(markers);   
+                markers.forEach((element) => {
+                  //  console.log(element.lat);
+                    element.lat += this.variate();
+                    element.lng += this.variate();
+                   // console.log(element.lat);
+                });
+
+                //console.log(markers);   
 
                 this.globeInstance.htmlElementsData([]);
                 this.selectedLocation = '';
