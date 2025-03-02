@@ -87,13 +87,13 @@ export default{
                     return;
                 }
 
-                //console.log(markers);   
+                /*
                 markers.forEach((element) => {
                   //  console.log(element.lat);
                     element.lat += this.variate();
                     element.lng += this.variate();
                    // console.log(element.lat);
-                });
+                });*/
 
                 //console.log(markers);   
 
